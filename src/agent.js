@@ -11,7 +11,7 @@ const errorBody = (err) => err.response.body;
 const token = getItemFromSessionStore('token');
 const createdBy = '620aae3e90e0a582e3d93ee5';
 const companyId = '6219f4a39ca8773564b6fac0';
-const clientId = getItemFromSessionStore('user').id;
+const clientId = getItemFromSessionStore('user')?.id;
 
 const requests = {
   del: (url) =>
