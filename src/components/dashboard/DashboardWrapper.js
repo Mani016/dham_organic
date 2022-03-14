@@ -1,11 +1,8 @@
 import React, { Fragment } from "react";
 import { MetaTags } from "react-meta-tags";
-import {  useLocation } from "react-router-dom";
 import LayoutOne from "../../layouts/LayoutOne";
 
 const DashboardWrapper = (props) => {
-    const location = useLocation();
-    let split = location.pathname.split("/");
 	return (
 		<Fragment>
 			<MetaTags>

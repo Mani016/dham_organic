@@ -8,7 +8,6 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact"; 
 import SingleService from "./pages/SingleService"; 
 import Team from "./pages/Team";  
-import SingleShop from "./pages/SingleShop"; 
 import BlogPageTwo from "./pages/BlogPageTwo"; 
 import BlogPageOne from "./pages/BlogPageOne"; 
 import SingleBlog from "./pages/SingleBlog"; 
@@ -18,12 +17,12 @@ import NotFound from "./pages/NotFound";
 import OrganicFarming from "./pages/OrganicFarming";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import UserDashboard from "./components/dashboard/UserDashboard";
 import MyCart from "./components/dashboard/MyCart";
 import Profile from "./components/dashboard/Profile";
-import Category from "./pages/Categorys";
+import Category from "./pages/Categories";
 import Product from "./pages/Products";
-import SingleProduct from "./pages/SingleProduct";
+import ProductDetails from "./pages/ProductDetails";
+// import UserDashboard from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -78,7 +77,7 @@ function App() {
           />
           <Route
             path={`${process.env.PUBLIC_URL + "/product/:id"}`}
-            component={SingleProduct}
+            component={ProductDetails}
           />
           <Route
             path={`${process.env.PUBLIC_URL + "/blog"}`}
@@ -121,10 +120,6 @@ function App() {
             path={`${process.env.PUBLIC_URL + "/sign-up"}`}
             component={SignUp}
           />
-           {/* <Route
-            path={`${process.env.PUBLIC_URL + "/dashboard"}`}
-            component={UserDashboard}
-          /> */}
           <Route exact component={NotFound} />
         </Switch>
       </ScrollToTop>

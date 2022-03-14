@@ -6,18 +6,19 @@ import AboutContent from '../components/AboutContent';
 import Funfact from '../components/Funfact';
 import WorkProcess from '../components/WorkProcess';
 import ChooseUs from '../components/ChooseUs'; 
-import ProductsList from '../components/ProductsList';   
+import OurCategories from '../components/OurCategories';   
 import Team from '../components/Team';  
 import Testimonial from '../components/Testimonial';  
+import GalleryContent from '../components/GalleryContent';  
+
 // import Gallery from '../pages/Gallery';
 // import ClinetCarousel from '../components/ClinetCarousel';
-import ContactForm from '../components/ContactForm';
 
 const Home = () => {
   return (
     <Fragment>
       <MetaTags>
-        <title>FuodBorne | Home</title>
+        <title>Dhaam Organic| Home</title>
         <meta
           name="description"
           content="Organic Food React JS Template."
@@ -30,12 +31,12 @@ const Home = () => {
       {/* <ServiceContent /> */}
       <Funfact />
       <WorkProcess />
-      <ProductsList />
+      <GalleryContent />
+      <OurCategories />
       <ChooseUs /> 
       <Team /> 
       <Testimonial />
       {/* <ClinetCarousel /> */}
-      <ContactForm />
       </LayoutOne>
     </Fragment>
   );

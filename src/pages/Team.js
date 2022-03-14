@@ -78,7 +78,7 @@ class Team extends Component{
 	return(
         <Fragment>
         <MetaTags>
-          <title>FuodBorne | Team</title>
+          <title>Dhaam Organic| Team</title>
           <meta
             name="description"
             content="Organic Food React JS Template."

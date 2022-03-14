@@ -10,8 +10,9 @@ import "./assets/css/style.css";
 import "./assets/css/responsive.css";   
  
 import * as serviceWorker from "./serviceWorker";
+import Main from './Main';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Main><App/></Main>, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

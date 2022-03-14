@@ -1,5 +1,5 @@
 import React,{Component} from 'react';  
-import VideoPopup from "./VideoPopup"; 
+// import VideoPopup from "./VideoPopup"; 
 
 class Funfact extends Component{
 
@@ -51,8 +51,8 @@ class Funfact extends Component{
                 <div className="col-sm-12">
                     <div className="video_wrp">  
                 
-                        <VideoPopup />
-                        
+                        {/* <VideoPopup /> */}
+                        {/*  */}
                         <p>Watch Our organic food Video</p> 
                         <h2>Everyone's body is different, it will take to see changes in your body .</h2> 
                     </div>

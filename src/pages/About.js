@@ -8,7 +8,7 @@ const About = () => {
 	return (
 		<Fragment>
 			<MetaTags>
-				<title>FuodBorne | About</title>
+				<title>Dhaam Organic| About</title>
 				<meta name="description" content="Organic Food React JS Template." />
 			</MetaTags>
 			<LayoutOne>

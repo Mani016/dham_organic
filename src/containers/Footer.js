@@ -125,7 +125,7 @@ const Footer = () => {
         </div> 
         {/*  Start:Subfooter  */}
         <div className="subfooter">
-            <p>2020 © Copyright <Link to={process.env.PUBLIC_URL + "/"}>Fuodborne.</Link> All rights Reserved.</p>
+            <p>2020 © Copyright <Link to={process.env.PUBLIC_URL + "/"}>Dhaam Organic</Link> All rights Reserved.</p>
         </div> 
         {/* End:Subfooter  */}
     </footer> 

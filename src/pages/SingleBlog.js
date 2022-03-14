@@ -40,7 +40,7 @@ class SingleBlog extends Component{
     return(
         <Fragment>
         <MetaTags>
-          <title>FuodBorne | Single Service</title>
+          <title>Dhaam Organic| Single Service</title>
           <meta
             name="description"
             content="Organic Food React JS Template."

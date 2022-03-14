@@ -9,8 +9,6 @@ import Breadcrumb from "../components/Breadcrumb";
 class SingleShop extends Component{
 
     render(){
-
-
 		const settings = {
 	      customPaging: function(i) {
 	      return (	         
@@ -91,7 +89,7 @@ class SingleShop extends Component{
     	return(
 			<Fragment>
 			<MetaTags>
-			  <title>FuodBorne | Single Service</title>
+			  <title>Dhaam Organic| Single Service</title>
 			  <meta
 				name="description"
 				content="Organic Food React JS Template."
