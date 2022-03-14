@@ -67,7 +67,7 @@ const MobileMenu = () => {
                       </li>
                   </ul>
               </li>
-              <li><Link to="products">Products</Link>
+              <li><Link to="categories">Categories</Link>
               </li>
               <li><Link to="contact">Contact</Link>
               </li>
