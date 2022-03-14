@@ -90,13 +90,14 @@ const ProductDetails = () => {
       Alert.showToastAlert('error', 'Login Required');
     }
   }
+  console.log(quantity)
+
   function GetCart() {
     agent.Cart.get()
       .then((res) => {
         // setData(res.data);
         // setItems(res.data.items);
         setItemsInCart(res.data.length);
-        const quantity = 
         setQuantity()
       })
       .catch((err) => console.error(err));
