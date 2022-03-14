@@ -9,13 +9,13 @@ class Slides extends Component{
 
         let slideImages = [
             {
-                img:'slider1.jpg',
+                img:'slider1.jpeg',
                 smallTitle: 'Professional Cleaning Services',
                 title:"A huge variety fruits & vegetables.",
 				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
             },
             {
-                img:'slider2.jpg',
+                img:'slider2.jpeg',
                 smallTitle:"Professional Cleaning Services",
                 title:"A huge variety fruits & vegetables.",
 				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",

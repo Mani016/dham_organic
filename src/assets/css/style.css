@@ -1029,15 +1029,15 @@ Primary use: Food Farms, Organic Farms
     /*  Slider Area Styling */
     
   .slide_bg_1 {
-    background: #f0f0f0 url("/assets/images/slider1.jpg") no-repeat scroll right center;
+    background: #f0f0f0 url("/assets/images/slider1.jpeg") no-repeat scroll right center;
   }
   
   .slide_bg_2 {
-    background: #f0f0f0 url("/assets/images/slider2.jpg") no-repeat scroll right center;
+    background: #f0f0f0 url("/assets/images/slider2.jpeg") no-repeat scroll right center;
   }
   
   .slide_bg_3 {
-    background: #f0f0f0 url("/assets/images/slider3.jpg") no-repeat scroll right center;
+    background: #f0f0f0 url("/assets/images/slider3.jpeg") no-repeat scroll right center;
   }
   
   .single_slider {
@@ -1737,7 +1737,7 @@ right: 0px !important;
   }
   
   .whychose_bg {
-    background-image: url("/assets/images/why_chose.jpg");
+    background-image: url("/assets/images/why_chose.jpeg");
     background-position: left center;
     background-repeat: no-repeat;
     height: 557px;
