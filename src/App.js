@@ -8,7 +8,6 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact"; 
 import SingleService from "./pages/SingleService"; 
 import Team from "./pages/Team";  
-import Products from "./pages/Products"; 
 import SingleShop from "./pages/SingleShop"; 
 import BlogPageTwo from "./pages/BlogPageTwo"; 
 import BlogPageOne from "./pages/BlogPageOne"; 
@@ -19,6 +18,12 @@ import NotFound from "./pages/NotFound";
 import OrganicFarming from "./pages/OrganicFarming";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import UserDashboard from "./components/dashboard/UserDashboard";
+import MyCart from "./components/dashboard/MyCart";
+import Profile from "./components/dashboard/Profile";
+import Category from "./pages/Categorys";
+import Product from "./pages/Products";
+import SingleProduct from "./pages/SingleProduct";
 
 function App() {
   return (
@@ -64,12 +69,16 @@ function App() {
             component={Team}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/products"}`}
-            component={Products}
+            path={`${process.env.PUBLIC_URL + "/categories"}`}
+            component={Category}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/single-shop"}`}
-            component={SingleShop}
+            path={`${process.env.PUBLIC_URL + "/category/:id"}`}
+            component={Product}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + "/product/:id"}`}
+            component={SingleProduct}
           />
           <Route
             path={`${process.env.PUBLIC_URL + "/blog"}`}
@@ -92,6 +101,15 @@ function App() {
             component={Cart}
           />
           <Route
+            path={`${process.env.PUBLIC_URL + "/my-cart"}`}
+            component={MyCart}
+          />
+           <Route
+            path={`${process.env.PUBLIC_URL + "/dashboard/my-profile"}`}
+            component={Profile}
+          />
+          
+          <Route
             path={`${process.env.PUBLIC_URL + "/checkout"}`}
             component={Checkout}
           />
@@ -103,6 +121,10 @@ function App() {
             path={`${process.env.PUBLIC_URL + "/sign-up"}`}
             component={SignUp}
           />
+           {/* <Route
+            path={`${process.env.PUBLIC_URL + "/dashboard"}`}
+            component={UserDashboard}
+          /> */}
           <Route exact component={NotFound} />
         </Switch>
       </ScrollToTop>

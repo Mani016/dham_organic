@@ -7,6 +7,7 @@ import { Link, useHistory } from "react-router-dom";
 import agent from "../agent";
 import Alert from "../Utils/Alert";
 import { setItemToStore } from "../Utils/utils";
+import { API_STATUS } from "../constant";
 
 const SignUp = () => {
     let history = useHistory();
@@ -15,17 +16,21 @@ const SignUp = () => {
     const [address, setAddress] = React.useState('');
     const [mobileNum, setMobileNum] = React.useState('');
     const [created, setCreated] = React.useState(false);
+    const [password, setPassword] = React.useState('');
     const [OTP, setOTP] = React.useState('');
 
     function GetOtp() {
         let formIsComplete = true;
-        if (name === '') {
-            Alert.showToastAlert('warning', 'Name is required');
+        if ((name === '') || (mobileNum === '') || (password === '') || (email === '') || (address === '') ) {
+            Alert.showToastAlert('warning', 'Required fields cannot be empty');
             formIsComplete = false;
         }
-        if (mobileNum === '') {
-            Alert.showToastAlert('warning', 'Mobile No. is required');
-            formIsComplete = false;
+        if (password !== ''){
+
+            if (password.length < 6){
+                Alert.showToastAlert('warning', 'Password cannot be less than 6 letters');
+                formIsComplete = false;
+            }
         }
         if (mobileNum !== '') {
             if (mobileNum.length < 10) {
@@ -40,27 +45,27 @@ const SignUp = () => {
                 formIsComplete = false;
             }
         }
-        if (address === '') {
-            Alert.showToastAlert('warning', 'Address is required');
-            formIsComplete = false;
-        }
-
+       
         if (formIsComplete) {
             const data = {
                 name: name,
                 email: email,
-                mobile_no: mobileNum,
-                address: address
+                mobile: Number(mobileNum),
+                address: address,
+                password: password,
+                status: true,
+                isOTPVerified: false
             }
             agent.Register.register(data).then((res) => {
-                if (!res.status) {
-                    Alert.showToastAlert('error', res.message);
-                }
-                else {
+                if (API_STATUS.SUCCESS_CODE.includes(res.status)){
                     Alert.showToastAlert('success', res.message);
                     setCreated(true);
                 }
-            }).catch((err) => console.error(err))
+                else {
+                    Alert.showToastAlert('error', res.message);
+                    setCreated(false);
+                }
+            }).catch((err) => { console.log(err); Alert.showToastAlert('error', err.message);})
         }
     }
     function Register() {
@@ -71,8 +76,8 @@ const SignUp = () => {
         }
         if (formIsComplete) {
             const data = {
-                customer_otp: OTP,
-                mobile_no: mobileNum,
+                otp: OTP,
+                mobile: Number(mobileNum),
             }
             agent.Register.registerOtp(data).then((res) => {
                 if (!res.status) {
@@ -82,7 +87,7 @@ const SignUp = () => {
                 else {
                     Alert.showToastAlert('success', res.message);
                     setItemToStore("token", res.user.token);
-                    history.push('/user-dashboard/my-subscriptions');
+                    history.push('/login');
                 }
             }).catch((err) => console.error(err))
         }
@@ -150,6 +155,16 @@ const SignUp = () => {
                                                     onChange={({ target }) => {
                                                         setEmail(target.value);
                                                     }} value={email}
+                                                />
+                                            </p>
+                                            <p className="input_fields input_name">
+                                                <label>password<span className="required">*</span></label>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Enter Password"
+                                                    onChange={({ target }) => {
+                                                        setPassword(target.value);
+                                                    }} value={password}
                                                 />
                                             </p>
                                             <p className="input_fields input_name">

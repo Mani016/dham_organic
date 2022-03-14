@@ -1,22 +1,43 @@
-import React, {Component} from 'react'; 
+import React, {Component, useEffect, useState} from 'react'; 
 import Slider from "react-slick"; 
+import  agent  from '../agent';
   
-class Testimonial extends Component{
+const Testimonial =()=>{
+    const [data, setData] = useState([]);
+	const [loading, setLoading] = useState(false);
+	function getTestimonials() {
+		setLoading(true);
+		const payload = {
+			status: true,
+		};
+		agent.Testimonial
+			.get(payload)
+			.then((res) => {
+                console.log(res);
+				if (res.success) {
 
-    state = { 
-        heading: `What Client's Say`, 
-        subHeading: ' Client Satisfait ',
-        image1: 'testimonial1.jpg',
-        image2: 'testimonial2.jpg',
-        image3: 'testimonial3.jpg',
-        image4: 'testimonial4.jpg',
-    }
+					setData(res.data);
+					setLoading(false);
+				} else {
+					setData([]);
+					setLoading(false);
+				}
+			})
+			.catch((err) => {
+				setData([]);    
+				setLoading(false);
+			});
+	}
+	useEffect(() => {
+		getTestimonials();
+	}, []);
 
-    render(){
         var settings = {
           dots: false,
           arrows:false,
           infinite: true, 
+          autoplay:true,
+          fade:true,
           speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -37,16 +58,16 @@ class Testimonial extends Component{
             },
         ]; 
 
-        let ImageeTestiDataList = imageTestiData.map((val, i) => {
+        let ImageTestiDataList = data.map((val, i) => {
             return(
 
  
-                <div className="item" key={i}> 
+                <div className="item" key={`val_${i}`}> 
                     <div className="testi_wrp">
-                        <img src={`assets/images/${val.clientImg}`} alt="" />
+                        <img src={val.image.path} alt="" />
                         <div>
                             <div className="testi_info">
-                                    <p>{val.content}</p>
+                                    <p>{val.msg}</p>
                                 </div>
                                 <div className="testi_img"> 
                                     
@@ -66,15 +87,15 @@ class Testimonial extends Component{
     <section className="testi-section">
         <div className="container"> 
             <div className="base-header">
-                <small>{this.state.subHeading} </small> 
-                <h3>{this.state.heading} </h3> 
+                <small>Client Satisfait </small> 
+                <h3>What Consumers Say </h3> 
             </div> 
             <div className="row">
                 <div className="col-sm-12">
 
                         <Slider {...settings}>
 
-                            {ImageeTestiDataList}
+                            {ImageTestiDataList}
 
                         </Slider>
  
@@ -87,8 +108,6 @@ class Testimonial extends Component{
     );
 }
 
-
-}
 
 
 export default Testimonial;

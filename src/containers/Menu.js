@@ -14,7 +14,7 @@ const Menu = () => {
         <div className="container"> 
                 <div className="logo">
                     <Link to={process.env.PUBLIC_URL + "/"}> 
-                    	<img src="assets/images/logo.png" alt="" />
+                    	<img src="/assets/images/logo.png" alt="" />
                     </Link>
                 </div>
 
@@ -28,15 +28,15 @@ const Menu = () => {
                                     <ul>
                                         <li><a href="/#how-it-done">How It Done</a>
                                         </li>
-                                        <li><Link to="organic-farming">Organic Farming</Link>
+                                        <li><Link to="/organic-farming">Organic Farming</Link>
                                         </li>
-                                        <li><Link to="gallery">Farm Gallery</Link>
+                                        <li><Link to="/gallery">Farm Gallery</Link>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><Link to="products">Products</Link>
+                                <li><Link to="/categories">Categories</Link>
                                 </li>
-                                <li><Link to="contact">Contact</Link>
+                                <li><Link to="/contact">Contact</Link>
                                 </li>
                             </ul>
                         </Nav> 
