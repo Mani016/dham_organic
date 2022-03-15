@@ -61,7 +61,7 @@ class Team extends Component{
 
     return(
  
-    <section className="team-section" style={{backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/bg_3.jpg"})` }}>
+    <section className="team-section" style={{backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/bg_3.jpeg"})` }}>
         <div className="container">
             <div className="base-header">
                 <small>{this.state.subHeading} </small>  

@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import agent from '../agent';
 import Loader from '../components/Loader';
 import { API_STATUS } from '../constant';
+import NoData from '../components/NoData';
 const Product = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -55,7 +56,11 @@ const Product = () => {
               <div className='product_info'>
                 <h4>{valu.name}</h4>
                 <div className='price'>
-                  <span className={`product_price ${valu.discount>0 &&'cut_price'}`}>
+                  <span
+                    className={`product_price ${
+                      valu.discount > 0 && 'cut_price'
+                    }`}
+                  >
                     Price: ₹{valu.price}
                   </span>
                   {valu.discount > 0 && (
@@ -85,39 +90,49 @@ const Product = () => {
           <Breadcrumb title='Our Products' />
           {/*====================  End of breadcrumb area  ====================*/}
           {/*==================== Products area  ====================*/}
-          <section className='product-section'>
+          <section className='product-section blog-section'>
             <div className='container'>
+              <div className='base-header'>
+                <small> Our Featured Products</small>
+                <h3> Organic Products</h3>
+              </div>
               {loading ? (
                 <Loader />
               ) : (
                 <>
-                  <div className='d-flex justify-content-between w-100'>
-                    <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
-                    <div className='prodt_pagination'>
-                      <ul>
-                        <li>
-                          <span
-                            onClick={() => setPage(page - 1)}
-                            className={page <= 1 ? 'disable' : ''}
-                          >
-                            {'< '}
-                          </span>
-                        </li>
-                        {page}
-                        <li>
-                          <span
-                            onClick={() => setPage(page + 1)}
-                            className={
-                              page === data.total_pages ? 'disable' : ''
-                            }
-                          >
-                            {'>'}
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className='row'>{productMap(data.data || [])}</div>
+                  {data.total > 0 ? (
+                    <>
+                      <div className='d-flex justify-content-between w-100'>
+                        <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
+                        <div className='prodt_pagination'>
+                          <ul>
+                            <li>
+                              <span
+                                onClick={() => setPage(page - 1)}
+                                className={page <= 1 ? 'disable' : ''}
+                              >
+                                {'< '}
+                              </span>
+                            </li>
+                            {page}
+                            <li>
+                              <span
+                                onClick={() => setPage(page + 1)}
+                                className={
+                                  page === data.total_pages ? 'disable' : ''
+                                }
+                              >
+                                {'>'}
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className='row'>{productMap(data.data)}</div>
+                    </>
+                  ) : (
+                    <NoData />
+                  )}
                 </>
               )}
             </div>
