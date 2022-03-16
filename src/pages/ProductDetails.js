@@ -114,11 +114,11 @@ const ProductDetails = () => {
   }, []);
 
   const settings = {
-    // customPaging: function (i) {
-    //   return <img src={`assets/images/product0${i + 1}.jpg`} alt='' />;
-    // },
+    customPaging: function (i) {
+      return <img src={`assets/images/product0${i + 1}.jpg`} alt='' />;
+    },
     dots: true,
-    // dotsClass: 'slick-dots slick-thumb',
+    dotsClass: 'slick-dots slick-thumb',
     infinite: true,
     speed: 500,
     slidesToShow: 1,

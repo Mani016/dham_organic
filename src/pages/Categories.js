@@ -99,11 +99,6 @@ const Category = () => {
                 <Loader />
               ) : (
                 <>
-<<<<<<< HEAD
-                  <div className='d-flex justify-content-between align-items-center mb-4'>
-                      <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
-                      <div className='prodt_pagination'>
-=======
                 <div className='base-header'>
                   <small> Our Featured Categories</small>
                   <h3> Organic Categories</h3>
@@ -111,7 +106,6 @@ const Category = () => {
                   <div className='d-flex justify-content-between'>
                     <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
                     <div className='prodt_pagination'>
->>>>>>> 3a9d18e5726429128744bb85b0feab364bf6cce8
                       <ul>
                         <li>
                           <span

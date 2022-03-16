@@ -100,35 +100,6 @@ const Product = () => {
                 <Loader />
               ) : (
                 <>
-<<<<<<< HEAD
-                  <div className='d-flex justify-content-between w-100 align-items-center mb-2'>
-                    <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
-                    <div className='prodt_pagination'>
-                      <ul>
-                        <li>
-                          <span
-                            onClick={() => setPage(page - 1)}
-                            className={page <= 1 ? 'disable' : ''}
-                          >
-                            {'< '}
-                          </span>
-                        </li>
-                        {page}
-                        <li>
-                          <span
-                            onClick={() => setPage(page + 1)}
-                            className={
-                              page === data.total_pages ? 'disable' : ''
-                            }
-                          >
-                            {'>'}
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className='row'>{productMap(data.data || [])}</div>
-=======
                   {data.total > 0 ? (
                     <>
                       <div className='d-flex justify-content-between w-100'>
@@ -162,7 +133,6 @@ const Product = () => {
                   ) : (
                     <NoData />
                   )}
->>>>>>> 3a9d18e5726429128744bb85b0feab364bf6cce8
                 </>
               )}
             </div>
