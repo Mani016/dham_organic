@@ -6,7 +6,7 @@ const ChooseUs = () => {
 	<section 
     className="whychose-section" 
     style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/bg_1.jpg"})`
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/bg_1.jpeg"})`
     }}
     > 
 	    <div className="container">

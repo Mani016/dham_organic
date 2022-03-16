@@ -9,7 +9,7 @@ import agent from '../agent';
 import Loader from '../components/Loader';
 import Alert from '../Utils/Alert';
 import { API_STATUS } from '../constant';
-import { getItemFromSessionStore } from '../Utils/utils';
+import { getItemFromSessionStore, HANDLE_ERROR } from '../Utils/utils';
 import AppContext from '../Context';
 const ProductDetails = () => {
   const [data, setData] = useState([]);
@@ -19,16 +19,12 @@ const ProductDetails = () => {
   const payload = {
     productId: params.id,
   };
-  const { itemsInCart, setItemsInCart } = React.useContext(AppContext);
+  const { setItemsInCart } = React.useContext(AppContext);
   const [quantity, setQuantity] = useState(0);
-  function getItemQuantity() {
-    console.log(itemsInCart);
-    // GetCart().then((res) => {
-    //   setQuantity(res.data.length);
-    // }).catch((err) => console.error(err))
-  }
+  const [cart, setCart] = useState([]);
+
   useEffect(() => {
-    getItemQuantity();
+    GetCart();
   }, []);
   function checkUserLogin() {
     if (getItemFromSessionStore('token')) {
@@ -56,17 +52,20 @@ const ProductDetails = () => {
 
   function addToCart() {
     if (checkUserLogin()) {
+      setLoading(true);
       agent.Cart.add(payload)
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
             Alert.showToastAlert('success', 'Product Added Successfully.');
             GetCart();
+            setLoading(false);
           } else {
             Alert.showToastAlert('error', res.message);
+            setLoading(false);
           }
         })
         .catch((err) => {
-          console.log(err);
+          HANDLE_ERROR(err.message, setLoading);
         });
     } else {
       Alert.showToastAlert('error', 'Login Required');
@@ -74,50 +73,65 @@ const ProductDetails = () => {
   }
   function subtractFromCart() {
     if (checkUserLogin()) {
+      setLoading(true);
       agent.Cart.remove(payload)
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
             Alert.showToastAlert('success', 'Product Removed Successfully.');
             GetCart();
+            setLoading(false);
           } else {
-            Alert.showToastAlert('error', res.message);
+            HANDLE_ERROR(res.message, setLoading);
           }
         })
         .catch((err) => {
-          console.log(err);
+          HANDLE_ERROR(err.message, setLoading);
         });
     } else {
       Alert.showToastAlert('error', 'Login Required');
     }
   }
-  console.log(quantity)
 
   function GetCart() {
+    setLoading(true);
     agent.Cart.get()
       .then((res) => {
-        // setData(res.data);
-        // setItems(res.data.items);
-        setItemsInCart(res.data.length);
-        setQuantity()
+        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+          setCart(res.data);
+          setItemsInCart(res.data.length);
+          setQuantity();
+          setLoading(false);
+        } else {
+          HANDLE_ERROR(res.message, setLoading);
+        }
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        HANDLE_ERROR(err.message, setLoading);
+      });
   }
   useEffect(() => {
     getProductById();
   }, []);
 
   const settings = {
-    customPaging: function (i) {
-      return <img src={`assets/images/product0${i + 1}.jpg`} alt='' />;
-    },
+    // customPaging: function (i) {
+    //   return <img src={`assets/images/product0${i + 1}.jpg`} alt='' />;
+    // },
     dots: true,
-    dotsClass: 'slick-dots slick-thumb',
+    // dotsClass: 'slick-dots slick-thumb',
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
+  function getItemQuantity() {
+    let qty = 0;
+    const product = cart.filter((item) => item.productId._id === params.id);
+    if (product.length) {
+      qty = product[0].quantity;
+    }
+    return qty;
+  }
   return (
     <Fragment>
       <MetaTags>
@@ -146,7 +160,7 @@ const ProductDetails = () => {
                           <Slider {...settings}>
                             {data.images?.map((slide, j) => (
                               <div key={`slide_${j}`}>
-                                <img src={slide.path} alt='' />
+                                <img src={slide.path} alt=''style={{height:'369px'}} />
                               </div>
                             ))}
                           </Slider>
@@ -187,7 +201,7 @@ const ProductDetails = () => {
                             type='text'
                             name='qtybutton'
                             readOnly
-                            value={quantity}
+                            value={getItemQuantity()}
                           />
                           <div
                             className={

@@ -47,7 +47,7 @@ const Category = () => {
     };
     agent.Category.get(payload)
       .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)){
+        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
           setData(res.data);
           setLoading(false);
         } else {
@@ -64,7 +64,6 @@ const Category = () => {
     getCategories();
   }, [page]);
 
-
   return (
     <Fragment>
       <MetaTags>
@@ -80,16 +79,39 @@ const Category = () => {
           {/*====================  End of breadcrumb area  ====================*/}
 
           {/*==================== Category Area  ====================*/}
-
-          <section className='product-section'>
+          <section className='service-section'>
+            <div className='animate_icon'>
+              <div className='animate_item animate_item1 bounce_animate'>
+                <img src='assets/images/animate_icon1.png' alt='' />
+              </div>
+              <div className='animate_item animate_item2 bounce_animate'>
+                <img src='assets/images/animate_icon2.png' alt='' />
+              </div>
+              <div className='animate_item animate_item3 bounce_animate'>
+                <img src='assets/images/animate_icon3.png' alt='' />
+              </div>
+              <div className='animate_item animate_item4 bounce_animate'>
+                <img src='assets/images/animate_icon4.png' alt='' />
+              </div>
+            </div>
             <div className='container'>
               {loading ? (
                 <Loader />
               ) : (
                 <>
+<<<<<<< HEAD
                   <div className='d-flex justify-content-between align-items-center mb-4'>
                       <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
                       <div className='prodt_pagination'>
+=======
+                <div className='base-header'>
+                  <small> Our Featured Categories</small>
+                  <h3> Organic Categories</h3>
+                </div>
+                  <div className='d-flex justify-content-between'>
+                    <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
+                    <div className='prodt_pagination'>
+>>>>>>> 3a9d18e5726429128744bb85b0feab364bf6cce8
                       <ul>
                         <li>
                           <span
@@ -115,8 +137,6 @@ const Category = () => {
                   </div>
                   <div className='row'>
                     <CategoryCard item={data.data || []} />
-
-                    
                   </div>
                 </>
               )}
