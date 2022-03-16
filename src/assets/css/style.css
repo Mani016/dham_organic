@@ -2095,6 +2095,7 @@ right: 0px !important;
     transform: scaleX(1);
     height: 395px;
     width: 100%;
+    object-fit: cover;
   }
   
   .project-item:hover .project_slide_img img {
@@ -4629,28 +4630,34 @@ right: 0px !important;
   
   .prodt_pagination li {
     display: inline-block;
+    margin: 0 25px;
+    cursor: pointer;
   }
   
   .prodt_pagination li span {
     border: 1px solid #ddcfcf;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     display: block;
-    border-radius: 50%;
+    background: #4BA755;
+    border-radius: 5px;
     line-height: 40px;
     margin: 0px 5px;
-    color: #8e8b8b;
+    color: #fff;
     font-size: 18px;
     cursor: pointer;
   }
   .prodt_pagination li span.disable{
     background: #e4e4e4;
     pointer-events: none;
+    color: #141414;
   }
   
   .prodt_pagination {
     text-align: center;
     display: block;
+    font-size: 22px;
+    font-weight: 500;
   }
   
   .prodt_pagination li span.current {
