@@ -173,7 +173,7 @@ class SingleShop extends Component{
 				                        <div className="cart-quantity">
 				                            <div className="cart-plus-minus">
 				                                <input  className="cart-plus-minus-box" type="text" name="qtybutton" placeholder="1" />
-				                            <div className="dec qtybutton">-</div><div className="inc qtybutton">+</div></div>
+				                            <div className="dec qtybutton"><span>-</span></div><div className="inc qtybutton"><span> + </span></div></div>
 				                        </div>
 				                        <div className="allchoices">
 				                            <div className="choice-icon">

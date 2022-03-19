@@ -104,7 +104,7 @@ function App() {
             component={MyCart}
           />
            <Route
-            path={`${process.env.PUBLIC_URL + "/dashboard/my-profile"}`}
+            path={`${process.env.PUBLIC_URL + "/my-account"}`}
             component={Profile}
           />
           

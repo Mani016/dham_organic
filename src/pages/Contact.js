@@ -80,13 +80,6 @@ const Contact = () => {
                   </div>
                   <div className='col-md-8 col-sm-12 inner-contact'>
                     <div className='contact-form'>
-                      {/* <div id="message">
-				                                {this.state.flag ? 
-				                                     <div className="alert alert-success">
-				                                     <strong>{this.state.return_msg}</strong>
-				                                     </div>
-				                                 : null}
-				                            </div>  */}
                       <form method='post' name='contact-form' id='contact-form'>
                         <div className='row'>
                           <div className='col-lg-6 col-sm-12'>
@@ -101,11 +94,11 @@ const Contact = () => {
                           </div>
                           <div className='col-lg-6 col-sm-12'>
                             <input
-                              type='text'
+                              type='number'
                               className='con-field form-control'
                               value={mobile}
                               onChange={({ target }) => setMobile(target.value)}
-                              id='exampleInputEmail1'
+                              // id='exampleInputEmail1'
                               placeholder='Mobile*'
                             />
                           </div>
