@@ -64,7 +64,7 @@ const Testimonial = () => {
   });
 
   return (
-    <section className='testi-section'>
+    <section className='blog-section'>
       <div className='container'>
         <div className='base-header'>
           <small>Client Satisfait </small>

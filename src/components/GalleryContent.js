@@ -106,6 +106,7 @@ const GalleryContent = () => {
       {loading ? (
         <Loader />
       ) : (
+     
         <div className='container-fluid'>
           <div className='project_list_one'>
             <div className='container'>
