@@ -158,6 +158,13 @@
 		margin-right: 6px;
 	}
 	/* End: Slider  */
+	.past_order , .manage_address{
+		padding: 0;
+		border-left: none;
+	}
+	.manage_address{
+		padding-top: 30px;
+	}
 }
 
 /*                      Tablet Portrait

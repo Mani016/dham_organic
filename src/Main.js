@@ -11,7 +11,7 @@ const Main = props => {
     const token = getItemFromSessionStore("token");
     function GetCart() {
         agent.Cart.get().then((res) => {
-            setItemsInCart(res.data.length);
+            setItemsInCart(res.data.cartDetails.length);
         }).catch((err) => console.error(err))
     }
     React.useEffect(() => {

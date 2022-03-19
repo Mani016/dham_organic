@@ -54,7 +54,7 @@ const Login = () => {
             setItemToSessionStore('justOnce', true);
             setItemToSessionStore('user', res.data.user);
             setTimeout(function () {
-              window.location = '/dashboard';
+              window.location = '/my-account';
               setLoading(false);
             }, 1000);
           } else {
