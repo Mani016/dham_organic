@@ -175,7 +175,7 @@ const Login = () => {
                           id='submit'
                           name='send'
                           onClick={() =>
-                            history.push('/user-dashboard/my-subscriptions')
+                            history.push('/my-account')
                           }
                           className='submit-contact submitBnt mx-2'
                           value='Portal'

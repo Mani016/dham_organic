@@ -73,7 +73,7 @@ const Menu = () => {
           <div className='header_cart'>
             <ul>
               <li className='header_cart_icon'>
-                <Link to={token ? '/user-dashboard/my-cart' : '/'}>
+                <Link to={token ? '/cart' : '/'}>
                   <i className='icon-glyph-13'></i>
                   <span className='number_cart'>{itemsInCart}</span>
                 </Link>

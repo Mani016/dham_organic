@@ -104,7 +104,7 @@ const Product = () => {
                     <>
                       <div className='d-flex justify-content-between w-100'>
                         <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
-                        <div className='prodt_pagination'>
+                        <div className='prodt_pagination mb-3'>
                           <ul>
                             <li>
                               <span

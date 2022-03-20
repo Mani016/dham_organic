@@ -6557,3 +6557,23 @@ input[type="number"] {
   font-size: 16px;
   font-weight: bold;
 }
+.sidebar .item_count{
+  border-bottom: 1px solid #4ca853;
+}
+.sidebar .item_box {
+  border-bottom: 1px solid #4ca853;
+  padding: 10px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.sidebar .bill {
+  padding: 20px 0;
+  font-weight: bold;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.sidebar .bill h5 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
