@@ -12,7 +12,7 @@ import { API_STATUS } from '../constant';
 const SignUp = () => {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
-  const [address, setAddress] = React.useState('');
+  // const [address, setAddress] = React.useState('');
   const [mobileNum, setMobileNum] = React.useState('');
   const [created, setCreated] = React.useState(false);
   const [password, setPassword] = React.useState('');
@@ -25,9 +25,9 @@ const SignUp = () => {
     if (
       name === '' ||
       mobileNum === '' ||
-      password === '' ||
-      address === '' ||
-      locality === ''
+      password === '' 
+      // address === '' ||
+      // locality === ''
     ) {
       Alert.showToastAlert('warning', 'Required fields cannot be empty');
       formIsComplete = false;
@@ -63,7 +63,7 @@ const SignUp = () => {
         name: name,
         email: email,
         mobile: Number(mobileNum),
-        address: address,
+        // address: address,
         password: password,
         status: true,
         isOTPVerified: false,
@@ -84,23 +84,23 @@ const SignUp = () => {
         });
     }
   }
-  function getaAllLocalities() {
-    const payload = {
-      statue: true,
-    };
-    agent.Localities.getAll(payload)
-      .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-          setLocalities(res.data);
-        } else {
-          setLocalities([]);
-          Alert.showToastAlert('error', res.message);
-        }
-      })
-      .catch((err) => {
-        Alert.showToastAlert('error', err.message);
-      });
-  }
+  // function getaAllLocalities() {
+  //   const payload = {
+  //     statue: true,
+  //   };
+  //   agent.Localities.getAll(payload)
+  //     .then((res) => {
+  //       if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+  //         setLocalities(res.data);
+  //       } else {
+  //         setLocalities([]);
+  //         Alert.showToastAlert('error', res.message);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       Alert.showToastAlert('error', err.message);
+  //     });
+  // }
   function Register() {
     let formIsComplete = true;
     if (OTP === '') {
@@ -118,10 +118,10 @@ const SignUp = () => {
             setCreated(true);
             setItemToSessionStore('token', res.data.token);
             setItemToSessionStore('justOnce', true);
-            setItemToSessionStore('user', res.data.user);
-            // setTimeout(function () {
-            //     window.location = '/dashboard';
-            //   }, 1000);
+            setItemToSessionStore('clientId', res.data.user.id);
+            setTimeout(function () {
+                window.location = '/my-account';
+              }, 1000);
           } else {
             Alert.showToastAlert('error', res.message);
             //   history.push('/login');
@@ -130,9 +130,9 @@ const SignUp = () => {
         .catch((err) => console.error(err));
     }
   }
-  useEffect(() => {
-    getaAllLocalities();
-  }, []);
+  // useEffect(() => {
+  //   getaAllLocalities();
+  // }, []);
   return (
     <Fragment>
       <MetaTags>
@@ -234,7 +234,7 @@ const SignUp = () => {
                             value={mobileNum}
                           />
                         </p>
-                        <p className='input_fields input_name'>
+                        {/* <p className='input_fields input_name'>
                           <label>
                             Locality<span className='required'>*</span>
                           </label>
@@ -254,20 +254,7 @@ const SignUp = () => {
                               </option>
                             ))}
                           </select>
-                        </p>
-                        <p className='input_fields input_name'>
-                          <label>
-                            Address<span className='required'>*</span>
-                          </label>
-                          <input
-                            type='text'
-                            placeholder='Enter Address'
-                            onChange={({ target }) => {
-                              setAddress(target.value);
-                            }}
-                            value={address}
-                          />
-                        </p>
+                        </p> */}
                         <div className='d-flex mt-3 justify-content-center'>
                           <input
                             type='button'

@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import AppContext from './Context';
 import agent from './agent';
 import { getItemFromSessionStore } from './Utils/utils';
-
+import { API_STATUS } from './constant';
+import Alert from "./Utils/Alert";
 const Main = props => {
 
     const [itemsInCart, setItemsInCart] = useState(0);
-    const [userData, setUserData] = useState({});
+    const [user, setUser] = useState({});
+
     const token = getItemFromSessionStore("token");
+
     function GetCart() {
         agent.Cart.get().then((res) => {
             setItemsInCart(res.data.cartDetails.length);
@@ -18,7 +21,23 @@ const Main = props => {
         let isActive = true;
         if (isActive) {
             if (token) {
-                setUserData(getItemFromSessionStore("user"))
+              agent.Client.getById()
+              .then((res) => {
+                if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+                    console.log(res);
+                } else {
+                    Alert.showToastAlert("error", res.message);
+                    // setTimeout(function () {
+                    //     window.location = '/logout';
+                    //   }, 1000);
+                }
+            })
+            .catch((err) => {
+                Alert.showToastAlert("error", err.message);
+                // setTimeout(function () {
+                //     window.location = '/logout';
+                //   }, 1000);
+            });
             }
         }
         return (() => {
@@ -29,8 +48,7 @@ const Main = props => {
         itemsInCart,
         setItemsInCart,
         GetCart,
-        setUserData,
-        userData
+        user
     };
 
 

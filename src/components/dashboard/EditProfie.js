@@ -7,6 +7,12 @@ const EditProfie = (props) => {
         <h3>Edit Profile</h3>
         <p className='input_fields input_name'>
             <label>
+            Upload Profile Pic<span className='required'>*</span>
+            </label>
+            <input type='file' />
+        </p>
+        <p className='input_fields input_name'>
+            <label>
             Name<span className='required'>*</span>
             </label>
             <input

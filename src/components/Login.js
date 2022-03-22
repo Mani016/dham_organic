@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment  , useContext} from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../layouts/LayoutOne';
 import Typewriter from 'typewriter-effect';
@@ -8,13 +8,14 @@ import agent from '../agent';
 import Alert from '../Utils/Alert';
 import { API_STATUS } from '../constant';
 import { setItemToSessionStore, HANDLE_ERROR,getItemFromSessionStore } from '../Utils/utils';
+import AppContext from '../Context';
 const Login = () => {
   const [isLogin, setIsLogin] = React.useState(false);
   const [mobileNum, setMobileNum] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [loading, setLoading] = React.useState(false);
   let history = useHistory();
-  const user = getItemFromSessionStore('user');
+  const {user} =  useContext(AppContext)
 
   React.useEffect(() => {
     let isActive = true;
@@ -52,7 +53,7 @@ const Login = () => {
             Alert.showToastAlert('success', res.message);
             setItemToSessionStore('token', res.data.token);
             setItemToSessionStore('justOnce', true);
-            setItemToSessionStore('user', res.data.user);
+            setItemToSessionStore('clientId', res.data.user.id);
             setTimeout(function () {
               window.location = '/my-account';
               setLoading(false);

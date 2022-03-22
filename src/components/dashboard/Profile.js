@@ -1,24 +1,16 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment , useContext, useEffect, useState } from "react";
 import { MetaTags } from "react-meta-tags";
 import LayoutOne from "../../layouts/LayoutOne";
 import Address from "./Address";
 import EditProfie from "./EditProfie";
 import PastOrder from "./PastOrder";
-import user from "../../assets/images/user.png";
-import agent from "../../agent";
-import { getItemFromSessionStore } from "../../Utils/utils";
+import user_img from "../../assets/images/user.png";
+import AppContext from '../../Context';
+
 const Profile = () => {
 	const [activeTab, setActiveTab] = useState("orders");
 	const [onEdit, setOnEdit] = useState(false);
-	const [userData, setUserData] = useState({});
-	function GetDetail() {
-		setUserData(getItemFromSessionStore("user"));
-	}
-	useEffect(() => {
-		GetDetail();
-	}, []);
-
-	console.log(userData);
+	const {user} =  useContext(AppContext)
 
 	return (
 		<Fragment>
@@ -31,12 +23,12 @@ const Profile = () => {
 					<div className="container ">
 						<div className="top py-4">
 							<div className="detail_box d-flex align-items-center">
-								<img src={user} alt="" width="90" />
+								<img src={user_img} alt="" width="90" />
 								<div>
-									<p>{userData.name}</p>
+									<p>{user.name}</p>
 									<div className="other_details py-1">
-										<span>{userData.mobile}</span>
-										<span>{userData.email || ""}</span>
+										<span>{user.mobile}</span>
+										<span>{user.email || ""}</span>
 									</div>
 								</div>
 							</div>
