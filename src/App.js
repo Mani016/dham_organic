@@ -3,21 +3,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from "./helpers/ScrollToTop";
 import Home from "./pages/Home"; 
 import About from "./pages/About"; 
-import Services from "./pages/Services";  
 import Gallery from "./pages/Gallery"; 
 import Contact from "./pages/Contact"; 
-import SingleService from "./pages/SingleService"; 
 import Team from "./pages/Team";  
-import BlogPageTwo from "./pages/BlogPageTwo"; 
-import BlogPageOne from "./pages/BlogPageOne"; 
-import SingleBlog from "./pages/SingleBlog"; 
 import Cart from "./pages/Cart"; 
-import Checkout from "./pages/Checkout"; 
 import NotFound from "./pages/NotFound"; 
 import OrganicFarming from "./pages/OrganicFarming";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import MyCart from "./components/dashboard/MyCart";
 import Profile from "./components/dashboard/Profile";
 import Category from "./pages/Categories";
 import Product from "./pages/Products";
@@ -43,10 +36,6 @@ function App() {
             component={About}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/services"}`}
-            component={Services}
-          />
-          <Route
             path={`${process.env.PUBLIC_URL + "/gallery"}`}
             component={Gallery}
           />
@@ -58,10 +47,6 @@ function App() {
           <Route
             path={`${process.env.PUBLIC_URL + "/contact"}`}
             component={Contact}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/single-services"}`}
-            component={SingleService}
           />
           <Route
             path={`${process.env.PUBLIC_URL + "/team"}`}
@@ -80,38 +65,14 @@ function App() {
             component={ProductDetails}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/blog"}`}
-            component={BlogPageOne}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/blog-two"}`}
-            component={BlogPageTwo}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/single-blog"}`}
-            component={SingleBlog}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/single-blog"}`}
-            component={SingleService}
-          />
-          <Route
             path={`${process.env.PUBLIC_URL + "/cart"}`}
             component={Cart}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/my-cart"}`}
-            component={MyCart}
           />
            <Route
             path={`${process.env.PUBLIC_URL + "/my-account"}`}
             component={Profile}
           />
           
-          <Route
-            path={`${process.env.PUBLIC_URL + "/checkout"}`}
-            component={Checkout}
-          />
            <Route
             path={`${process.env.PUBLIC_URL + "/login"}`}
             component={Login}

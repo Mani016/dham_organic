@@ -13,6 +13,7 @@ const Footer = () => {
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };
+      
     }, []);
   
     const scrollToTop = () => {

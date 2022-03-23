@@ -7,6 +7,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import agent from '../agent';
 import Loader from '../components/Loader';
 import { API_STATUS } from '../constant';
+import { HANDLE_ERROR } from '../Utils/utils';
 export const CategoryCard = ({ item = [] }) => {
   return (
     <>
@@ -25,7 +26,7 @@ export const CategoryCard = ({ item = [] }) => {
               </Link>
               <p>{valu.description}</p>
             </div>
-            <Link to={`${valu.link}`} className='serv_link'>
+            <Link to={`category/${valu._id}`} className='serv_link'>
               <i className='icon-glyph-40'></i>
             </Link>
           </div>
@@ -51,17 +52,21 @@ const Category = () => {
           setData(res.data);
           setLoading(false);
         } else {
-          setData({});
-          setLoading(false);
+          HANDLE_ERROR(res.message, setLoading);
         }
       })
       .catch((err) => {
-        setData({});
-        setLoading(false);
+        HANDLE_ERROR(err.message, setLoading);
       });
   }
   useEffect(() => {
-    getCategories();
+    let isActive = true;
+    if (isActive) {
+      getCategories();
+    }
+    return () => {
+      isActive = false;
+    };
   }, [page]);
 
   return (
@@ -95,14 +100,14 @@ const Category = () => {
               </div>
             </div>
             <div className='container'>
+              <div className='base-header'>
+                <small> Our Featured Categories</small>
+                <h3> Organic Categories</h3>
+              </div>
               {loading ? (
                 <Loader />
               ) : (
                 <>
-                <div className='base-header'>
-                  <small> Our Featured Categories</small>
-                  <h3> Organic Categories</h3>
-                </div>
                   <div className='d-flex justify-content-between'>
                     <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
                     <div className='prodt_pagination mb-4'>

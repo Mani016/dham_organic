@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import agent from '../agent';
 import Loader from './Loader';
 import { API_STATUS } from '../constant';
+import { HANDLE_ERROR } from '../Utils/utils';
 
 const Testimonial = () => {
   const [data, setData] = useState([]);
@@ -18,17 +19,21 @@ const Testimonial = () => {
           setData(res.data);
           setLoading(false);
         } else {
-          setData([]);
-          setLoading(false);
+          HANDLE_ERROR(res.message, setLoading);
         }
       })
       .catch((err) => {
-        setData([]);
-        setLoading(false);
+        HANDLE_ERROR(err.message, setLoading);
       });
   }
   useEffect(() => {
-    getTestimonials();
+    let isActive = true;
+    if (isActive) {
+      getTestimonials();
+    }
+    return () => {
+      isActive = false;
+    };
   }, []);
 
   var settings = {

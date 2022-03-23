@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../layouts/LayoutOne';
 import Typewriter from 'typewriter-effect';
@@ -6,19 +6,17 @@ import logo from '../assets/images/dhaam_logo.png';
 import { Link } from 'react-router-dom';
 import agent from '../agent';
 import Alert from '../Utils/Alert';
-import { setItemToSessionStore } from '../Utils/utils';
+import { HANDLE_ERROR, setItemToSessionStore } from '../Utils/utils';
 import { API_STATUS } from '../constant';
 
 const SignUp = () => {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
-  // const [address, setAddress] = React.useState('');
   const [mobileNum, setMobileNum] = React.useState('');
   const [created, setCreated] = React.useState(false);
   const [password, setPassword] = React.useState('');
   const [OTP, setOTP] = React.useState('');
-  const [localities, setLocalities] = React.useState([]);
-  const [locality, setLocality] = React.useState([]);
+  const [loading,setLoading] = React.useState(false);
 
   function GetOtp() {
     let formIsComplete = true;
@@ -26,8 +24,6 @@ const SignUp = () => {
       name === '' ||
       mobileNum === '' ||
       password === '' 
-      // address === '' ||
-      // locality === ''
     ) {
       Alert.showToastAlert('warning', 'Required fields cannot be empty');
       formIsComplete = false;
@@ -59,6 +55,7 @@ const SignUp = () => {
       }
     }
     if (formIsComplete) {
+      setLoading(true);
       const data = {
         name: name,
         email: email,
@@ -67,40 +64,23 @@ const SignUp = () => {
         password: password,
         status: true,
         isOTPVerified: false,
-        locality: locality,
       };
-      agent.Register.register(data)
+      agent.Auth.register(data)
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
               Alert.showToastAlert('success', res.message);
               setCreated(true);
+              setLoading(false);
           } else {
-            Alert.showToastAlert('error', res.message);
+            HANDLE_ERROR(res.message, setLoading);
             setCreated(false);
           }
         })
         .catch((err) => {
-          Alert.showToastAlert('error', err.message);
+          HANDLE_ERROR(err.message, setLoading);
         });
     }
   }
-  // function getaAllLocalities() {
-  //   const payload = {
-  //     statue: true,
-  //   };
-  //   agent.Localities.getAll(payload)
-  //     .then((res) => {
-  //       if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-  //         setLocalities(res.data);
-  //       } else {
-  //         setLocalities([]);
-  //         Alert.showToastAlert('error', res.message);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       Alert.showToastAlert('error', err.message);
-  //     });
-  // }
   function Register() {
     let formIsComplete = true;
     if (OTP === '') {
@@ -108,11 +88,12 @@ const SignUp = () => {
       formIsComplete = false;
     }
     if (formIsComplete) {
+      setLoading(true);
       const data = {
         otp: Number(OTP),
         mobile: Number(mobileNum),
       };
-      agent.Register.otp(data)
+      agent.Auth.otp(data)
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
             setCreated(true);
@@ -122,17 +103,14 @@ const SignUp = () => {
             setTimeout(function () {
                 window.location = '/my-account';
               }, 1000);
+              setLoading(false);
           } else {
-            Alert.showToastAlert('error', res.message);
-            //   history.push('/login');
+            HANDLE_ERROR(res.message, setLoading);
           }
         })
-        .catch((err) => console.error(err));
+        .catch((err) => HANDLE_ERROR(err.message, setLoading));
     }
   }
-  // useEffect(() => {
-  //   getaAllLocalities();
-  // }, []);
   return (
     <Fragment>
       <MetaTags>
@@ -234,27 +212,6 @@ const SignUp = () => {
                             value={mobileNum}
                           />
                         </p>
-                        {/* <p className='input_fields input_name'>
-                          <label>
-                            Locality<span className='required'>*</span>
-                          </label>
-                          <select
-                            value={locality}
-                            onChange={({ target }) => {
-                              setLocality(target.value);
-                            }}
-                            className='form-control'
-                            name='status'
-                            id='status'
-                          >
-                            <option value=''>Select Locality</option>
-                            {localities.map((item, index) => (
-                              <option value={item._id} key={index}>
-                                {item.name}
-                              </option>
-                            ))}
-                          </select>
-                        </p> */}
                         <div className='d-flex mt-3 justify-content-center'>
                           <input
                             type='button'
@@ -289,6 +246,7 @@ const SignUp = () => {
                               setOTP(target.value);
                             }}
                             value={OTP}
+                            disabled={loading}
                           />
                         </p>
                         <div className='d-flex mt-3 mb-3 justify-content-center'>
@@ -298,6 +256,7 @@ const SignUp = () => {
                             onClick={() => Register()}
                             className='submit-contact submitBnt mx-2'
                             value='Register'
+                            disabled={loading}
                           />
                         </div>
                       </form>

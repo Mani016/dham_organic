@@ -1,4 +1,4 @@
-import React, { Fragment  , useContext} from 'react';
+import React, { Fragment, useContext } from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../layouts/LayoutOne';
 import Typewriter from 'typewriter-effect';
@@ -7,7 +7,11 @@ import { Link, useHistory } from 'react-router-dom';
 import agent from '../agent';
 import Alert from '../Utils/Alert';
 import { API_STATUS } from '../constant';
-import { setItemToSessionStore, HANDLE_ERROR,getItemFromSessionStore } from '../Utils/utils';
+import {
+  setItemToSessionStore,
+  HANDLE_ERROR,
+  getItemFromSessionStore,
+} from '../Utils/utils';
 import AppContext from '../Context';
 const Login = () => {
   const [isLogin, setIsLogin] = React.useState(false);
@@ -15,7 +19,7 @@ const Login = () => {
   const [password, setPassword] = React.useState('');
   const [loading, setLoading] = React.useState(false);
   let history = useHistory();
-  const {user} =  useContext(AppContext)
+  const { user } = useContext(AppContext);
 
   React.useEffect(() => {
     let isActive = true;
@@ -47,20 +51,20 @@ const Login = () => {
         mobile: Number(mobileNum),
       };
       setLoading(true);
-      agent.Login.login(data)
+      agent.Auth.login(data)
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
             Alert.showToastAlert('success', res.message);
             setItemToSessionStore('token', res.data.token);
             setItemToSessionStore('justOnce', true);
             setItemToSessionStore('clientId', res.data.user.id);
+            setItemToSessionStore('activeTab', 'orders');
             setTimeout(function () {
               window.location = '/my-account';
               setLoading(false);
             }, 1000);
           } else {
             HANDLE_ERROR(res.message, setLoading);
-            // window.location = "/dashboard/my-profile";
           }
         })
         .catch((err) => HANDLE_ERROR(err.message, setLoading));
@@ -89,9 +93,7 @@ const Login = () => {
                     }}
                     onInit={(typewriter) => {
                       typewriter
-                        .typeString(
-                          'Know your farmer, know your food'
-                        )
+                        .typeString('Know your farmer, know your food')
                         .deleteAll()
                         .start();
                     }}
@@ -175,9 +177,7 @@ const Login = () => {
                           type='button'
                           id='submit'
                           name='send'
-                          onClick={() =>
-                            history.push('/my-account')
-                          }
+                          onClick={() => history.push('/my-account')}
                           className='submit-contact submitBnt mx-2'
                           value='Portal'
                         />

@@ -6,12 +6,14 @@ import ContactMap from '../components/ContactMap';
 import agent from '../agent';
 import Alert from '../Utils/Alert';
 import { API_STATUS } from '../constant';
+import { HANDLE_ERROR } from '../Utils/utils';
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
   const [address, setAddress] = useState('');
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
   function handleSubmit() {
     let formValid = true;
     if (name === '' || mobile === '' || address === '' || message === '') {
@@ -25,6 +27,7 @@ const Contact = () => {
       }
     }
     if (formValid) {
+      setLoading(true);
       const data = {
         name: name,
         mobile: Number(mobile),
@@ -40,13 +43,13 @@ const Contact = () => {
             setMobile('');
             setAddress('');
             setMessage('');
+            setLoading(false);
           } else {
-            Alert.showToastAlert('error', res.message);
+            HANDLE_ERROR(res.message, setLoading);
           }
         })
         .catch((err) => {
-          console.log(err);
-          Alert.showToastAlert('error', err.message);
+          HANDLE_ERROR(err.message, setLoading);
         });
     }
   }
@@ -134,6 +137,7 @@ const Contact = () => {
                                 id='submit'
                                 name='send'
                                 onClick={handleSubmit}
+                                disabled={loading}
                                 className='submit-contact submitBnt'
                                 value='Send Message'
                               />

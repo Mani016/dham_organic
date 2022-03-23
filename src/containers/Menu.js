@@ -13,9 +13,7 @@ const Menu = () => {
   React.useEffect(() => {
     let isActive = true;
     if (isActive) {
-      if (token) {
-        GetCart();
-      }
+      GetCart();
     }
     return () => {
       isActive = false;
@@ -75,7 +73,9 @@ const Menu = () => {
               <li className='header_cart_icon'>
                 <Link to={token ? '/cart' : '/'}>
                   <i className='icon-glyph-13'></i>
-                  <span className='number_cart'>{itemsInCart}</span>
+                  <span className='number_cart'>
+                    {itemsInCart.cartDetails?.length || '-'}
+                  </span>
                 </Link>
               </li>
               <li className='header_cart_icon'>

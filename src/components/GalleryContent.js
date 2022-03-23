@@ -1,9 +1,10 @@
-import React, {  useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import Loader from './Loader';
 import agent from '../agent';
 import { API_STATUS } from '../constant';
+import { HANDLE_ERROR } from '../Utils/utils';
 
 const GalleryContent = () => {
   var settings = {
@@ -65,20 +66,24 @@ const GalleryContent = () => {
   const [loading, setLoading] = React.useState(false);
   const [imageGalleryData, setImageGalleryData] = useState([]);
   useEffect(() => {
-    agent.Gallery.getAll()
-      .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+    let isActive = true;
+    if (isActive) {
+      agent.Gallery.getAll()
+        .then((res) => {
+          if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
             setImageGalleryData(res.data);
-          setLoading(false);
-        } else {
-          setImageGalleryData([]);
-          setLoading(false);
-        }
-      })
-      .catch((err) => {
-        setImageGalleryData([]);
-        setLoading(false);
-      });
+            setLoading(false);
+          } else {
+            HANDLE_ERROR(res.message, setLoading);
+          }
+        })
+        .catch((err) => {
+          HANDLE_ERROR(err.message, setLoading);
+        });
+    }
+    return () => {
+      isActive = false;
+    };
   }, []);
 
   let ImageGalleryDataList = imageGalleryData.map((val, i) => {
@@ -92,9 +97,7 @@ const GalleryContent = () => {
             <img src={val.image.path} alt='product' />
           </div>
           <div className='project_text'>
-            <h4>
-             {val.title}
-            </h4>
+            <h4>{val.title}</h4>
           </div>
         </div>
       </div>
@@ -106,7 +109,6 @@ const GalleryContent = () => {
       {loading ? (
         <Loader />
       ) : (
-     
         <div className='container-fluid'>
           <div className='project_list_one'>
             <div className='container'>

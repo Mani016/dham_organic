@@ -1,118 +1,158 @@
-import superagentPromise from "superagent-promise";
-import _superagent from "superagent";
-import { getItemFromSessionStore } from "./Utils/utils";
+import superagentPromise from 'superagent-promise';
+import _superagent from 'superagent';
+import { getItemFromSessionStore } from './Utils/utils';
+import Alert from './Utils/Alert';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = "https://api-dhaam.herokuapp.com/api/";
-const responseBody = (res) => res.body;
-const errorBody = (err) => err.response.body;
+// const API_ROOT = 'https://api-dhaam.herokuapp.com/api/';
+const API_ROOT = 'http://localhost:8000/api/';
 
-const token = getItemFromSessionStore("token");
-const createdBy = "620aae3e90e0a582e3d93ee5";
-const companyId = "6219f4a39ca8773564b6fac0";
-const clientId = getItemFromSessionStore("clientId");
+const responseBody = (res) => res.body;
+const errorBody = (err) => {
+  if (err.response.status === 403) {
+    sessionStorage.clear();
+    Alert.showToastAlert('error', 'Session Expired');
+    setTimeout(() => (window.location = '/login'), 2000);
+  } else {
+    return err.response.body;
+  }
+};
+const token = getItemFromSessionStore('token');
+const createdBy = '620aae3e90e0a582e3d93ee5';
+const companyId = '6219f4a39ca8773564b6fac0';
+const clientId = getItemFromSessionStore('clientId');
 
 const requests = {
-	del: (url) =>
-		superagent.del(`${API_ROOT}${url}`).then(responseBody).catch(errorBody),
-	get: (url) =>
-		superagent
-			.get(`${API_ROOT}${url}`)
-			.set("x-access-token", `Bearer ${token}`)
-			.set("user_id" , clientId )
-			.then(responseBody)
-			.catch(errorBody),
-	put: (url, body) =>
-		superagent
-			.put(`${API_ROOT}${url}`, body)
-			.set("x-access-token", `Bearer ${token}`)
-			.set("user_id" , clientId )
-			.then(responseBody)
-			.catch(errorBody),
+  del: (url) =>
+    superagent
+      .del(`${API_ROOT}${url}`)
+      .set('x-access-token', `Bearer ${token}`)
+      .set('user_id', clientId)
+      .then(responseBody)
+      .catch(errorBody),
+  getClient: (url, body) =>
+    superagent
+      .post(`${API_ROOT}${url}`, body)
+      .set('x-access-token', `Bearer ${token}`)
+      .set('user_id', createdBy)
+      .then(responseBody)
+      .catch(errorBody),
+  get: (url) =>
+    superagent
+      .get(`${API_ROOT}${url}`)
+      .set('x-access-token', `Bearer ${token}`)
+      .set('user_id', clientId)
+      .then(responseBody)
+      .catch(errorBody),
+  put: (url, body) =>
+    superagent
+      .put(`${API_ROOT}${url}`, body)
+      .set('x-access-token', `Bearer ${token}`)
+      .set('user_id', clientId)
+      .then(responseBody)
+      .catch(errorBody),
 
-	post: (url, body) =>
-		superagent
-			.post(`${API_ROOT}${url}`, body)
-			.set("x-access-token", `Bearer ${token}`)
-			.set("user_id" , clientId )
-			.then(responseBody)
-			.catch(errorBody),
+  post: (url, body) =>
+    superagent
+      .post(`${API_ROOT}${url}`, body)
+      .set('x-access-token', `Bearer ${token}`)
+      .set('user_id', clientId)
+      .then(responseBody)
+      .catch(errorBody),
 };
 
-const Register = {
-	register: (data) =>
-		requests.post("client/auth/register", { ...data, createdBy, companyId }),
-	otp: (data) => requests.post("client/auth/verifyOTP", { ...data }),
+const Auth = {
+  register: (data) =>
+    requests.post('client/auth/register', { ...data, createdBy, companyId }),
+  otp: (data) => requests.post('client/auth/verifyOTP', { ...data }),
+  login: (data) => requests.post('client/auth/login', { ...data }),
+  changePassword: (data) => requests.post('client/auth/changePassword', { ...data }),
 };
-const Login = {
-	login: (data) => requests.post("client/auth/login", { ...data }),
+
+const Client = {
+  getById: () => requests.getClient('client/auth/getClientById', { clientId }),
+  uploadProfilePic: (payload) =>
+    requests.post('client/auth/uploadProfilePic', payload),
+  deleteProfilePic: (payload) =>
+    requests.post('client/auth/uploadProfilePic', { ...payload }),
+  update: (payload) =>
+    requests.post('client/auth/update', { ...payload }),
 };
-const Client ={
-	getById: () => requests.post("client/auth/getClientById", { clientId }),
-}
 const Category = {
-	get: (data) =>
-		requests.post("admin/category", { ...data, companyId, createdBy }),
+  get: (payload) =>
+    requests.post('admin/category', { ...payload, companyId, createdBy }),
 };
 const Product = {
-	get: (data) =>
-		requests.post("admin/product/getAllProducts", {
-			...data,
-			companyId,
-			createdBy,
-		}),
-	getById: (id) => requests.get(`admin/product/${id}`),
+  get: (payload) =>
+    requests.post('admin/product/getAllProducts', {
+      ...payload,
+      companyId,
+      createdBy,
+    }),
+  getById: (id) => requests.get(`admin/product/${id}`),
 };
 const Testimonial = {
-	get: (data) => requests.post("admin/testimonial", { ...data, companyId }),
+  get: (payload) =>
+    requests.post('admin/testimonial', { ...payload, companyId }),
 };
 const Contact = {
-	send: (data) =>
-		requests.post("client/contact-us/add", { ...data, companyId }),
+  send: (payload) =>
+    requests.post('client/contact-us/add', { ...payload, companyId }),
 };
 const Cart = {
-	add: (data) =>
-		requests.post("client/cart/addToCart", { ...data, companyId, clientId }),
-	remove: (data) =>
-		requests.post("client/cart/subtractFromCart", {
-			...data,
-			companyId,
-			clientId,
-		}),
-	get: () => requests.post("client/cart/getCart", { clientId }),
-	checkout: (data) =>
-		requests.post("client/order/placeOrder", { ...data, clientId, companyId }),
+  add: (payload) =>
+    requests.post('client/cart/addToCart', { ...payload, companyId, clientId }),
+  remove: (payload) =>
+    requests.post('client/cart/subtractFromCart', {
+      ...payload,
+      companyId,
+      clientId,
+    }),
+  get: () => requests.post('client/cart/getCart', { clientId }),
+  checkout: (payload) =>
+    requests.post('client/order/placeOrder', {
+      ...payload,
+      clientId,
+      companyId,
+    }),
 };
 
 const Localities = {
-	getAll: (data) =>
-		requests.post("admin/locality", { ...data, companyId, createdBy }),
+  getAll: (payload) =>
+    requests.post('admin/locality', { ...payload, companyId, createdBy }),
 };
 const Gallery = {
-	getAll: () => requests.post("admin/gallery/getImages", { companyId }),
+  getAll: () => requests.post('admin/gallery/getImages', { companyId }),
 };
-const Address ={
-	add:(data)=>
-	requests.post('client/auth/addNewAddress' , {...data , clientId }),
-	delete:(id)=>
-	requests.post('client/auth/deleteAddress' , {clientId , id}),
-	update:(data)=>
-	requests.post('client/auth/updateAddress' , {clientId , ...data}),
-	updateStatus:(id)=>
-	requests.post('client/auth/setDefaultAddress' , {clientId , ...id}),
-}
+const Address = {
+  add: (payload) =>
+    requests.post('client/auth/addNewAddress', { ...payload, clientId }),
+  delete: (id) =>
+    requests.post('client/auth/deleteAddress', { clientId, ...id }),
+  update: (payload) =>
+    requests.post('client/auth/updateAddress', { clientId, ...payload }),
+  setDefaultAddress: (id) =>
+    requests.post('client/auth/setDefaultAddress', { clientId, ...id }),
+};
+const Orders = {
+  getAll: () =>
+    requests.post('client/order/getOrdersForUser', {
+      clientId,
+    }),
+  getById: (payload) => requests.post(`client/order/getOrderById`, payload),
+};
 const Services = {
-	Register,
-	Login,
-	Client,
-	Category,
-	Product,
-	Testimonial,
-	Contact,
-	Cart,
-	Localities,
-	Gallery,
-	Address,
+  Auth,
+  Client,
+  Category,
+  Product,
+  Testimonial,
+  Contact,
+  Cart,
+  Localities,
+  Gallery,
+  Address,
+  Orders,
 };
 export default Services;

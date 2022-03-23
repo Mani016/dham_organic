@@ -7,6 +7,7 @@ import agent from '../agent';
 import Loader from '../components/Loader';
 import { API_STATUS } from '../constant';
 import NoData from '../components/NoData';
+import { HANDLE_ERROR } from '../Utils/utils';
 const Product = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,17 +27,21 @@ const Product = () => {
           setData(res.data);
           setLoading(false);
         } else {
-          setData([]);
-          setLoading(false);
+          HANDLE_ERROR(res.message, setLoading);
         }
       })
       .catch((err) => {
-        setData([]);
-        setLoading(false);
+        HANDLE_ERROR(err.message, setLoading);
       });
   }
   useEffect(() => {
-    getProducts();
+    let isActive = true;
+    if (isActive) {
+      getProducts();
+    }
+    return () => {
+      isActive = false;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 

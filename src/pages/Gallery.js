@@ -5,26 +5,31 @@ import Breadcrumb from '../components/Breadcrumb';
 import Loader from '../components/Loader';
 import agent from '../agent';
 import { API_STATUS } from '../constant';
+import { HANDLE_ERROR } from '../Utils/utils';
 
 const Gallery = () => {
   const [galleryListArray, setGalleryListArray] = useState([]);
   const [loading, setLoading] = React.useState(false);
 
   useEffect(() => {
-    agent.Gallery.getAll()
-      .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-          setGalleryListArray(res.data);
-          setLoading(false);
-        } else {
-          setGalleryListArray([]);
-          setLoading(false);
-        }
-      })
-      .catch((err) => {
-        setGalleryListArray([]);
-        setLoading(false);
-      });
+    let isActive = true;
+    if (isActive) {
+      agent.Gallery.getAll()
+        .then((res) => {
+          if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+            setGalleryListArray(res.data);
+            setLoading(false);
+          } else {
+            HANDLE_ERROR(res.message, setLoading);
+          }
+        })
+        .catch((err) => {
+          HANDLE_ERROR(err.message, setLoading);
+        });
+    }
+    return () => {
+      isActive = false;
+    };
   }, []);
 
   const galleryListMap = galleryListArray.map((valu, i) => {
@@ -36,10 +41,7 @@ const Gallery = () => {
         >
           <div className='project-hover'>
             <div className='project_cnt'>
-              <h6>
-               {valu.title}
-              </h6>
-          
+              <h6>{valu.title}</h6>
             </div>
           </div>
         </div>
