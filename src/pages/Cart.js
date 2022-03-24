@@ -2,12 +2,12 @@
 import React, { Fragment, useEffect } from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../layouts/LayoutOne';
-import Breadcrumb from '../components/Breadcrumb';
+// import Breadcrumb from '../components/Breadcrumb';
 import agent from '../agent';
 import AppContext from '../Context';
 import Alert from '../Utils/Alert';
 import { API_STATUS } from '../constant';
-import { HANDLE_ERROR } from '../Utils/utils';
+import { HANDLE_ERROR, setItemToSessionStore } from '../Utils/utils';
 import Loader from '../components/Loader';
 import ManageAddress from '../components/dashboard/ManageAddress';
 import NoItemsInCart from '../components/NoItemsInCart';
@@ -30,7 +30,8 @@ const Cart = () => {
     };
   }, []);
   function handleCheckout() {
-    if (selectedAddress.locality) {
+    console.log(selectedAddress)
+    if (!selectedAddress?.locality) {
       Alert.showToastAlert('warning', 'Select Address');
     } else {
       const payload = {
@@ -40,15 +41,16 @@ const Cart = () => {
           productId: item.productId,
         })),
         orderAmount: itemsInCart.subTotal,
-        finalAmount: itemsInCart.subTotal + itemsInCart.locality.charge,
-        deliveryAddress: selectedAddress.address,
-        locality: selectedAddress.locality.name,
+        finalAmount: itemsInCart.subTotal + selectedAddress.locality.charge,
+        deliveryAddress: `${selectedAddress.address}, ${selectedAddress.landmark}`,
+        locality: selectedAddress.locality._id,
         deliveryBoyId: selectedAddress.locality.deliveryBoyId,
       };
       agent.Cart.checkout(payload)
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
             Alert.showToastAlert('success', res.message);
+            setItemToSessionStore('selectedAddress', {});
             GetCart();
             setLoading(false);
           } else {
@@ -111,6 +113,23 @@ const Cart = () => {
       Alert.showToastAlert('error', 'Login Required');
     }
   }
+  function handleRemove(productId){
+    const payload = {
+      productId
+    }
+    agent.Cart.deleteFromCart(payload).then((res) => {
+      if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+        Alert.showToastAlert('success',res.message);
+        GetCart();
+        setLoading(false);
+      } else {
+        HANDLE_ERROR(res.message, setLoading);
+      }
+    })
+    .catch((err) => {
+      HANDLE_ERROR(err.message, setLoading);
+    });
+  }
   return (
     <Fragment>
       <MetaTags>
@@ -118,10 +137,10 @@ const Cart = () => {
         <meta name='description' content='Organic Food React JS Template.' />
       </MetaTags>
       <LayoutOne>
-        <div className='cart-page'>
+        <div >
           {/*====================  breadcrumb area ====================*/}
 
-          <Breadcrumb title='Shopping Cart' />
+          {/* <Breadcrumb title='Shopping Cart' /> */}
 
           {/*====================  End of breadcrumb area  ====================*/}
 
@@ -213,9 +232,9 @@ const Cart = () => {
                                     <span>₹ {item.subTotal}</span>
                                   </td>
                                   <td>
-                                    <a href='#/'>
+                                    <div onClick={()=>handleRemove(item.productId)}>
                                       <i className='fa fa-trash'></i>
-                                    </a>
+                                    </div>
                                   </td>
                                 </tr>
                               ))}
@@ -237,7 +256,7 @@ const Cart = () => {
                                 Delivery Fee
                                 <span className='amt'>
                                   {' '}
-                                  ₹ {itemsInCart.locality?.charge || 0}
+                                  ₹ {selectedAddress?.locality?.charge || 0}
                                 </span>
                               </p>
                             }
@@ -247,8 +266,8 @@ const Cart = () => {
                               <span className='amt'>
                                 {' '}
                                 ₹{' '}
-                                {itemsInCart.locality?.charge ||
-                                  0 + itemsInCart.subTotal}
+                                {(selectedAddress?.locality?.charge ||
+                                  0) + itemsInCart.subTotal}
                               </span>
                             </p>
                             <div

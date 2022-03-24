@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import logo from '../../../assets/images/dhaam_logo.png';
 import { API_STATUS } from '../../../constant';
@@ -12,9 +13,14 @@ const OrderHistory = () => {
   const [details, setDetails] = useState({});
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
   const getOrderHistory = () => {
     setLoading(true);
-    agent.Orders.getAll()
+    const payload = {
+      page: page,
+      limit: 10,
+    };
+    agent.Orders.getAll(payload)
       .then((res) => {
         if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
           setData(res.data);
@@ -35,56 +41,85 @@ const OrderHistory = () => {
     return () => {
       isActive = false;
     };
-  }, []);
+  }, [page]);
   return (
     <div className='past_order'>
       <h3>Order History</h3>
       {loading ? (
         <Loader />
       ) : (
-        data.data &&
-        data.data.map((item, index) => (
-          <div className='order_box' key={index}>
-            <div className='left'>
-              <img src={logo} alt='' />
-              <div className='txtb'>
-                <p>{item.orderId}</p>
-                <div>
-                  <div>
-                    <span> Status: {item.orderStatus}</span>
-                    <span> Total Paid: ₹{item.finalAmount} </span>
-                    <span>
-                      Order Placed At:{' '}
-                      {moment(item.orderPlacedAt).format('llll')}
-                    </span>
-                    <span>Locality:{item.locality}</span>
-                    <span className='d-flex'>
-                      {item.orderItem.map((item, index) => (
-                        <div key={index}>
-                          {`${item.name}x${item.quantity}`}&nbsp;
-                        </div>
-                      ))}
-                    </span>
-                  </div>
-                  <button
-                    className='get_details mx-2'
-                    onClick={() => {
-                      setIsOpen(true);
-                      setDetails(item);
-                    }}
-                  >
-                    {' '}
-                    Get Details
-                  </button>
-                  <DownloadInvoice showTxt={false} orderId={item.orderId} />
-                </div>
-              </div>
-            </div>
-            <div className='deliever'>
-              {item.orderStatus} on {moment(item.orderUpdatedAt).format('llll')}
-            </div>
+        <>
+          <div className='prodt_pagination mb-4'>
+            <ul>
+              <li>
+                <span
+                  onClick={() => setPage(page - 1)}
+                  className={page <= 1 ? 'disable' : ''}
+                >
+                  {'< '}
+                </span>
+              </li>
+              {page}
+              <li>
+                <span
+                  onClick={() => setPage(page + 1)}
+                  className={page === data.total_pages ? 'disable' : ''}
+                >
+                  {'>'}
+                </span>
+              </li>
+            </ul>
           </div>
-        ))
+          <div>
+            {data.data &&
+              data.data.map((item, index) => (
+                <div className='order_box' key={index}>
+                  <div className='left'>
+                    <img src={logo} alt='' />
+                    <div className='txtb'>
+                      <p>{item.orderId}</p>
+                      <div>
+                        <div>
+                          <span> Status: {item.orderStatus}</span>
+                          <span> Total Paid: ₹{item.finalAmount} </span>
+                          <span>
+                            Order Placed At:{' '}
+                            {moment(item.orderPlacedAt).format('llll')}
+                          </span>
+                          <span>Locality:{item.locality}</span>
+                          <span className='d-flex'>
+                            {item.orderItem.map((item, index) => (
+                              <div key={index}>
+                                {`${item.name}x${item.quantity}`}&nbsp;
+                              </div>
+                            ))}
+                          </span>
+                        </div>
+                        <button
+                          className='get_details mx-2'
+                          onClick={() => {
+                            setIsOpen(true);
+                            setDetails(item);
+                          }}
+                        >
+                          {' '}
+                          Get Details
+                        </button>
+                        <DownloadInvoice
+                          showTxt={false}
+                          orderId={item.orderId}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='deliever'>
+                    {item.orderStatus} on{' '}
+                    {moment(item.orderUpdatedAt).format('llll')}
+                  </div>
+                </div>
+              ))}
+          </div>
+        </>
       )}
 
       <OrderDetail

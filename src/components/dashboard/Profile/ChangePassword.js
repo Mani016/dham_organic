@@ -3,9 +3,8 @@ import AppContext from '../../../Context';
 import agent from '../../../agent';
 import { API_STATUS } from '../../../constant';
 import Alert from '../../../Utils/Alert';
-const EditProfile = (props) => {
-  const { data = {} } = props;
-  const { user, handleRefresh } = useContext(AppContext);
+const ChangePassword = () => {
+const { user } = useContext(AppContext);
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const mobile = user.mobile || '';
@@ -15,11 +14,15 @@ const EditProfile = (props) => {
       newPassword,
       mobile,
     };
-    agent.Auth.changePassword(data.id, payload)
+    
+    agent.Client.changePassword(payload)
       .then((res) => {
         if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
           Alert.showToastAlert('success', res.message);
-          handleRefresh();
+          setTimeout(function () {
+            sessionStorage.clear()
+            window.location = '/login';
+          }, 1000);
         } else {
           Alert.showToastAlert('error', res.message);
         }
@@ -67,4 +70,4 @@ const EditProfile = (props) => {
   );
 };
 
-export default EditProfile;
+export default ChangePassword;

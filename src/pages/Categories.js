@@ -42,8 +42,8 @@ const Category = () => {
   function getCategories() {
     setLoading(true);
     const payload = {
-      // page: page,
-      // limit: 10,
+      page: page,
+      limit: 10,
       status: true,
     };
     agent.Category.get(payload)

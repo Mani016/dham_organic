@@ -29,6 +29,9 @@ const Profile = () => {
     setComponent(value);
     setIsOpen(true);
   };
+  const handleClose = ()=>{
+    setIsOpen(false);
+  }
   return (
     <Fragment>
       <MetaTags>
@@ -40,7 +43,7 @@ const Profile = () => {
           <div className='container '>
             <div className='top py-4'>
               <div className='detail_box d-flex align-items-center'>
-                <img src={user_img} alt='' width='90' />
+                <img src={user.image?.path || user_img} alt='' width='90' />
                 <div>
                   <p>{user.name}</p>
                   <div className='other_details py-1'>
@@ -93,8 +96,8 @@ const Profile = () => {
               </div>
             </div>
           </div>{' '}
-          <Sidebar onClose={() => setIsOpen(false)} isOpen={isOpen}>
-            {component === 'edit' && <EditProfile />}
+          <Sidebar onClose={() => handleClose()} isOpen={isOpen}>
+            {component === 'edit' && <EditProfile handleClose={handleClose} isOpen={isOpen}/>}
             {component === 'change_password' && <ChangePassword/>}
           </Sidebar>
         </div>

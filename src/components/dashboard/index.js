@@ -2,6 +2,7 @@ import React, { Fragment, useContext } from 'react';
 import { MetaTags } from 'react-meta-tags';
 import AppContext from '../../Context';
 import LayoutOne from '../../layouts/LayoutOne';
+import user_img from '../../../assets/images/user.png';
 
 const DashboardWrapper = (props) => {
   const { user } = useContext(AppContext);
@@ -15,7 +16,11 @@ const DashboardWrapper = (props) => {
         <div className='container pt-2'>
           <div className='user_dashboard_title d-block d-md-flex justify-content-between mb-5 align-items-center'>
             <div className='left d-block d-md-flex'>
-              <img src='' alt='' className='user_img' />
+              <img
+                src={user.image?.path || user_img}
+                alt=''
+                className='user_img'
+              />
               <div>
                 <p>
                   {' '}

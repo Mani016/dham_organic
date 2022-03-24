@@ -18,37 +18,35 @@ const ManageAddress = (props) => {
   } = useContext(AppContext);
   const [address, setAddress] = useState({});
   function handleDelete(addressId) {
-   
-      Swal.fire({
-        title: 'Are you sure you want to delete?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          setLoading(true);
-          agent.Address.delete({ addressId })
-            .then((res) => {
-              if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-                Alert.showToastAlert('success', res.message);
-                handleRefresh();
-              } else {
-                HANDLE_ERROR(res.message, setLoading);
-              }
-            })
-            .catch((err) => {
-              HANDLE_ERROR(err.message, setLoading);
-            });
-        }
-      });
-    
+    Swal.fire({
+      title: 'Are you sure you want to delete?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setLoading(true);
+        agent.Address.delete({ addressId })
+          .then((res) => {
+            if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+              Alert.showToastAlert('success', res.message);
+              handleRefresh();
+            } else {
+              HANDLE_ERROR(res.message, setLoading);
+            }
+          })
+          .catch((err) => {
+            HANDLE_ERROR(err.message, setLoading);
+          });
+      }
+    });
   }
   return (
     <div className='manage_address'>
       <div className='address_wrapper'>
-        {selectedAddress?.title ? (
+        {isChooseAddress ?(
           <div>
             <h3>
               {' '}
@@ -62,10 +60,9 @@ const ManageAddress = (props) => {
           </div>
         ) : (
           <>
-            <h3>{title || 'Manage Address'}</h3>
+            <h3>{title || 'Manage  Addresses'}</h3>
             <p>{subTitle || ' '}</p>{' '}
             <div>
-              {' '}
               {user.address &&
                 user.address.map((item, index) => (
                   <div className='address_box d-flex' key={`item${index}`}>
@@ -74,7 +71,7 @@ const ManageAddress = (props) => {
                       <div>
                         <h4>{item.title}</h4>
                         <p>
-                          {item.address} {item.landmark && item.landmark}
+                          {item.address}, {item.landmark} ,{item.locality?.name}
                         </p>
                         {!isChooseAddress && (
                           <div className='options'>
@@ -97,7 +94,10 @@ const ManageAddress = (props) => {
                               onClick={() => {
                                 handleSelectedAddress(item);
                               }}
+                              disabled={!item.locality}
+                              className={!item.locality ?'text-muted':''}
                             >
+                             {!item.locality && ' tooltip lga :- Unable to deliver here'}
                               Deliver Here
                             </button>
                           </div>

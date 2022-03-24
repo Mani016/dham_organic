@@ -10,6 +10,7 @@ const API_ROOT = 'http://localhost:8000/api/';
 
 const responseBody = (res) => res.body;
 const errorBody = (err) => {
+  console.log(err.response);
   if (err.response.status === 403) {
     sessionStorage.clear();
     Alert.showToastAlert('error', 'Session Expired');
@@ -31,7 +32,7 @@ const requests = {
       .set('user_id', clientId)
       .then(responseBody)
       .catch(errorBody),
-  getClient: (url, body) =>
+  customPost: (url, body) =>
     superagent
       .post(`${API_ROOT}${url}`, body)
       .set('x-access-token', `Bearer ${token}`)
@@ -67,21 +68,22 @@ const Auth = {
     requests.post('client/auth/register', { ...data, createdBy, companyId }),
   otp: (data) => requests.post('client/auth/verifyOTP', { ...data }),
   login: (data) => requests.post('client/auth/login', { ...data }),
-  changePassword: (data) => requests.post('client/auth/changePassword', { ...data }),
 };
 
 const Client = {
-  getById: () => requests.getClient('client/auth/getClientById', { clientId }),
+  getById: () => requests.customPost('client/auth/getClientById', { clientId }),
   uploadProfilePic: (payload) =>
     requests.post('client/auth/uploadProfilePic', payload),
   deleteProfilePic: (payload) =>
-    requests.post('client/auth/uploadProfilePic', { ...payload }),
-  update: (payload) =>
-    requests.post('client/auth/update', { ...payload }),
+    requests.post('client/auth/deleteProfilePic', { ...payload }),
+  update: (payload) => requests.post('client/auth/update', { ...payload }),
+  changePassword: (payload) =>
+  requests.post('client/auth/changePassword', { ...payload, companyId, createdBy }),
 };
 const Category = {
   get: (payload) =>
     requests.post('admin/category', { ...payload, companyId, createdBy }),
+
 };
 const Product = {
   get: (payload) =>
@@ -116,6 +118,11 @@ const Cart = {
       clientId,
       companyId,
     }),
+  deleteFromCart: (payload) =>
+    requests.post('client/cart/deleteFromCart', {
+      ...payload,
+      clientId,
+    }),
 };
 
 const Localities = {
@@ -136,8 +143,9 @@ const Address = {
     requests.post('client/auth/setDefaultAddress', { clientId, ...id }),
 };
 const Orders = {
-  getAll: () =>
+  getAll: (payload) =>
     requests.post('client/order/getOrdersForUser', {
+      ...payload,
       clientId,
     }),
   getById: (payload) => requests.post(`client/order/getOrderById`, payload),

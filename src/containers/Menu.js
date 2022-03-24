@@ -74,12 +74,13 @@ const Menu = () => {
                 <Link to={token ? '/cart' : '/'}>
                   <i className='icon-glyph-13'></i>
                   <span className='number_cart'>
-                    {itemsInCart.cartDetails?.length || '-'}
+                    {itemsInCart.cartDetails?.length || 
+                      '-'}
                   </span>
                 </Link>
               </li>
               <li className='header_cart_icon'>
-                <Link to='/login'>
+                <Link to={token ? '/my-account' : '/login'}>
                   <i className='fa fa-user'></i>
                 </Link>
               </li>

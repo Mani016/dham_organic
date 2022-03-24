@@ -20,7 +20,7 @@ const AddEditAddress = (props) => {
       setTitle(data.title);
       setAddress(data.address);
       setLandmark(data.landmark);
-      setLocality(data.locality?._id);
+      setLocality(data.locality?.status ? data.locality?._id : '');
     }
     return () => {
       isActive = false;
@@ -28,7 +28,7 @@ const AddEditAddress = (props) => {
   }, [data]);
   function getaAllLocalities() {
     const payload = {
-      statue: true,
+      status: true,
     };
     agent.Localities.getAll(payload)
       .then((res) => {
@@ -59,6 +59,7 @@ const AddEditAddress = (props) => {
     setLandmark('');
     onClose();
   };
+  console.log(data);
   function SaveAddress() {
     setLoading();
     let formIsComplete = true;
@@ -66,27 +67,54 @@ const AddEditAddress = (props) => {
       Alert.showToastAlert('warning', 'Required fields cannot be empty');
       formIsComplete = false;
     }
+
     if (formIsComplete) {
-      const data = {
+      const payload = {
         title,
         address,
         locality,
         landmark,
       };
-      agent.Address.add({ address: data })
-        .then((res) => {
-          if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-            Alert.showToastAlert('success', res.message);
+      if (!isEdit) {
+        agent.Address.add({ address: payload })
+          .then((res) => {
+            if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+              Alert.showToastAlert('success', res.message);
+              handleClose();
+              handleRefresh();
+            } else {
+              Alert.showToastAlert('error', res.message);
+            }
+          })
+          .catch((err) => {
+            Alert.showToastAlert('error', err.message);
             handleClose();
-            handleRefresh();
-          } else {
-            Alert.showToastAlert('error', res.message);
-          }
-        })
-        .catch((err) => {
-          Alert.showToastAlert('error', err.message);
-          handleClose();
-        });
+          });
+      } else {
+        const payload = {
+          address: {
+            title,
+            address,
+            locality,
+            landmark,
+          },
+          addressId: data._id,
+        };
+        agent.Address.update(payload)
+          .then((res) => {
+            if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+              Alert.showToastAlert('success', res.message);
+              handleClose();
+              handleRefresh();
+            } else {
+              Alert.showToastAlert('error', res.message);
+            }
+          })
+          .catch((err) => {
+            Alert.showToastAlert('error', err.message);
+            handleClose();
+          });
+      }
     }
   }
 
