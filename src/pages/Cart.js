@@ -30,7 +30,6 @@ const Cart = () => {
     };
   }, []);
   function handleCheckout() {
-    console.log(selectedAddress)
     if (!selectedAddress?.locality) {
       Alert.showToastAlert('warning', 'Select Address');
     } else {
