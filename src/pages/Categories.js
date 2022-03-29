@@ -12,7 +12,7 @@ export const CategoryCard = ({ item = [] }) => {
   return (
     <>
       {item.map((valu, i) => (
-        <div className='col-md-4 col-sm-12' key={i}>
+        <div className='col-md-4 col-sm-12 mb-5' key={i}>
           <div className='service-item'>
             <div className='img_serv'>
               <Link to={`category/${valu._id}`}>

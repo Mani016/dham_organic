@@ -62,7 +62,7 @@ const ManageAddress = (props) => {
           <>
             <h3>{title || 'Manage  Addresses'}</h3>
             <p>{subTitle || ' '}</p>{' '}
-            <div>
+            <div className='d-flex address_listing'>
               {user.address &&
                 user.address.map((item, index) => (
                   <div className='address_box d-flex' key={`item${index}`}>

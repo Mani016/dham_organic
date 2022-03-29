@@ -6429,7 +6429,9 @@ input[type="number"] {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  flex-wrap: wrap;
+  gap: 15px;
+  position: relative;
+  /* flex-wrap: wrap; */
 }
 .dashboard .order_box:last-child{
   margin-bottom: 0;
@@ -6447,16 +6449,18 @@ input[type="number"] {
 }
 .dashboard .order_box .txtb{
   font-size: 14px;
+  flex: 1;
 }
 .dashboard .order_box p {
   font-weight: bold;
   font-size: 18px;
 }
 .dashboard .order_box  span {
-  display: inline-block;
+  display: block;
   margin-right: 15px;
 }
 .get_details{
+  
   background: #4ca853;
   border: none;
   color: #fff;
@@ -6479,7 +6483,7 @@ input[type="number"] {
   border: 1px solid #4ca853;
   padding: 20px;
   gap: 10px;
-  border-radius: 5px;
+  border-radius: 0;
   width: 280px
 
 
@@ -6636,4 +6640,54 @@ input[type="number"] {
   position: relative;
   box-shadow: 0 4px 14px #d4d5d9;
   color: white;
+}
+.address_listing{
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.profile_upload{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: 1px solid #2b343b;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 1px 6px 39px 5px #b1acac54
+}
+.profile_upload img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.order_status{
+  position: absolute;
+  background: #4ca853;
+  color: #fff;
+  padding: 3px 15px;
+  border-radius: 0 4px 0px 0;
+  right: -15px;
+  top: -1px;
+}
+.one_box{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.white_load{
+  width: 20px !important;
+  height: auto;
+  filter: brightness(0.5);
+}
+.order_paginate{
+  text-align: right;
+}
+.order_paginate li{
+  margin: 0 15px;
+  display: inline-flex;
+  text-align: center; 
+  padding-left: 0;
+  border: none !important;
 }

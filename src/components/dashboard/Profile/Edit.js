@@ -100,16 +100,19 @@ const EditProfile = (props) => {
   return (
     <>
       <h3>Edit Profile</h3>
-      <img
-        src={showImg || user_default_img}
-        alt='profileImage'
-        style={{ height: '25%' }}
-      />
+      <label htmlFor='file' 
+          className="profile_upload">
+        <img
+          src={showImg || user_default_img}
+          alt='profileImage'
+        />
+      </label>
       <p className='input_fields input_name'>
-        <label>
+        {/* <label>
           Upload Profile Pic<span className='required'>*</span>
-        </label>
+        </label> */}
         <input
+        style={{display:"none"}}
           type='file'
           onChange={({ target }) => uploadFile(target)}
           id='file'

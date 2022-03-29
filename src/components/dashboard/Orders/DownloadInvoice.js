@@ -6,7 +6,7 @@ import agent from '../../../agent';
 import { useState } from "react";
 import { API_STATUS, MESSAGES } from  '../../../constant';
 import { HANDLE_ERROR } from '../../../Utils/utils';
-
+import loadImg from "../../../assets/images/loading.gif";
 const DownloadInvoice = ({ showTxt, orderId }) => {
   const [loading, setLoading] = useState(false); // Set loading to true on component mount
   // const [details, setDetails] = useState({}); // Set details to empty object on component mount
@@ -122,11 +122,12 @@ const DownloadInvoice = ({ showTxt, orderId }) => {
       type="reset"
       size="md"
       color="info"
+      className='get_details mx-2'
       onClick={handleDownload}
       disabled={loading}
     >
       {loading ? (
-        'loading....'
+        <img src={loadImg} className="white_load"  alt="" />
       ) : (
         <i className="fa fa-download" />
       )}{" "}
