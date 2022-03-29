@@ -17,7 +17,7 @@ const errorBody = (err) => {
     setTimeout(() => (window.location = '/login'), 2000);
   } else {
     return err.response.body;
-  }
+  } 
 };
 const token = getItemFromSessionStore('token');
 const createdBy = '620aae3e90e0a582e3d93ee5';
