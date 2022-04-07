@@ -787,7 +787,7 @@
 	}
 
 	.product_count {
-		margin-right: 20px;
+		float: none;
 	}
 
 	.cust-reviews-area .nav-tabs a {
@@ -815,7 +815,6 @@
 
 	.allproduct-info {
 		margin-left: 0px;
-		margin-top: 135px;
 	}
 	.shop-tab-wrapper {
 		margin-top: 6px;
@@ -953,6 +952,12 @@
 	.info_box {
 		padding: 25px 10px;
 	}
+	.shop-product-area{
+		padding-top: 60px;
+	}
+	#login-form-wrapper , #register-form-wrapper{
+		padding: 20px;
+	} 
 }
 
 /* Mobile Vertical Layout: 488px 
@@ -986,7 +991,7 @@
 ===============================================================================*/
 @media only screen and (min-width: 8px) and (max-width: 380px) {
 	.navigation .logo img {
-		margin-top: 98px !important;
-		width: 150px;
+		width: auto;
+		object-fit: contain;
 	}
 }

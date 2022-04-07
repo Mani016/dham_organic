@@ -108,8 +108,8 @@ const Category = () => {
                 <Loader />
               ) : (
                 <>
-                  <div className='d-flex justify-content-between'>
-                    <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
+                  <div className='d-block d-md-flex justify-content-between'>
+                    <p className='product_count text-center text-md-left'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
                     <div className='prodt_pagination mb-4'>
                       <ul>
                         <li>

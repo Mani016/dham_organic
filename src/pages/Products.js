@@ -107,8 +107,8 @@ const Product = () => {
                 <>
                   {data.total > 0 ? (
                     <>
-                      <div className='d-flex justify-content-between w-100'>
-                        <p className='product_count'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
+                      <div className='d-md-flex d-block justify-content-between w-100'>
+                        <p className='product_count text-center text-md-left'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
                         <div className='prodt_pagination mb-3'>
                           <ul>
                             <li>
