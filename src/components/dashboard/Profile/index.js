@@ -50,17 +50,25 @@ const Profile = () => {
                     <span>{user.mobile}</span>
                     <span>{user.email || ''}</span>
                   </div>
+                  <div>
+                  <button
+                    className='edit_profile_btn mb-2 mb-md-0 mr-3'
+                    onClick={() => handleModal('edit')}
+                  >
+                    Edit Profile
+                  </button>
+                  <button className='edit_profile_btn mb-2 mb-md-0' onClick={() => handleModal('change_password')}>
+                    Change Password
+                  </button>
+                  </div>
                 </div>
               </div>
               <div>
                 <button
-                  className='edit_profile_btn mx-3'
+                  className='edit_profile_btn mb-2 mb-md-0 mr-3'
                   onClick={() => handleModal('edit')}
                 >
-                  Edit Profile
-                </button>
-                <button className='edit_profile_btn' onClick={() => handleModal('change_password')}>
-                  Change Password
+                  Log Out
                 </button>
               </div>
             </div>

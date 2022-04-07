@@ -73,52 +73,50 @@ const OrderHistory = () => {
 					<div>
 						{data.data &&
 							data.data.map((item, index) => (
-									<div className="order_box" key={index}>
-                    <span className="order_status">{item.orderStatus}</span>
-										<div className="left">
-											<img src={logo} alt="" />
-										</div>
-										<div className="txtb">
-											<p>{item.orderId}</p>
-                      <div className="one_box">
-
-                        <div>
-                          <div>
-                            <span>{item.locality}</span>
-                            <span className="d-flex">
-                              {item.orderItem.map((item, index) => (
-                                <div key={index}>
-                                  {`${item.name} x ${item.quantity}`}&nbsp;
-                                </div>
-                              ))}
-                            </span>
-                            <span>
-                             {moment(item.orderPlacedAt).format("llll")}
-                           </span>
-                          </div>
-                          <button
-                            className="get_details mx-2"
-                            onClick={() => {
-                              setIsOpen(true);
-                              setDetails(item);
-                            }}
-                          >
-                            {" "}
-                            Get Details
-                          </button>
-                          <DownloadInvoice
-                            showTxt={false}
-                            orderId={item.orderId}
-                          />
-                        </div>
-                        <div className="deliever">
-                          {item.orderStatus} on{" "}
-                          {moment(item.orderUpdatedAt).format("llll")}
-                        </div>
-                      </div>
+								<div className="order_box" key={index}>
+									<span className={`order_status ${item.orderStatus.toLowerCase() }`}>{item.orderStatus}</span>
+									<div className="left">
+										<img src={logo} alt="" />
+									</div>
+									<div className="txtb">
+										<p>{item.orderId}</p>
+										<div className="one_box">
+											<div>
+												<div>
+													<span>{item.locality}</span>
+													<span className="d-flex">
+														{item.orderItem.map((item, index) => (
+															<div key={index}>
+																{`${item.name} x ${item.quantity}`}&nbsp;
+															</div>
+														))}
+													</span>
+													<span>
+														{moment(item.orderPlacedAt).format("llll")}
+													</span>
+												</div>
+												<button
+													className="get_details mx-2"
+													onClick={() => {
+														setIsOpen(true);
+														setDetails(item);
+													}}
+												>
+													{" "}
+													Get Details
+												</button>
+												<DownloadInvoice
+													showTxt={false}
+													orderId={item.orderId}
+												/>
+											</div>
+											<div className="deliever">
+												{item.orderStatus} on{" "}
+												{moment(item.orderUpdatedAt).format("llll")}
+											</div>
 										</div>
 									</div>
-								
+								</div>
 							))}
 					</div>
 				</>

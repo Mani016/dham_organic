@@ -90,13 +90,15 @@ const ProductDetails = () => {
   }, []);
 
   const settings = {
-    customPaging: function (i) {
-      return <img src={`assets/images/product0${i + 1}.jpg`} alt='' />;
-    },
-    dots: true,
+    // customPaging: function (i) {
+    //   return <img src={`assets/images/product0${i + 1}.jpg`} alt='' />;
+    // },
+    dots: false,
+    arrows:true,
     dotsClass: 'slick-dots slick-thumb',
     infinite: true,
     speed: 500,
+    autoplay:true,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -138,11 +140,13 @@ const ProductDetails = () => {
                           <Slider {...settings}>
                             {data.images?.map((slide, j) => (
                               <div key={`slide_${j}`}>
-                                <img
-                                  src={slide.path}
-                                  alt=''
-                                  style={{ height: '369px' }}
-                                />
+                                <div className="imgb">
+                                  <img
+                                    src={slide.path}
+                                    alt=''
+                                    style={{ height: '369px' }}
+                                  />
+                                </div>
                               </div>
                             ))}
                           </Slider>

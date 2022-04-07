@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useState } from "react";
 import { Link } from "react-router-dom";
 
 const MobileMenu = () => {
@@ -40,7 +40,7 @@ const MobileMenu = () => {
     );
     offcanvasMobileMenu.classList.remove("active");
   };
-
+const [showSubMenu , setShowSubMenu]= useState(false);
   return (
     <div className="offcanvasMobileMenu" id="offcanvas-mobile-menu">
       <button
@@ -56,20 +56,28 @@ const MobileMenu = () => {
 
           <nav className="offcanvasNavigation" id="offcanvas-navigation">
             <ul>
-              <li><Link to={process.env.PUBLIC_URL + "/about"}>About Us</Link></li>
-              <li className="menuItemHasChildren"><Link to="#/">Our Company</Link>
-                  <ul className="subMenu">
-                      <li><a href="/#how-it-done">How It Done</a>
-                      </li>
-                      <li><Link to="organic-farming">Organic Farming</Link>
-                      </li>
-                      <li><Link to="gallery">Farm Gallery</Link>
-                      </li>
-                  </ul>
+              <li>
+                <Link to='about'>About Us</Link>
               </li>
-              <li><Link to="categories">Categories</Link>
+              <li className='has-sub' onClick={()=>setShowSubMenu(!showSubMenu)}>
+                Our Company
+                <ul className={showSubMenu ? "active" : ""}>
+                  <li>
+                    <a href='/#how-it-done'>How It Done</a>
+                  </li>
+                  <li>
+                    <Link to='/organic-farming'>Organic Farming</Link>
+                  </li>
+                  <li>
+                    <Link to='/gallery'>Farm Gallery</Link>
+                  </li>
+                </ul>
               </li>
-              <li><Link to="contact">Contact</Link>
+              <li>
+                <Link to='/categories'>Categories</Link>
+              </li>
+              <li>
+                <Link to='/contact'>Contact</Link>
               </li>
             </ul>
           </nav>

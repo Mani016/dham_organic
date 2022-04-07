@@ -90,6 +90,12 @@ const ManageAddress = (props) => {
                         )}
                         {isChooseAddress && (
                           <div className='options'>
+                            {!item.locality && 
+                              <div className="info_box_outer">
+                                <span className='fa fa-info'></span>
+                                <p>Unable to deliver here</p>
+                              </div> 
+                            }
                             <button
                               onClick={() => {
                                 handleSelectedAddress(item);
@@ -97,7 +103,7 @@ const ManageAddress = (props) => {
                               disabled={!item.locality}
                               className={!item.locality ?'text-muted':''}
                             >
-                             {!item.locality && ' tooltip lga :- Unable to deliver here'}
+                             {/* {!item.locality && ' tooltip lga :- Unable to deliver here'} */}
                               Deliver Here
                             </button>
                           </div>

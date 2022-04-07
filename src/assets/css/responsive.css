@@ -160,10 +160,21 @@
 	/* End: Slider  */
 	.past_order , .manage_address{
 		padding: 0;
+		padding-top: 30px;
 		border-left: none;
 	}
-	.manage_address{
-		padding-top: 30px;
+	.has-sub{
+		font-weight: 500;
+		display: block;
+		padding: 6px 0;
+		color: #222;
+		text-transform: uppercase;
+	}
+	.has-sub ul{
+		display: none;
+	}
+	.has-sub ul.active{
+		display: block;
 	}
 }
 
@@ -958,6 +969,19 @@
 	#login-form-wrapper , #register-form-wrapper{
 		padding: 20px;
 	} 
+	.address_wrapper{
+		gap: 15px;
+	}
+	.address_box{
+		width: 100%;
+	}
+	.dashboard .tab_box{
+		padding: 40px 20px;
+	}
+	.info_box_outer p{
+		margin-left: 0;
+		right: 25px;
+	}
 }
 
 /* Mobile Vertical Layout: 488px 

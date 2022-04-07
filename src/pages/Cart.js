@@ -148,7 +148,7 @@ const Cart = () => {
           <div className='shop_cart'>
             <div className='container-fluid'>
               <div className='base-header'>
-                <h3> SECURE CHECKOUT</h3>
+                <h3> SHOPPING CART</h3>
               </div>
               {loading ? (
                 <Loader msg={'Updating Cart'} />
@@ -240,7 +240,7 @@ const Cart = () => {
                             </tbody>
                           </table>
                         </div>
-                        <div className='col-lg-12 col-sm-12'>
+                        <div className='col-lg-8 ml-auto col-sm-12'>
                           <div className='grand-total-area'>
                             <h4>Bill Details</h4>
                             <p className='sub-total'>
