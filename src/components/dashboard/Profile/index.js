@@ -29,9 +29,9 @@ const Profile = () => {
     setComponent(value);
     setIsOpen(true);
   };
-  const handleClose = ()=>{
+  const handleClose = () => {
     setIsOpen(false);
-  }
+  };
   return (
     <Fragment>
       <MetaTags>
@@ -51,24 +51,30 @@ const Profile = () => {
                     <span>{user.email || ''}</span>
                   </div>
                   <div>
-                  <button
-                    className='edit_profile_btn mb-2 mb-md-0 mr-3'
-                    onClick={() => handleModal('edit')}
-                  >
-                    Edit Profile
-                  </button>
-                  <button className='edit_profile_btn mb-2 mb-md-0' onClick={() => handleModal('change_password')}>
-                    Change Password
-                  </button>
+                    <button
+                      className='edit_profile_btn mb-2 mb-md-0 mr-3'
+                      onClick={() => handleModal('edit')}
+                    >
+                      Edit Profile
+                    </button>
+                    <button
+                      className='edit_profile_btn mb-2 mb-md-0'
+                      onClick={() => handleModal('change_password')}
+                    >
+                      Change Password
+                    </button>
                   </div>
                 </div>
               </div>
               <div>
                 <button
                   className='edit_profile_btn mb-2 mb-md-0 mr-3'
-                  onClick={() => handleModal('edit')}
+                  onClick={() => {
+                    sessionStorage.clear();
+                    window.location = '/login';
+                  }}
                 >
-                  Log Out
+                  <i className='fa fa-sign-out' /> Log Out
                 </button>
               </div>
             </div>
@@ -105,8 +111,10 @@ const Profile = () => {
             </div>
           </div>{' '}
           <Sidebar onClose={() => handleClose()} isOpen={isOpen}>
-            {component === 'edit' && <EditProfile handleClose={handleClose} isOpen={isOpen}/>}
-            {component === 'change_password' && <ChangePassword/>}
+            {component === 'edit' && (
+              <EditProfile handleClose={handleClose} isOpen={isOpen} />
+            )}
+            {component === 'change_password' && <ChangePassword />}
           </Sidebar>
         </div>
       </LayoutOne>

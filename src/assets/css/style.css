@@ -6733,6 +6733,7 @@ input[type="number"] {
   text-align: center; 
   padding-left: 0;
   border: none !important;
+  padding: 0px;
 }
 .single-item-detail .imgb{
   padding: 0 40px;
