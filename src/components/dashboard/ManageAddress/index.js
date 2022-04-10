@@ -43,24 +43,36 @@ const ManageAddress = (props) => {
       }
     });
   }
+  console.log(selectedAddress, isChooseAddress);
   return (
     <div className='manage_address'>
-      <div className='address_wrapper'>
-        {isChooseAddress && selectedAddress  ?(
-          <div>
-            <h3>
-              {' '}
-              Delivery address <i className='fa fa-check' />
-            </h3>
-            <p>Title: {selectedAddress.title}</p>
-            <p> Address: {selectedAddress.address}</p>
-            <p> Landmark: {selectedAddress.landmark}</p>
-            <p> Locality: {selectedAddress.locality?.name}</p>
-            <button onClick={() => handleSelectedAddress({})}>Change</button>
-          </div>
+      <div className='address_wrapper '>
+        {isChooseAddress && selectedAddress.title ? (
+            <div className='address_box'>
+              <h4>
+               <b> Delivery Address</b> <i className='fa fa-check' />
+              </h4>
+
+              <div className='address d-flex'>
+                <i className='fa fa-home' aria-hidden='true'></i>
+                <div>
+                  <h4>{selectedAddress.title}</h4>
+                  <p>
+                    {selectedAddress.address}, {selectedAddress.landmark} ,
+                    {selectedAddress.locality?.name}
+                  </p>
+                  <div className='options'>
+                    <button onClick={() => handleSelectedAddress({})}>
+                      Change
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
         ) : (
           <>
             <h3>{title || 'Manage  Addresses'}</h3>
+            <br />
             <p>{subTitle || ' '}</p>{' '}
             <div className='d-flex address_listing'>
               {user.address &&
@@ -90,22 +102,23 @@ const ManageAddress = (props) => {
                         )}
                         {isChooseAddress && (
                           <div className='options'>
-                            {!item.locality && 
-                              <div className="info_box_outer">
+                            {!item.locality && (
+                              <div className='info_box_outer'>
                                 <span className='fa fa-info'></span>
-                                <p>Unable to deliver here</p>
-                              </div> 
-                            }
-                            <button
-                              onClick={() => {
-                                handleSelectedAddress(item);
-                              }}
-                              disabled={!item.locality}
-                              className={!item.locality ?'text-muted':''}
-                            >
-                             {/* {!item.locality && ' tooltip lga :- Unable to deliver here'} */}
-                              Deliver Here
-                            </button>
+                                <p>Unable To Deliver Here</p>
+                              </div>
+                            )}
+                            {item.locality && (
+                              <button
+                                onClick={() => {
+                                  handleSelectedAddress(item);
+                                }}
+                                disabled={!item.locality}
+                                className={!item.locality ? 'text-muted' : ''}
+                              >
+                                Deliver Here
+                              </button>
+                            )}
                           </div>
                         )}
                       </div>
