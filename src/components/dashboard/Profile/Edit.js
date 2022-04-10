@@ -17,7 +17,7 @@ const EditProfile = (props) => {
     if (user.name) {
       setName(user.name);
       setEmail(user.email);
-      setShowImg(user.image.path);
+      setShowImg(user.image?.path);
       setProfileImage(user.image);
     }
   }, [isOpen]);
@@ -60,7 +60,8 @@ const EditProfile = (props) => {
     };
     const formData = new FormData();
     formData.append('image', profileImage);
-    if (profileImage.name && profileImage?.name !== user.image?.filename) {
+    console.log(profileImage.name && profileImage?.name !== user.image?.filename,'....',profileImage.name , profileImage?.name , user.image?.filename)
+    if (profileImage.name && profileImage?.name !== user.image?.filename && user.image) {
       const deletePayload = { filename: user.image.filename };
       agent.Client.deleteProfilePic(deletePayload)
         .then((res) => {
@@ -93,8 +94,22 @@ const EditProfile = (props) => {
           handleClose();
         });
     } else {
-      payload.image = user.image;
-      handleUpdate(payload);
+      agent.Client.uploadProfilePic(formData)
+      .then((res) => {
+        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+          payload.image = res.data;
+          handleUpdate(payload);
+        } else {
+          Alert.showToastAlert('error', res.message);
+          setLoading(false);
+          handleClose();
+        }
+      })
+      .catch((err) => {
+        Alert.showToastAlert('error', err.message);
+        setLoading(false);
+        handleClose();
+      });
     }
   };
   return (

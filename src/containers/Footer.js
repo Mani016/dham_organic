@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { animateScroll } from "react-scroll";
 import { Link } from "react-router-dom"; 
-import dhaam_logo from '../assets/images/dhaam_logo.png';
+// import dhaam_logo from '../assets/images/dhaam_logo.png';
 const Footer = () => {
  
     const [scroll, setScroll] = useState(0);

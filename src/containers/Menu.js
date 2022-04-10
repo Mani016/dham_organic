@@ -75,7 +75,7 @@ const Menu = () => {
                   <i className='icon-glyph-13'></i>
                   <span className='number_cart'>
                     {itemsInCart.cartDetails?.length || 
-                      '-'}
+                      '-'} | {itemsInCart.subTotal}
                   </span>
                 </Link>
               </li>

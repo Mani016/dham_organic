@@ -11,6 +11,7 @@ import Alert from '../Utils/Alert';
 import { API_STATUS } from '../constant';
 import { getItemFromSessionStore, HANDLE_ERROR } from '../Utils/utils';
 import AppContext from '../Context';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const ProductDetails = () => {
   const token = getItemFromSessionStore('token');
@@ -22,7 +23,11 @@ const ProductDetails = () => {
     productId: params.id,
   };
   const { itemsInCart, GetCart, checkUserLogin } = React.useContext(AppContext);
-
+  /* Shop Tab menu */
+  let productTabMenuData = [
+    { tabMenuName: 'Product Specifications' },
+    { tabMenuName: 'Additional Information' },
+  ];
   function getProductById() {
     setLoading(true);
     agent.Product.getById(params.id)
@@ -57,6 +62,7 @@ const ProductDetails = () => {
         });
     } else {
       Alert.showToastAlert('error', 'Login Required');
+      history.push('/login');
     }
   }
   function subtractFromCart() {
@@ -77,6 +83,7 @@ const ProductDetails = () => {
         });
     } else {
       Alert.showToastAlert('error', 'Login Required');
+      history.push('/login');
     }
   }
   useEffect(() => {
@@ -88,17 +95,22 @@ const ProductDetails = () => {
       isActive = false;
     };
   }, []);
+  const images = [];
+
+  if (Array.isArray(data.images)) {
+    data.images.forEach((card) => {
+      images.push(card.path);
+    });
+  }
 
   const settings = {
-    // customPaging: function (i) {
-    //   return <img src={`assets/images/product0${i + 1}.jpg`} alt='' />;
-    // },
-    dots: false,
-    arrows:true,
+    customPaging: function (i) {
+      return <img src={images[i]} alt='' />;
+    },
+    dots: true,
     dotsClass: 'slick-dots slick-thumb',
     infinite: true,
     speed: 500,
-    autoplay:true,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -112,11 +124,40 @@ const ProductDetails = () => {
     }
     return qty;
   }
+  /* Shop Tab Content */
+  let productTabContentData = [
+    {
+      contentDesc: data.specification,
+    },
+
+    {
+      contentDesc: data.additionalInfo,
+    },
+  ];
+  let productTabContentDatalist = productTabContentData.map((val, i) => {
+    return (
+      <TabPanel key={i}>
+        <div className='shop-tab-content-wrapper'>
+          <div className='shop-tab-content'>
+            <h3>{val.contentTitle}</h3>
+            <p>{val.contentDesc}</p>
+          </div>
+        </div>
+      </TabPanel>
+    );
+  });
+  let productTabMenuDatalist = productTabMenuData.map((val, i) => {
+    return (
+      <Tab key={i}>
+        <span className='shop-nav-tabs'>{val.tabMenuName}</span>
+      </Tab>
+    );
+  });
   return (
     <Fragment>
       <MetaTags>
         <title>Dhaam Organic| Product</title>
-        <meta name='description' content='Organic Food React JS Template.' />
+        <meta name='description' content='Organic Food' />
       </MetaTags>
       <LayoutOne>
         <div className='single-shop-page'>
@@ -140,13 +181,13 @@ const ProductDetails = () => {
                           <Slider {...settings}>
                             {data.images?.map((slide, j) => (
                               <div key={`slide_${j}`}>
-                                <div className="imgb">
-                                  <img
-                                    src={slide.path}
-                                    alt=''
-                                    style={{ height: '369px' }}
-                                  />
-                                </div>
+                                {/* <div className="imgb"> */}
+                                <img
+                                  src={slide.path}
+                                  alt=''
+                                  style={{ height: '369px' }}
+                                />
+                                {/* </div> */}
                               </div>
                             ))}
                           </Slider>
@@ -164,13 +205,13 @@ const ProductDetails = () => {
                           <span className='n-amt'>
                             {data.finalPrice}/{data?.unit?.name}
                           </span>
-                          <span>
+                         {data.discount > 0 && <span>
                             <del>
                               Rs. {data.price}/{data?.unit?.name}
                             </del>
-                          </span>
+                          </span>}
                           &nbsp; &nbsp;
-                          {data.discount && <span>{data.discount}% off;</span>}
+                          {data.discount >0 && <span>{data.discount}% off;</span>}
                         </span>
                       </div>
                       {/* Product Desctiption  */}
@@ -234,6 +275,22 @@ const ProductDetails = () => {
                   </div>
                 </div>
               )}
+            </div>
+          </div>
+          <div className='cust-reviews-area'>
+            <div className='container'>
+              <div className='row'>
+                {/* Shop tab wrapper */}
+                <div className='shop-tab-wrapper'>
+                  <Tabs>
+                    <div className='col-md-12'>
+                      <TabList>{productTabMenuDatalist}</TabList>
+                    </div>
+
+                    <div className='col-md-12'>{productTabContentDatalist}</div>
+                  </Tabs>
+                </div>
+              </div>
             </div>
           </div>
           {/*==================== End :  Section ====================*/}

@@ -451,7 +451,9 @@
 	.header_topbar {
 		display: none;
 	}
-
+	.allproduct-info{
+		margin-top: 135px;
+	}
 	.navigation .container {
 		position: relative;
 	}
@@ -800,6 +802,9 @@
 	.product_count {
 		float: none;
 	}
+	.cust-reviews-area{
+		padding-top:0px;
+	}
 
 	.cust-reviews-area .nav-tabs a {
 		margin-right: 0px;
@@ -826,6 +831,7 @@
 
 	.allproduct-info {
 		margin-left: 0px;
+		margin-top: 135px;
 	}
 	.shop-tab-wrapper {
 		margin-top: 6px;

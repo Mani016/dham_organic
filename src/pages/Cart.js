@@ -11,6 +11,7 @@ import { HANDLE_ERROR, setItemToSessionStore } from '../Utils/utils';
 import Loader from '../components/Loader';
 import ManageAddress from '../components/dashboard/ManageAddress';
 import NoItemsInCart from '../components/NoItemsInCart';
+import { useHistory } from 'react-router-dom';
 const Cart = () => {
   const {
     checkUserLogin,
@@ -29,6 +30,7 @@ const Cart = () => {
       isActive = false;
     };
   }, []);
+  const history = useHistory();
   function handleCheckout() {
     if (!selectedAddress?.locality) {
       Alert.showToastAlert('warning', 'Select Address');
@@ -40,7 +42,11 @@ const Cart = () => {
           productId: item.productId,
         })),
         orderAmount: itemsInCart.subTotal,
-        finalAmount: itemsInCart.subTotal + selectedAddress.locality.charge,
+        finalAmount:
+          itemsInCart.subTotal + itemsInCart.subTotal <
+          selectedAddress?.locality?.minOrder
+            ? selectedAddress.locality.charge
+            : 0,
         deliveryAddress: `${selectedAddress.address}, ${selectedAddress.landmark}`,
         locality: selectedAddress.locality._id,
         deliveryBoyId: selectedAddress.locality.deliveryBoyId,
@@ -90,6 +96,7 @@ const Cart = () => {
         });
     } else {
       Alert.showToastAlert('error', 'Login Required');
+      history.push('/login');
     }
   }
   function subtractFromCart(id) {
@@ -110,24 +117,26 @@ const Cart = () => {
         });
     } else {
       Alert.showToastAlert('error', 'Login Required');
+      history.push('/login');
     }
   }
-  function handleRemove(productId){
+  function handleRemove(productId) {
     const payload = {
-      productId
-    }
-    agent.Cart.deleteFromCart(payload).then((res) => {
-      if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-        Alert.showToastAlert('success',res.message);
-        GetCart();
-        setLoading(false);
-      } else {
-        HANDLE_ERROR(res.message, setLoading);
-      }
-    })
-    .catch((err) => {
-      HANDLE_ERROR(err.message, setLoading);
-    });
+      productId,
+    };
+    agent.Cart.deleteFromCart(payload)
+      .then((res) => {
+        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+          Alert.showToastAlert('success', res.message);
+          GetCart();
+          setLoading(false);
+        } else {
+          HANDLE_ERROR(res.message, setLoading);
+        }
+      })
+      .catch((err) => {
+        HANDLE_ERROR(err.message, setLoading);
+      });
   }
   return (
     <Fragment>
@@ -136,7 +145,7 @@ const Cart = () => {
         <meta name='description' content='Organic Food React JS Template.' />
       </MetaTags>
       <LayoutOne>
-        <div >
+        <div>
           {/*====================  breadcrumb area ====================*/}
 
           {/* <Breadcrumb title='Shopping Cart' /> */}
@@ -231,7 +240,11 @@ const Cart = () => {
                                     <span>₹ {item.subTotal}</span>
                                   </td>
                                   <td>
-                                    <div onClick={()=>handleRemove(item.productId)}>
+                                    <div
+                                      onClick={() =>
+                                        handleRemove(item.productId)
+                                      }
+                                    >
                                       <i className='fa fa-trash'></i>
                                     </div>
                                   </td>
@@ -255,8 +268,19 @@ const Cart = () => {
                                 Delivery Fee
                                 <span className='amt'>
                                   {' '}
-                                  ₹ {selectedAddress?.locality?.charge || 0}
+                                  ₹ {itemsInCart.subTotal <
+                                  selectedAddress?.locality?.minOrder ? selectedAddress?.locality?.charge : 0}
                                 </span>
+                                {itemsInCart.subTotal <
+                                  selectedAddress?.locality?.minOrder && (
+                                  <p style={{ fontSize: '12px' }}>
+                                    {' '}
+                                    (Shipping is free if your order costs Rs. ₹{' '}
+                                    {selectedAddress?.locality?.minOrder ||
+                                      0}{' '}
+                                    or more)
+                                  </p>
+                                )}
                               </p>
                             }
                             <hr />
@@ -265,8 +289,8 @@ const Cart = () => {
                               <span className='amt'>
                                 {' '}
                                 ₹{' '}
-                                {(selectedAddress?.locality?.charge ||
-                                  0) + itemsInCart.subTotal}
+                                {(selectedAddress?.locality?.charge || 0) +
+                                  itemsInCart.subTotal}
                               </span>
                             </p>
                             <div

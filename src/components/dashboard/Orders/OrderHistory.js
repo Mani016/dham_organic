@@ -8,6 +8,7 @@ import agent from "../../../agent";
 import moment from "moment";
 import Loader from "../../Loader";
 import DownloadInvoice from "./DownloadInvoice";
+import NoItemsInCart from '../../NoItemsInCart';
 const OrderHistory = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [details, setDetails] = useState({});
@@ -54,7 +55,7 @@ const OrderHistory = () => {
 							<li>
 								<span
 									onClick={() => setPage(page - 1)}
-									className={page <= 1 ? "disable" : ""}
+									className={page === 1 ? "disable" : ""}
 								>
 									{"< "}
 								</span>
@@ -63,15 +64,16 @@ const OrderHistory = () => {
 							<li>
 								<span
 									onClick={() => setPage(page + 1)}
-									className={page === data.total_pages ? "disable" : ""}
+									className={data.page === data.total_pages ? "disable" : ""}
 								>
 									{">"}
 								</span>
 							</li>
 						</ul>
 					</div>
+					{console.log(data.data)}
 					<div>
-						{data.data &&
+						{data.data.length ?
 							data.data.map((item, index) => (
 								<div className="order_box" key={index}>
 									<span className={`order_status ${item.orderStatus.toLowerCase() }`}>{item.orderStatus}</span>
@@ -117,7 +119,7 @@ const OrderHistory = () => {
 										</div>
 									</div>
 								</div>
-							))}
+							)):<NoItemsInCart title="No Orders"/>}
 					</div>
 				</>
 			)}

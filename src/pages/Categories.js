@@ -115,7 +115,7 @@ const Category = () => {
                         <li>
                           <span
                             onClick={() => setPage(page - 1)}
-                            className={page <= 1 ? 'disable' : ''}
+                            className={page === 1 ? 'disable' : ''}
                           >
                             {'< '}
                           </span>
@@ -125,7 +125,7 @@ const Category = () => {
                           <span
                             onClick={() => setPage(page + 1)}
                             className={
-                              page === data.total_pages ? 'disable' : ''
+                              data.page === data.total_pages ? 'disable' : ''
                             }
                           >
                             {'>'}

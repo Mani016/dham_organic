@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const NoItemsInCart = () => {
+const NoItemsInCart = (props) => {
+  const { title ='Your Cart Is Empty' } = props;
   return (
     <div className='no_items'>
       <div className='no_items_bg'></div>
-      <div className='no_items_title'>Your cart is empty</div>
+      <div className='no_items_title'>{title}</div>
       <div className='no_items_sub_title'>
         You can go to category page to view more categories
       </div>
