@@ -47,7 +47,7 @@ const ManageAddress = (props) => {
   return (
     <div className='manage_address'>
       <div className='address_wrapper '>
-        {isChooseAddress && selectedAddress.title ? (
+        {isChooseAddress && selectedAddress?.title ? (
             <div className='address_box'>
               <h4>
                <b> Delivery Address</b> <i className='fa fa-check' />
