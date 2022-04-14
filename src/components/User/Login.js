@@ -1,18 +1,18 @@
 import React, { Fragment, useContext } from 'react';
 import MetaTags from 'react-meta-tags';
-import LayoutOne from '../layouts/LayoutOne';
+import LayoutOne from '../../layouts/LayoutOne';
 import Typewriter from 'typewriter-effect';
-import logo from '../assets/images/dhaam_logo.png';
+import logo from '../../assets/images/dhaam_logo.png';
 import { Link, useHistory } from 'react-router-dom';
-import agent from '../agent';
-import Alert from '../Utils/Alert';
-import { API_STATUS } from '../constant';
+import agent from '../../agent';
+import Alert from '../../Utils/Alert';
+import { API_STATUS } from '../../constant';
 import {
   setItemToSessionStore,
   HANDLE_ERROR,
   getItemFromSessionStore,
-} from '../Utils/utils';
-import AppContext from '../Context';
+} from '../../Utils/utils';
+import AppContext from '../../Context';
 const Login = () => {
   const [isLogin, setIsLogin] = React.useState(false);
   const [mobileNum, setMobileNum] = React.useState('');

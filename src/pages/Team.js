@@ -2,7 +2,7 @@ import React,{Component, Fragment} from 'react';
 import { ExternalLink } from 'react-external-link';
 import MetaTags from "react-meta-tags";
 import LayoutOne from "../layouts/LayoutOne";
-import Breadcrumb from "../components/Breadcrumb";
+import Breadcrumb from "../components/reusables/Breadcrumb";
 
 class Team extends Component{
 	render(){

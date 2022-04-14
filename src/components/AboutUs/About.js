@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import MetaTags from "react-meta-tags";
-import LayoutOne from "../layouts/LayoutOne";
-import AboutContent from "../components/AboutContent";
-import Breadcrumb from "../components/Breadcrumb";
+import LayoutOne from "../../layouts/LayoutOne";
+import AboutContent from "./AboutContent";
+import Breadcrumb from "../reusables/Breadcrumb";
 
 const About = () => {
 	return (

@@ -51,6 +51,9 @@ Primary use: Food Farms, Organic Farms
   ------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700|Playfair+Display:400,500,700&display=swap');
 
+.cursor-pointer {
+  cursor: pointer;
+}
 body {
   background: #fff;
   color: #61657a;
@@ -548,7 +551,7 @@ section {
 
 .navigation {
   background-color: #fff;
-  z-index: 9;
+  z-index: 7;
   position: relative;
   border-top: 1px solid #fbf3f3;
 }
@@ -1863,49 +1866,23 @@ section {
   width: 120px;
   margin: 0 auto;
 }
-
-.product_wrp .project_view {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  content: '';
-  top: 0px;
-  background: rgb(75 167 85 / 56%);
-  opacity: 0;
-  left: 0px;
+.product_wrp .product_img{
+  /* position: absolute; */
+  left: 50%;
+  top: 36%;
+  transform: translate(-50%,-50%);
+  transition: opacity .4s ease-in-out;
+  max-width: 100%;
+  max-height: 100%;
+}
+.product_wrp:hover .product_img{
+  transition: opacity .4s ease-in-out,transform .4s ease-in-out;
+  transform: translate(-50%,-55%);
+}
+.product_wrp:hover{
+  border: 1px solid #ffffff;
 }
 
-.product_wrp:hover .product_info {
-  z-index: 99999;
-  position: relative;
-}
-
-.product_wrp .project_view a {
-  margin-right: 20px;
-  margin-top: 20px;
-  font-size: 16px;
-  padding: 8px 14px;
-}
-
-.product_wrp:hover .project_view {
-  opacity: 1;
-}
-
-.product_wrp:hover .project_view a {
-  opacity: 1;
-}
-
-.product_wrp:hover .product_info h4 {
-  color: #fff;
-}
-
-.product_wrp:hover .product_rating li {
-  color: #8ab003;
-}
-
-.product_wrp:hover .on_sale {
-  z-index: 999;
-}
 .eye_outer {
   display: flex;
   align-items: center;
@@ -2119,31 +2096,6 @@ section {
   font-size: 16px;
 }
 
-.project_view a:last-child {
-  transition: all 0.4s ease-in-out;
-}
-
-.project-item:hover .project_view a {
-  opacity: 1;
-}
-
-.project-item:hover .project_view a:last-child {
-  transition: all 0.3s ease-in-out;
-  margin-top: 80px;
-}
-
-.project_view a {
-  background: #fff;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  margin-right: 43px;
-  padding: 9px 15px;
-  border-radius: 50%;
-  margin-top: 30px;
-  opacity: 0;
-  color: #4ba755;
-}
 
 .project-section .arrows-slick {
   text-align: right;
@@ -2973,7 +2925,7 @@ footer .quick_lnk li a:hover {
   bottom: 0px;
   margin-right: 15px;
   margin-bottom: -98px;
-  z-index: 99;
+  z-index: 7;
   background: transparent;
   border: none;
 }
@@ -4560,9 +4512,7 @@ header {
 .shop-page .product-section {
   padding-top: 120px;
 }
-.shop-page .product_wrp {
-  margin-bottom: 30px;
-}
+
 /* =================================
       Product page 
   ================================= */
@@ -4588,9 +4538,9 @@ header {
   text-transform: uppercase;
 }
 
-.product_pg_prod .product_wrp {
+/* .product_pg_prod .product_wrp {
   margin-bottom: 30px;
-}
+} */
 
 .prodt_pagination li {
   display: inline-block;
@@ -4734,13 +4684,17 @@ header {
   margin: 0px;
 }
 .shop-product-area .slick-dots li img {
-  height: 139px;
+  height: 106px;
   border: 1px solid #f5f0f0;
   padding: 2px;
+  width: 127px;
+  object-fit: contain;
 }
 .shop-product-area .slick-slide img{
   border: 1px solid #f5f0f0;
-  padding: 2px; 
+  padding: 2px;
+  width: inherit;
+  object-fit: contain;
 }
 .shop-product-area .slick-dots li:last-child {
   margin-right: 0px !important;
@@ -5095,7 +5049,6 @@ header {
 }
 
 .cust-reviews-area {
-  padding-bottom: 60px;
   padding-top: 60px;
 }
 
@@ -5203,9 +5156,7 @@ header {
   padding-bottom: 120px;
 }
 
-.related_product_section .product_wrp {
-  background: #fff;
-}
+
 
 /* =================================
       Checkout  page 
@@ -6659,6 +6610,15 @@ input[type='number'] {
   border: none !important;
   padding: 0px;
 }
+.all-products .slick-next:before, .slick-prev:before{
+  color: #00aa49;
+}
+.all-products{
+  margin-bottom: 40px;
+}
+.all-products .slick-slide{
+  padding: 26px;
+}
 /* .single-item-detail .imgb{
   padding: 0 40px;
 }
@@ -6731,3 +6691,22 @@ input[type='number'] {
   opacity: 1;
   z-index: 1;
 }
+.img-magnifier img{
+  max-width: fit-content !important;
+}
+.slide-img{
+  height: 369px;
+}
+
+/* .img-magnifier img{
+  cursor: crosshair !important;
+}
+.img-magnifier  div{
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.img-magnifier  div img{
+  visibility: visible !important;
+  opacity: 1 !important;
+
+} */

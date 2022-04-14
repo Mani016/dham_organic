@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useContext } from 'react';
-import Sidebar from '../Sidebar';
 import agent from '../../../agent';
 import { API_STATUS } from '../../../constant';
 import Alert from '../../../Utils/Alert';
 import AppContext from '../../../Context';
+import Sidebar from '../../reusables/Sidebar';
 const AddEditAddress = (props) => {
   const { data, onClose } = props;
   const isEdit = Boolean(data.title);
@@ -59,7 +59,6 @@ const AddEditAddress = (props) => {
     setLandmark('');
     onClose();
   };
-  console.log(data);
   function SaveAddress() {
     setLoading();
     let formIsComplete = true;

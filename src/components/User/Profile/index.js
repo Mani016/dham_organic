@@ -5,14 +5,14 @@ import ManageAddress from '../ManageAddress';
 import OrderHistory from '../Orders/OrderHistory';
 import user_img from '../../../assets/images/user.png';
 import AppContext from '../../../Context';
-import Loader from '../../../components/Loader';
 import {
   getItemFromSessionStore,
   setItemToSessionStore,
 } from '../../../Utils/utils';
-import Sidebar from '../Sidebar';
 import EditProfile from './Edit';
 import ChangePassword from './ChangePassword';
+import Loader from '../../reusables/Loader';
+import Sidebar from '../../reusables/Sidebar';
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState(

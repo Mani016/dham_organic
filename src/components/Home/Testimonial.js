@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import agent from '../agent';
-import Loader from './Loader';
-import { API_STATUS } from '../constant';
-import { HANDLE_ERROR } from '../Utils/utils';
+import { HANDLE_ERROR } from '../../Utils/utils';
+import agent from '../../agent';
+import { API_STATUS } from '../../constant';
+import Loader from '../reusables/Loader';
 
 const Testimonial = () => {
   const [data, setData] = useState([]);

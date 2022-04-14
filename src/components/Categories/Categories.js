@@ -2,12 +2,13 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MetaTags from 'react-meta-tags';
-import LayoutOne from '../layouts/LayoutOne';
-import Breadcrumb from '../components/Breadcrumb';
-import agent from '../agent';
-import Loader from '../components/Loader';
-import { API_STATUS } from '../constant';
-import { HANDLE_ERROR } from '../Utils/utils';
+import LayoutOne from '../../layouts/LayoutOne';
+import Breadcrumb from '../../components/reusables/Breadcrumb';
+import agent from '../../agent';
+import { API_STATUS } from '../../constant';
+import Loader from '../../components/reusables/Loader';
+import usePagination from '../../Utils/hooks/usePagination';
+import { HANDLE_ERROR } from '../../Utils/utils';
 export const CategoryCard = ({ item = [] }) => {
   return (
     <>
@@ -38,7 +39,7 @@ export const CategoryCard = ({ item = [] }) => {
 const Category = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
+  const { paginationLayout, page } = usePagination(data);
   function getCategories() {
     setLoading(true);
     const payload = {
@@ -108,32 +109,7 @@ const Category = () => {
                 <Loader />
               ) : (
                 <>
-                  <div className='d-block d-md-flex justify-content-between'>
-                    <p className='product_count text-center text-md-left'>{`Showing ${data.page}– ${data.total_pages} of ${data.total} results`}</p>
-                    <div className='prodt_pagination mb-4'>
-                      <ul>
-                        <li>
-                          <span
-                            onClick={() => setPage(page - 1)}
-                            className={page === 1 ? 'disable' : ''}
-                          >
-                            {'< '}
-                          </span>
-                        </li>
-                        {page}
-                        <li>
-                          <span
-                            onClick={() => setPage(page + 1)}
-                            className={
-                              data.page === data.total_pages ? 'disable' : ''
-                            }
-                          >
-                            {'>'}
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                 {paginationLayout()}
                   <div className='row'>
                     <CategoryCard item={data.data || []} />
                   </div>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import Loader from './Loader';
-import agent from '../agent';
-import { API_STATUS } from '../constant';
-import { HANDLE_ERROR } from '../Utils/utils';
+import { HANDLE_ERROR } from '../../Utils/utils';
+import agent from '../../agent';
+import { API_STATUS } from '../../constant';
+import Loader from '../reusables/Loader';
 
 const GalleryContent = () => {
   var settings = {

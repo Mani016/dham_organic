@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import MetaTags from 'react-meta-tags';
-import LayoutOne from '../layouts/LayoutOne';
+import LayoutOne from '../../layouts/LayoutOne';
 import Typewriter from 'typewriter-effect';
-import logo from '../assets/images/dhaam_logo.png';
+import logo from '../../assets/images/dhaam_logo.png';
 import { Link } from 'react-router-dom';
-import agent from '../agent';
-import Alert from '../Utils/Alert';
-import { HANDLE_ERROR, setItemToSessionStore } from '../Utils/utils';
-import { API_STATUS } from '../constant';
+import agent from '../../agent';
+import Alert from '../../Utils/Alert';
+import { HANDLE_ERROR, setItemToSessionStore } from '../../Utils/utils';
+import { API_STATUS } from '../../constant';
 
 const SignUp = () => {
   const [name, setName] = React.useState('');

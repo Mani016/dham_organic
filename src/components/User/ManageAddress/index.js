@@ -7,7 +7,7 @@ import { API_STATUS } from '../../../constant';
 import AppContext from '../../../Context';
 import { HANDLE_ERROR } from '../../../Utils/utils';
 const ManageAddress = (props) => {
-  const { title, subTitle, isChooseAddress } = props;
+  const { title, isChooseAddress } = props;
   const [isOpen, setIsOpen] = useState(false);
   const {
     user,
@@ -43,20 +43,19 @@ const ManageAddress = (props) => {
       }
     });
   }
-  console.log(selectedAddress, isChooseAddress);
   return (
     <div className='manage_address'>
       <div className='address_wrapper '>
         {isChooseAddress && selectedAddress?.title ? (
+          <div>
+            <h4>
+              <b> Delivery Address</b> <i className='fa fa-check' />
+            </h4>
             <div className='address_box'>
-              <h4>
-               <b> Delivery Address</b> <i className='fa fa-check' />
-              </h4>
-
               <div className='address d-flex'>
                 <i className='fa fa-home' aria-hidden='true'></i>
                 <div>
-                  <h4>{selectedAddress.title}</h4>
+                  <h3>{selectedAddress.title}</h3>
                   <p>
                     {selectedAddress.address}, {selectedAddress.landmark} ,
                     {selectedAddress.locality?.name}
@@ -69,11 +68,10 @@ const ManageAddress = (props) => {
                 </div>
               </div>
             </div>
+          </div>
         ) : (
           <>
-            <h3>{title || 'Manage  Addresses'}</h3>
-            <br />
-            <p>{subTitle || ' '}</p>{' '}
+            <h4>{title || 'Manage  Addresses'}</h4>
             <div className='d-flex address_listing'>
               {user.address &&
                 user.address.map((item, index) => (
@@ -81,7 +79,7 @@ const ManageAddress = (props) => {
                     <div className='address d-flex'>
                       <i className='fa fa-home' aria-hidden='true'></i>
                       <div>
-                        <h4>{item.title}</h4>
+                        <h3>{item.title}</h3>
                         <p>
                           {item.address}, {item.landmark} ,{item.locality?.name}
                         </p>

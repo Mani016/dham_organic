@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import MetaTags from "react-meta-tags";
 import LayoutOne from "../layouts/LayoutOne";
-import Breadcrumb from "../components/Breadcrumb";
+import Breadcrumb from "../components/reusables/Breadcrumb";
 
 const About = () => {
 	return (

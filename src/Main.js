@@ -9,11 +9,12 @@ import {
 } from './Utils/utils';
 import { API_STATUS } from './constant';
 const Main = (props) => {
-  const [itemsInCart, setItemsInCart] = useState(0);
+  const [itemsInCart, setItemsInCart] = useState({});
   const [user, setUser] = useState({});
   const [refresh, setRefresh] = useState(false);
   const [loading, setLoading] = useState(false);
   const selectedAddress = getItemFromSessionStore('selectedAddress');
+  const [finalAmount, setFinalAmount] = useState(0);
   const token = getItemFromSessionStore('token');
 
   function checkUserLogin() {
@@ -61,6 +62,15 @@ const Main = (props) => {
       isActive = false;
     };
   }, [token, refresh]);
+  useEffect(() => {
+    setFinalAmount(
+      itemsInCart.subTotal < selectedAddress?.locality?.minOrder
+        ? itemsInCart.subTotal + selectedAddress.locality.charge
+        : itemsInCart.subTotal
+    );
+  }, [
+    itemsInCart,selectedAddress
+  ]);
   const handleRefresh = () => {
     setRefresh(!refresh);
   };
@@ -79,6 +89,7 @@ const Main = (props) => {
     checkUserLogin,
     handleSelectedAddress,
     selectedAddress,
+    finalAmount
   };
 
   return (

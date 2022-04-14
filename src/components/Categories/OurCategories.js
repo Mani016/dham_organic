@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import agent from '../agent';
-import { API_STATUS } from '../constant';
-import { CategoryCard } from '../pages/Categories';
-import { HANDLE_ERROR } from '../Utils/utils';
-import Loader from './Loader';
-
+import { HANDLE_ERROR } from '../../Utils/utils';
+import { API_STATUS } from '../../constant';
+import agent  from '../../agent';
+import { CategoryCard } from './Categories';
+import Loader from '../reusables/Loader';
 const OurCategories = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);

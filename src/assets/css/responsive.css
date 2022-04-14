@@ -275,11 +275,6 @@
 		padding-left: 5px;
 		padding-right: 5px;
 	}
-
-	.project_view a {
-		margin-right: 30px;
-	}
-
 	.team-section {
 		background-position: center;
 	}
@@ -673,10 +668,6 @@
 	.project-section .col-md-12 {
 		padding-left: 5px;
 		padding-right: 5px;
-	}
-
-	.project_view a {
-		margin-right: 25px;
 	}
 
 	.team-section {

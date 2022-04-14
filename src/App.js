@@ -1,20 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from "./helpers/ScrollToTop";
-import Home from "./pages/Home"; 
-import About from "./pages/About"; 
-import Gallery from "./pages/Gallery"; 
-import Contact from "./pages/Contact"; 
+import Home from "./components/Home/Home"; 
+import About from "./components/AboutUs/About"; 
+import Contact from "./components/ContactUs/Contact"; 
 import Team from "./pages/Team";  
-import Cart from "./pages/Cart"; 
+import Cart from "./components/User/Cart"; 
 import NotFound from "./pages/NotFound"; 
 import OrganicFarming from "./pages/OrganicFarming";
-import Login from "./components/Login";
-import SignUp from "./components/SignUp";
-import Profile from "./components/dashboard/Profile";
-import Category from "./pages/Categories";
-import Product from "./pages/Products";
-import ProductDetails from "./pages/ProductDetails";
+import Login from "./components/User/Login";
+import SignUp from "./components/User/SignUp";
+import Profile from "./components/User/Profile";
+import Product from "./components/Products";
+import ProductDetails from "./components/Products/ProductDetails";
+import Category from './components/Categories/Categories';
+import Gallery from './components/Gallery/Gallery';
 // import UserDashboard from "./pages/ProductDetails";
 
 function App() {
@@ -65,7 +65,7 @@ function App() {
             component={ProductDetails}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/cart"}`}
+            path={`${process.env.PUBLIC_URL + "/checkout"}`}
             component={Cart}
           />
            <Route

@@ -1,11 +1,11 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import MetaTags from 'react-meta-tags';
-import LayoutOne from '../layouts/LayoutOne';
-import Breadcrumb from '../components/Breadcrumb';
-import Loader from '../components/Loader';
-import agent from '../agent';
-import { API_STATUS } from '../constant';
-import { HANDLE_ERROR } from '../Utils/utils';
+import LayoutOne from '../../layouts/LayoutOne';
+import Breadcrumb from '../../components/reusables/Breadcrumb';
+import agent from '../../agent';
+import { API_STATUS } from '../../constant';
+import { HANDLE_ERROR } from '../../Utils/utils';
+import Loader from '../../components/reusables/Loader';
 
 const Gallery = () => {
   const [galleryListArray, setGalleryListArray] = useState([]);

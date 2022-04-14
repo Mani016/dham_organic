@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react';
 import MetaTags from 'react-meta-tags';
-import LayoutOne from '../layouts/LayoutOne';
-import Slides from '../components/Slides';
-import AboutContent from '../components/AboutContent';
-import Funfact from '../components/Funfact';
-import WorkProcess from '../components/WorkProcess';
-import ChooseUs from '../components/ChooseUs';
-import OurCategories from '../components/OurCategories';
-import Team from '../components/Team';
-import Testimonial from '../components/Testimonial';
-import GalleryContent from '../components/GalleryContent';
+import LayoutOne from '../../layouts/LayoutOne';
+import Team from '../../pages/Team';
+import AboutContent from '../AboutUs/AboutContent';
+import OurCategories from '../Categories/OurCategories';
+import GalleryContent from '../Gallery/GalleryContent';
+import Funfact from './Funfact';
+import Testimonial from './Testimonial';
+import Slides from './Slides';
+import WorkProcess from './WorkProcess';
+import ChooseUs from './ChooseUs';
 const Home = () => {
   return (
     <Fragment>
@@ -21,7 +21,7 @@ const Home = () => {
         <Slides />
         <AboutContent />
         <Funfact />
-        <WorkProcess />
+        <WorkProcess/>
         <GalleryContent />
         <OurCategories />
         <ChooseUs />

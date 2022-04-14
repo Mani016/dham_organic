@@ -60,7 +60,6 @@ const EditProfile = (props) => {
     };
     const formData = new FormData();
     formData.append('image', profileImage);
-    console.log(profileImage.name && profileImage?.name !== user.image?.filename,'....',profileImage.name , profileImage?.name , user.image?.filename)
     if (profileImage.name && profileImage?.name !== user.image?.filename && user.image) {
       const deletePayload = { filename: user.image.filename };
       agent.Client.deleteProfilePic(deletePayload)

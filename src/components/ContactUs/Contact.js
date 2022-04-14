@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import MetaTags from 'react-meta-tags';
-import LayoutOne from '../layouts/LayoutOne';
-import Breadcrumb from '../components/Breadcrumb';
-import ContactMap from '../components/ContactMap';
-import agent from '../agent';
-import Alert from '../Utils/Alert';
-import { API_STATUS } from '../constant';
-import { HANDLE_ERROR } from '../Utils/utils';
+import LayoutOne from '../../layouts/LayoutOne';
+import Breadcrumb from '../reusables/Breadcrumb';
+import ContactMap from './ContactMap';
+import agent from '../../agent';
+import Alert from '../../Utils/Alert';
+import { API_STATUS } from '../../constant';
+import { HANDLE_ERROR } from '../../Utils/utils';
 
 const Contact = () => {
   const [name, setName] = useState('');
