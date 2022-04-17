@@ -64,7 +64,7 @@ const Main = (props) => {
   }, [token, refresh]);
   useEffect(() => {
     setFinalAmount(
-      itemsInCart.subTotal < selectedAddress?.locality?.minOrder
+      itemsInCart.subTotal <= selectedAddress?.locality?.minOrder
         ? itemsInCart.subTotal + selectedAddress.locality.charge
         : itemsInCart.subTotal
     );

@@ -72,58 +72,61 @@ const ManageAddress = (props) => {
         ) : (
           <>
             <h4>{title || 'Manage  Addresses'}</h4>
-            <div className='d-flex address_listing'>
-              {user.address &&
-                user.address.map((item, index) => (
-                  <div className='address_box d-flex' key={`item${index}`}>
-                    <div className='address d-flex'>
-                      <i className='fa fa-home' aria-hidden='true'></i>
-                      <div>
-                        <h3>{item.title}</h3>
-                        <p>
-                          {item.address}, {item.landmark} ,{item.locality?.name}
-                        </p>
-                        {!isChooseAddress && (
-                          <div className='options'>
-                            <button
-                              onClick={() => {
-                                setIsOpen(true);
-                                setAddress(item);
-                              }}
-                            >
-                              Edit
-                            </button>
-                            <button onClick={() => handleDelete(item._id)}>
-                              Delete
-                            </button>
+            <div className='address_listing d-flex'>
+              
+                {user.address?.length >0 &&
+                  <div className='d-flex address_listing'>
+                      {user.address.map((item, index) => (
+                        <div className='address_box d-flex' key={`item${index}`}>
+                          <div className='address d-flex'>
+                            <i className='fa fa-home' aria-hidden='true'></i>
+                            <div>
+                              <h3>{item.title}</h3>
+                              <p>
+                                {item.address}, {item.landmark} ,{item.locality?.name}
+                              </p>
+                              {!isChooseAddress && (
+                                <div className='options'>
+                                  <button
+                                    onClick={() => {
+                                      setIsOpen(true);
+                                      setAddress(item);
+                                    }}
+                                  >
+                                    Edit
+                                  </button>
+                                  <button onClick={() => handleDelete(item._id)}>
+                                    Delete
+                                  </button>
+                                </div>
+                              )}
+                              {isChooseAddress && (
+                                <div className='options'>
+                                  {!item.locality && (
+                                    <div className='info_box_outer'>
+                                      <span className='fa fa-info'></span>
+                                      <p>Unable To Deliver Here</p>
+                                    </div>
+                                  )}
+                                  {item.locality && (
+                                    <button
+                                      onClick={() => {
+                                        handleSelectedAddress(item);
+                                      }}
+                                      disabled={!item.locality}
+                                      className={!item.locality ? 'text-muted' : ''}
+                                    >
+                                      Deliver Here
+                                    </button>
+                                  )}
+                                </div>
+                              )}
+                            </div>
                           </div>
-                        )}
-                        {isChooseAddress && (
-                          <div className='options'>
-                            {!item.locality && (
-                              <div className='info_box_outer'>
-                                <span className='fa fa-info'></span>
-                                <p>Unable To Deliver Here</p>
-                              </div>
-                            )}
-                            {item.locality && (
-                              <button
-                                onClick={() => {
-                                  handleSelectedAddress(item);
-                                }}
-                                disabled={!item.locality}
-                                className={!item.locality ? 'text-muted' : ''}
-                              >
-                                Deliver Here
-                              </button>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </div>
+                        </div>
+                        ))}
                   </div>
-                ))}
-            </div>
+                 }
             <div
               className='address_box add_more d-flex'
               onClick={() => setIsOpen(true)}
@@ -132,6 +135,8 @@ const ManageAddress = (props) => {
                 <i className='fa fa-plus' aria-hidden='true'></i>
                 <h3>Add New Address</h3>
               </div>
+            </div>
+
             </div>
           </>
         )}

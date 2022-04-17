@@ -66,10 +66,12 @@ const ProductDetails = () => {
     dots: true,
     dotsClass: 'slick-dots slick-thumb',
     infinite: true,
+    arrows: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    // adaptiveHeight: true,
   };
   /* Shop Tab Content */
   let productTabContentData = [
@@ -128,16 +130,16 @@ const ProductDetails = () => {
                             {/* Image Gallery */}
                             <Slider {...settings}>
                               {data.images?.map((slide, j) => (
-                                <div className="slide-img" key={j}>
+                                <div className='slide-img' key={j}>
                                   <GlassMagnifier
                                     imageSrc={slide.path}
                                     imageAlt='Example'
                                     cursorStyle='crosshair'
                                     magnifierSize='45%'
                                     className='img-magnifier'
-                                    magnifierBorderColor="black"
+                                    magnifierBorderColor='#f4f3f4'
                                   />
-                                  </div>
+                                </div>
                               ))}
                             </Slider>
                           </div>
@@ -157,7 +159,7 @@ const ProductDetails = () => {
                             {data.discount > 0 && (
                               <span>
                                 <del>
-                                  Rs. {data.price}/{data?.unit?.name}
+                                  ₹{data.price}/{data?.unit?.name}
                                 </del>
                               </span>
                             )}
@@ -174,7 +176,9 @@ const ProductDetails = () => {
                           </p>
                           <p className='d-content'>{data.description}</p>
                         </div>
-                        {getCartQuantity(params.id)}
+  
+                          {getCartQuantity(params.id)}
+                        
                         <div className='allchoices'>
                           <div className='choice-icon'>
                             <ul>
@@ -182,7 +186,10 @@ const ProductDetails = () => {
                                 <span
                                   to='single-shop'
                                   className='text-uppercase adtocart'
-                                  onClick={() => token ? history.push('/checkout') : ''} >
+                                  onClick={() =>
+                                    token ? history.push('/checkout') : ''
+                                  }
+                                >
                                   go to cart
                                 </span>
                               </li>
@@ -220,13 +227,11 @@ const ProductDetails = () => {
                 </>
               )}
             </div>
-
           </div>
-          <ProductsCaraousel/>
+          <ProductsCaraousel />
 
           {/*==================== End :  Section ====================*/}
         </div>
-        
       </LayoutOne>
     </Fragment>
   );

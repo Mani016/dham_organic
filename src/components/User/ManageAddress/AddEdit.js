@@ -130,6 +130,7 @@ const AddEditAddress = (props) => {
           onChange={({ target }) => {
             setTitle(target.value);
           }}
+          maxLength={10}
           value={title}
         />
       </p>

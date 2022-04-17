@@ -4,6 +4,7 @@ import { API_STATUS } from '../../constant';
 import agent  from '../../agent';
 import { CategoryCard } from './Categories';
 import Loader from '../reusables/Loader';
+import { Link } from 'react-router-dom';
 const OurCategories = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -66,6 +67,11 @@ const OurCategories = () => {
             <CategoryCard item={data || []} />
           </div>
         )}
+        <div className='project_btn text-center'>
+              <Link to='categories' className='more-link'>
+                View More
+              </Link>
+        </div>
       </div>
     </section>
   );

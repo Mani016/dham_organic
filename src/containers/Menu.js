@@ -72,11 +72,11 @@ const Menu = () => {
           {/* Start: Cart  */}
           <div className='header_cart'>
             <ul>
-              <li className='header_cart_icon cursor-pointer' onClick={()=>setIsOpen(true)}>
+              <li className='header_cart_icon header_cart_box cursor-pointer' onClick={()=>setIsOpen(true)}>
                 <i className='icon-glyph-13'></i>
                 <span className='number_cart'>
-                  {itemsInCart.cartDetails?.length || '-'} |{' '}
-                  {itemsInCart.subTotal}
+                  {itemsInCart.cartDetails?.length ? `${itemsInCart.cartDetails.length} items  |  ₹${itemsInCart?.subTotal} ` : 'my cart'} 
+                  
                 </span>
               </li>
               <li className='header_cart_icon'>

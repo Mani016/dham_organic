@@ -81,33 +81,37 @@ const useCart = () => {
         HANDLE_ERROR(err.message, setLoading);
       });
   }
-  const getCartQuantity = (id)=>(
+  const getCartQuantity = (id) => (
     <div className='cart-quantity'>
-    <div className='cart-plus-minus'>
-      <input
-        className='cart-plus-minus-box'
-        type='text'
-        name='qtybutton'
-        readOnly
-        value={getItemQuantity(id)}
-      />
-      <div
-        className={`qtybutton ${
-          getItemQuantity() === 0 ? 'disable' : ''
-        }`}
-        onClick={() => subtractFromCart(id)}
-      >
-        <span>-</span>
-      </div>
-      <div
-        className='inc qtybutton'
-        onClick={() => addToCart(id)}
-      >
-        <span>+</span>
-      </div>
+      {getItemQuantity(id) ? (
+        <div className='cart-plus-minus'>
+          <div
+            className={`qtybutton ${
+              getItemQuantity(id) === 0 ? 'disable' : ''
+            }`}
+            onClick={() => subtractFromCart(id)}
+          >
+            <i className='fa fa-minus'></i>
+          </div>
+          <input
+            className='cart-plus-minus-box'
+            type='text'
+            name='qtybutton'
+            readOnly
+            value={getItemQuantity(id)}
+          />
+
+          <div className='inc qtybutton' onClick={() => addToCart(id)}>
+            <i className='fa fa-plus'></i>
+          </div>
+        </div>
+      ) : (
+        <div onClick={() => addToCart(id)} className='prod_add_cart_btn' style={{marginTop:'38px'}}>
+          Add To Cart
+        </div>
+      )}
     </div>
-  </div>
-  )
+  );
   return {
     getCartQuantity,
     getItemQuantity,

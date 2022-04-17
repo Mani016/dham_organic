@@ -20,24 +20,31 @@ const CartSidebar = (props) => {
               className='item_box d-flex justify-content-between align-items-center'
               key={index}
             >
-              <span className='d-flex'>
+              <span className='item_details'>
                 <img
                   src={subItem.images}
                   alt='items_in_cart'
-                  style={{ height: '100px', width: '100px' }}
+                  style={{ height: '90px', width: '90px' }}
                 />
-                <p>{subItem.name}</p>,
                 <div>
-                  {' '}
-                  {subItem.quantity}/{subItem.unit}
+                  <p>{subItem.name}</p>
+                  <div className='price_tag'>
+                    <span>
+                      {subItem.quantity}/{subItem.unit}
+                    </span>
+                    <span><b>₹{subItem.finalPrice}</b></span>
+                    {subItem.discount > 0 && (
+                      <span style={{ textDecoration: 'line-through' }}>
+                        ₹{subItem.price}
+                      </span>
+                    )}
+                  </div>
                 </div>
-                <div>₹{subItem.subTotal}</div>
               </span>
               <span>{getCartQuantity(subItem.productId)}</span>
             </div>
           ))}
-          ----------------------
-          <ProductsCarousel />
+          <ProductsCarousel title={'before you checkout'}/>
           <div className='bill d-flex justify-content-between align-items-center'>
             <h5>Item Sub Total</h5>
             <span>₹{data.subTotal}</span>
@@ -57,7 +64,12 @@ const CartSidebar = (props) => {
       ) : (
         <>
           {' '}
-          <NoItemsInCart /> <ProductsCarousel />
+          <NoItemsInCart
+            title={"you don't have any items in your cart"}
+            subTitle={'your favourite items are just a click away'}
+            btnTxt={'Start Shopping'}
+          />{' '}
+          <ProductsCarousel/>
         </>
       )}
     </Sidebar>

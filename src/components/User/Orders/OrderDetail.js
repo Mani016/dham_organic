@@ -25,7 +25,6 @@ const OrderDetail = (props) => {
             <span>₹{subItem.subTotal}</span>
           </div>
         ))}
-      ----------------------
       <div className='bill d-flex justify-content-between align-items-center'>
         <h5>Item Total</h5>
         <span>₹{data.orderAmount}</span>

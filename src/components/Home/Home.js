@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../../layouts/LayoutOne';
-import Team from '../../pages/Team';
+import Team from './Team';
 import AboutContent from '../AboutUs/AboutContent';
 import OurCategories from '../Categories/OurCategories';
 import GalleryContent from '../Gallery/GalleryContent';

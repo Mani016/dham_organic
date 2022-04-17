@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import agent from '../../agent';
 import { API_STATUS } from '../../constant';
 import useCart from '../../Utils/hooks/useCart';
-import usePagination from '../../Utils/hooks/usePagination';
-import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import Alert from '../../Utils/Alert';
+import AppContext from '../../Context';
 
-const ProductsCarousel = () => {
+const ProductsCarousel = (props) => {
+  const { title = 'You may also like' } = props;
   const [data, setData] = useState([]);
-  const { page } = usePagination(data);
   const { getItemQuantity, addToCart, getCartQuantity } = useCart();
+  const { itemsInCart } = useContext(AppContext);
+  const cartDetails = itemsInCart?.cartDetails || [];
 
   function getProducts() {
     const payload = {
@@ -19,7 +20,12 @@ const ProductsCarousel = () => {
     agent.Product.get(payload)
       .then((res) => {
         if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-          setData(res.data);
+          setData(
+            res.data.data.filter(
+              (item) =>
+                !cartDetails.map((cd) => cd.productId).includes(item._id)
+            )
+          );
         } else {
           Alert.showToastAlert('error', res.message);
         }
@@ -31,31 +37,23 @@ const ProductsCarousel = () => {
 
   useEffect(() => {
     let isActive = true;
-    if (isActive) {
+    if (isActive && cartDetails.length > 0) {
       getProducts();
     }
     return () => {
       isActive = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [page]);
-  const settings = {
-    className: 'slider variable-width',
-    dots: true,
-    infinite: false,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    swipeToSlide: true,
-  };
+  }, [cartDetails]);
   const productMap = (item) =>
     item.map((valu, i) => {
       return (
         <div className='product_wrp' key={i}>
-          <Link to={`/product/${valu._id}`} >
+          <Link to={`/product/${valu._id}`}>
             <div className='product_img'>
               <img src={valu.images[0].path} alt='product' />
               {valu.discount > 0 && (
-                <div className='on_sale'>{valu.discount}%</div>
+                <div className='on_sale'>{valu.discount}% off</div>
               )}
             </div>
           </Link>
@@ -71,31 +69,33 @@ const ProductsCarousel = () => {
                     valu.discount > 0 && 'cut_price'
                   }`}
                 >
-                  Price:&nbsp; ₹{valu.price}
+                  ₹{valu.price}
                 </span>
                 {valu.discount > 0 && (
-                  <span className='product_price'>
-                    Offer Price: ₹{valu.finalPrice}/{valu.unit.name}
-                  </span>
+                  <span className='product_price'>₹{valu.finalPrice}</span>
                 )}
               </div>
               {getItemQuantity(valu._id) ? (
                 getCartQuantity(valu._id)
               ) : (
-                <div onClick={() => addToCart(valu._id)}>Add To Cart</div>
+                <div
+                  onClick={() => addToCart(valu._id)}
+                  className='prod_add_cart_btn'
+                >
+                  Add To Cart
+                </div>
               )}
             </div>
           </div>
         </div>
       );
     });
-
   return (
     <>
-      {data.total > 0 && (
+      {data.length > 0 && (
         <div className='container all-products'>
-          <h3>you might also like</h3>
-          <Slider {...settings}>{productMap(data.data)}</Slider>
+          <h3>{title}</h3>
+          <div className='related_products'>{productMap(data)}</div>
         </div>
       )}
     </>

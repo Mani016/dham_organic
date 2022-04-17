@@ -112,33 +112,41 @@ const Cart = () => {
                             <tbody>
                               {itemsInCart?.cartDetails?.map((item, index) => (
                                 <tr key={`product_${index}`}>
-                                  <td className='prod'>
+                                  <td align='center' className='prod'>
                                     <img src={item.images} alt='product' />
                                   </td>
-                                  <td className='ptitle'>{item.name}</td>
-                                  <td className='unit'>
+                                  <td align='center' className='ptitle'>
+                                    {item.name}
+                                  </td>
+                                  <td align='center' className='unit'>
                                     <span>₹ {item.price}</span>
                                   </td>
-                                  <td className='unit'>
+                                  <td align='center' className='unit'>
                                     <span>{item.discount}%</span>
                                   </td>
-                                  <td className='unit'>
+                                  <td align='center' className='unit'>
                                     <span>₹ {item.finalPrice}</span>
                                   </td>
-                                  <td className='qty'>
+                                  <td align='center' className='qty'>
                                     {getCartQuantity(item.productId)}
                                   </td>
-                                  <td className='unit'>
+                                  <td align='center' className='unit'>
                                     <span>₹ {item.subTotal}</span>
                                   </td>
-                                  <td>
+                                  <td align='center'>
                                     <div
                                       onClick={() =>
                                         handleRemove(item.productId)
                                       }
                                       className='cursor-pointer'
                                     >
-                                      <i className='fa fa-trash'></i>
+                                      <i
+                                        className='fa fa-trash'
+                                        style={{
+                                          fontSize: '35px',
+                                          color: '#ff4343',
+                                        }}
+                                      ></i>
                                     </div>
                                   </td>
                                 </tr>
@@ -148,11 +156,11 @@ const Cart = () => {
                         </div>
                       </div>
                       <div className='col-sm-12 col-lg-8'>
-                      <div className='grand-total-area'>
-                        <ManageAddress
-                          title={'Choose a delivery address'}
-                          isChooseAddress={true}
-                        />
+                        <div className='grand-total-area'>
+                          <ManageAddress
+                            title={'Choose a delivery address'}
+                            isChooseAddress={true}
+                          />
                         </div>
                       </div>
                       <div className='ml-auto col-lg-4'>
@@ -176,11 +184,9 @@ const Cart = () => {
                                   : 0}
                               </span>
                               {itemsInCart.subTotal < minOrder && (
-                                <p style={{ fontSize: '12px' }}>
-                                  {' '}
-                                  (Shipping is free if your order costs Rs. ₹{' '}
-                                  {minOrder} or more)
-                                </p>
+                                <div style={{ fontSize: '12px' }} className="d-flex">
+                                  <span className="text-primary">FREE DELIVERY</span>: On Order over ₹{minOrder}
+                                </div>
                               )}
                             </p>
                           }
