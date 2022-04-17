@@ -48,11 +48,11 @@ const DownloadInvoice = ({ showTxt, orderId }) => {
       },
       business: {
         name: "Dhaam Organic",
-        address: "Najafgarh, Delhi",
-        phone: "9716718367",
-        email: "dhaam_organic@example.com",
-        email_1: "dhaam_organic@example.al",
-        website: "www.example.al",
+        address: "Village Chhudani Dhaam, Haryana 124504",
+        phone: "9266027544,9810179526,8800203622",
+        email: "dhaamorganic@gmail.com",
+        email_1: "",
+        website: "www.dhaamorganic.com",
       },
       contact: {
         label: "Invoice issued for:",
@@ -105,9 +105,9 @@ const DownloadInvoice = ({ showTxt, orderId }) => {
           col1: "SubTotal:",
           col2: `Rs. ${String(details.finalAmount)}`,
         },
-        invDescLabel: "Invoice Note",
+        invDescLabel: "",
         invDesc:
-          "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+          "",
       },
       footer: {
         text: "The invoice is created on a computer and is valid without the signature and stamp.",

@@ -217,8 +217,8 @@ function jsPDFInvoiceTemplate(props) {
   currentHeight += pdfConfig.subLineHeight;
   doc.text(docWidth - 10, currentHeight, param.business.email, "right");
 
-  currentHeight += pdfConfig.subLineHeight;
-  doc.text(docWidth - 10, currentHeight, param.business.email_1, "right");
+  // currentHeight += pdfConfig.subLineHeight;
+  // doc.text(docWidth - 10, currentHeight, param.business.email_1, "right");
 
   currentHeight += pdfConfig.subLineHeight;
   doc.text(docWidth - 10, currentHeight, param.business.website, "right");
