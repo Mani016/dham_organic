@@ -9,7 +9,7 @@ import AppContext from '../../Context';
 const ProductsCarousel = (props) => {
   const { title = 'You may also like' } = props;
   const [data, setData] = useState([]);
-  const { getItemQuantity, addToCart, getCartQuantity } = useCart();
+  const {  getCartQuantity } = useCart();
   const { itemsInCart } = useContext(AppContext);
   const cartDetails = itemsInCart?.cartDetails || [];
 
@@ -20,12 +20,16 @@ const ProductsCarousel = (props) => {
     agent.Product.get(payload)
       .then((res) => {
         if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-          setData(
-            res.data.data.filter(
-              (item) =>
-                !cartDetails.map((cd) => cd.productId).includes(item._id)
-            )
-          );
+          if (cartDetails.length > 0) {
+            setData(
+              res.data.data.filter(
+                (item) =>
+                  !cartDetails.map((cd) => cd.productId).includes(item._id)
+              )
+            );
+          } else {
+            setData(res.data?.data);
+          }
         } else {
           Alert.showToastAlert('error', res.message);
         }
@@ -37,14 +41,14 @@ const ProductsCarousel = (props) => {
 
   useEffect(() => {
     let isActive = true;
-    if (isActive && cartDetails.length > 0) {
+    if (isActive) {
       getProducts();
     }
     return () => {
       isActive = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cartDetails]);
+  }, []);
   const productMap = (item) =>
     item.map((valu, i) => {
       return (
@@ -75,16 +79,7 @@ const ProductsCarousel = (props) => {
                   <span className='product_price'>₹{valu.finalPrice}</span>
                 )}
               </div>
-              {getItemQuantity(valu._id) ? (
-                getCartQuantity(valu._id)
-              ) : (
-                <div
-                  onClick={() => addToCart(valu._id)}
-                  className='prod_add_cart_btn'
-                >
-                  Add To Cart
-                </div>
-              )}
+              {getCartQuantity(valu._id,valu.status)}
             </div>
           </div>
         </div>

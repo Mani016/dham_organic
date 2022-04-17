@@ -85,7 +85,7 @@ const Product = () => {
 										</span>
 									)}
 								</div>
-								{getCartQuantity(valu._id)}
+								{getCartQuantity(valu._id,valu.status)}
 							</div>
 						</div>
 					</div>

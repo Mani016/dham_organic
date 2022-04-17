@@ -11,7 +11,6 @@ import {
 } from '../../../Utils/utils';
 import EditProfile from './Edit';
 import ChangePassword from './ChangePassword';
-import Loader from '../../reusables/Loader';
 import Sidebar from '../../reusables/Sidebar';
 
 const Profile = () => {
@@ -20,7 +19,7 @@ const Profile = () => {
   );
   const [isOpen, setIsOpen] = useState(false);
   const [component, setComponent] = useState('');
-  const { user, loading } = useContext(AppContext);
+  const { user } = useContext(AppContext);
   const handleActiveTab = (tab) => {
     setItemToSessionStore('activeTab', tab);
     setActiveTab(tab);
@@ -99,9 +98,7 @@ const Profile = () => {
                   </ul>
                 </div>
                 <div className='col-md-9'>
-                  {loading ? (
-                    <Loader />
-                  ) : activeTab === 'orders' ? (
+                  {activeTab === 'orders' ? (
                     <OrderHistory />
                   ) : (
                     <ManageAddress />

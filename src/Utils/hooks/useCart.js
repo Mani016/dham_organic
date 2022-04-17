@@ -5,10 +5,11 @@ import AppContext from '../../Context';
 import Alert from '../Alert';
 import { HANDLE_ERROR } from '../utils';
 import agent from '../../agent';
-
+import loadImg from '../../assets/images/loading.gif';
 const useCart = () => {
-  const { checkUserLogin, setLoading, GetCart, itemsInCart } =
+  const { checkUserLogin, setLoading, GetCart, itemsInCart, loading } =
     React.useContext(AppContext);
+
   const history = useHistory();
 
   function getItemQuantity(id) {
@@ -81,37 +82,55 @@ const useCart = () => {
         HANDLE_ERROR(err.message, setLoading);
       });
   }
-  const getCartQuantity = (id) => (
-    <div className='cart-quantity'>
-      {getItemQuantity(id) ? (
-        <div className='cart-plus-minus'>
-          <div
-            className={`qtybutton ${
-              getItemQuantity(id) === 0 ? 'disable' : ''
-            }`}
-            onClick={() => subtractFromCart(id)}
-          >
-            <i className='fa fa-minus'></i>
-          </div>
-          <input
-            className='cart-plus-minus-box'
-            type='text'
-            name='qtybutton'
-            readOnly
-            value={getItemQuantity(id)}
-          />
+  const getCartQuantity = (id, status) => {
+    console.log(status)
+    return(
+    <>
+      {status !== 'OUT-OF-STOCK' ? (
+        <div className='cart-quantity'>
+          {getItemQuantity(id) ? (
+            <div className='cart-plus-minus'>
+              <div
+                className={`qtybutton ${
+                  getItemQuantity(id) === 0 ? 'disable' : ''
+                }`}
+                onClick={() => subtractFromCart(id)}
+              >
+                <i className='fa fa-minus'></i>
+              </div>
+              {loading ? (
+                <img src={loadImg} className='white_load' alt='' />
+              ) : (
+                <input
+                  className='cart-plus-minus-box'
+                  type='text'
+                  name='qtybutton'
+                  readOnly
+                  value={getItemQuantity(id)}
+                />
+              )}
 
-          <div className='inc qtybutton' onClick={() => addToCart(id)}>
-            <i className='fa fa-plus'></i>
-          </div>
+              <div className='inc qtybutton' onClick={() => addToCart(id)}>
+                <i className='fa fa-plus'></i>
+              </div>
+            </div>
+          ) : (
+            <div onClick={() => addToCart(id)} className='prod_add_cart_btn'>
+              {loading ? (
+                <img src={loadImg} className='white_load' alt='' />
+              ) : (
+                'Add To Cart'
+              )}
+            </div>
+          )}
         </div>
       ) : (
-        <div onClick={() => addToCart(id)} className='prod_add_cart_btn' style={{marginTop:'38px'}}>
-          Add To Cart
+        <div className='prod_out_of_stock'>
+          OUT OF STOCK
         </div>
       )}
-    </div>
-  );
+    </>
+  )};
   return {
     getCartQuantity,
     getItemQuantity,

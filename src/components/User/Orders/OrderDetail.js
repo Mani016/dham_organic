@@ -18,9 +18,27 @@ const OrderDetail = (props) => {
             className='item_box d-flex justify-content-between align-items-center'
             key={index}
           >
-            <span>
-              {subItem.name}, {subItem.quantity}
-              {subItem.unit}
+            <span className='item_details'>
+              <img
+                src={subItem.image}
+                alt='items_in_cart'
+                style={{ height: '90px', width: '90px' }}
+              />
+              <div>
+                <p>{subItem.name}</p>
+                <div className='price_tag'>
+                  {subItem.discount > 0 && (
+                    <span style={{ textDecoration: 'line-through' }}>
+                      ₹{subItem.price}/{subItem.unit}
+                    </span>
+                  )}
+                  <span>
+                    <b>
+                      ₹{subItem.finalPrice}/{subItem.unit} x {subItem.quantity}
+                    </b>
+                  </span>
+                </div>
+              </div>
             </span>
             <span>₹{subItem.subTotal}</span>
           </div>

@@ -12,6 +12,7 @@ import ManageAddress from './ManageAddress';
 import NoItemsInCart from '../reusables/NoItemsInCart';
 import useCart from '../../Utils/hooks/useCart';
 import ProductsCarousel from '../Products/ProductsCarousel';
+import {Link} from 'react-router-dom';
 const Cart = () => {
   const {
     loading,
@@ -113,7 +114,7 @@ const Cart = () => {
                               {itemsInCart?.cartDetails?.map((item, index) => (
                                 <tr key={`product_${index}`}>
                                   <td align='center' className='prod'>
-                                    <img src={item.images} alt='product' />
+                                   <Link to={`/product/${item.productId}`}> <img src={item.images} alt='product' /></Link>
                                   </td>
                                   <td align='center' className='ptitle'>
                                     {item.name}
@@ -128,7 +129,7 @@ const Cart = () => {
                                     <span>₹ {item.finalPrice}</span>
                                   </td>
                                   <td align='center' className='qty'>
-                                    {getCartQuantity(item.productId)}
+                                    {getCartQuantity(item.productId,item.status)}
                                   </td>
                                   <td align='center' className='unit'>
                                     <span>₹ {item.subTotal}</span>

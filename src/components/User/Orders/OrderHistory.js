@@ -14,7 +14,7 @@ const OrderHistory = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [details, setDetails] = useState({});
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { paginationLayout, page } = usePagination(data);
   const getOrderHistory = () => {
     setLoading(true);
@@ -53,7 +53,7 @@ const OrderHistory = () => {
         <>
           {paginationLayout()}
           <div>
-            {data.data.length ? (
+            {data.data ? (
               data.data.map((item, index) => (
                 <div className='order_box' key={index}>
                   <span

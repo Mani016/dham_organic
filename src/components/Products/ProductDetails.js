@@ -171,14 +171,19 @@ const ProductDetails = () => {
                         </div>
                         {/* Product Desctiption  */}
                         <div className='p-content'>
-                          <p className='content'>
-                            Availability:<span> {data.status} </span>
+                          <p className={
+                                  data.status !== 'OUT-OF-STOCK'
+                                    ? 'content'
+                                    : 'd-none'
+                                }>
+                            Availability:
+                            <span>
+                                {data.status}
+                            </span>
                           </p>
                           <p className='d-content'>{data.description}</p>
                         </div>
-  
-                          {getCartQuantity(params.id)}
-                        
+                        {getCartQuantity(params.id, data.status)}
                         <div className='allchoices'>
                           <div className='choice-icon'>
                             <ul>

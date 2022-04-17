@@ -4,7 +4,7 @@ import useCart from '../../Utils/hooks/useCart';
 import ProductsCarousel from '../Products/ProductsCarousel';
 import { useHistory } from 'react-router-dom';
 import NoItemsInCart from '../reusables/NoItemsInCart';
-
+import { Link } from 'react-router-dom';
 const CartSidebar = (props) => {
   const { data, onClose, isOpen } = props;
   const { getCartQuantity } = useCart();
@@ -21,18 +21,22 @@ const CartSidebar = (props) => {
               key={index}
             >
               <span className='item_details'>
-                <img
-                  src={subItem.images}
-                  alt='items_in_cart'
-                  style={{ height: '90px', width: '90px' }}
-                />
+                <Link to={`/product/${subItem.productId}`}>
+                  <img
+                    src={subItem.images}
+                    alt='items_in_cart'
+                    style={{ height: '90px', width: '90px' }}
+                  />
+                </Link>
                 <div>
                   <p>{subItem.name}</p>
                   <div className='price_tag'>
                     <span>
-                      {subItem.quantity}/{subItem.unit}
+                      <b>
+                        ₹{subItem.finalPrice}/{subItem.unit} x{' '}
+                        {subItem.quantity}
+                      </b>
                     </span>
-                    <span><b>₹{subItem.finalPrice}</b></span>
                     {subItem.discount > 0 && (
                       <span style={{ textDecoration: 'line-through' }}>
                         ₹{subItem.price}
@@ -41,10 +45,10 @@ const CartSidebar = (props) => {
                   </div>
                 </div>
               </span>
-              <span>{getCartQuantity(subItem.productId)}</span>
+              <span>{getCartQuantity(subItem.productId, subItem.status)}</span>
             </div>
           ))}
-          <ProductsCarousel title={'before you checkout'}/>
+          <ProductsCarousel title={'before you checkout'} />
           <div className='bill d-flex justify-content-between align-items-center'>
             <h5>Item Sub Total</h5>
             <span>₹{data.subTotal}</span>
@@ -69,7 +73,7 @@ const CartSidebar = (props) => {
             subTitle={'your favourite items are just a click away'}
             btnTxt={'Start Shopping'}
           />{' '}
-          <ProductsCarousel/>
+          <ProductsCarousel />
         </>
       )}
     </Sidebar>
