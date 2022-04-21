@@ -122,7 +122,7 @@ const DownloadInvoice = ({ showTxt, orderId }) => {
       type="reset"
       size="md"
       color="info"
-      className='get_details mx-2'
+      className='download_invoice mx-2'
       onClick={handleDownload}
       disabled={loading}
     >
@@ -130,7 +130,7 @@ const DownloadInvoice = ({ showTxt, orderId }) => {
         <img src={loadImg} className="white_load"  alt="" />
       ) : (
         <i className="fa fa-download" />
-      )}{" "}
+      )}
       {showTxt ? "Download Invoice" : ""}
     </button>
   );

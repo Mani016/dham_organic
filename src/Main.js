@@ -34,10 +34,10 @@ const Main = (props) => {
     }
   }
   useEffect(() => {
-    setLoading(true);
     let isActive = true;
     if (isActive) {
       if (token) {
+        setLoading(true);
         agent.Client.getById()
           .then((res) => {
             if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
@@ -68,9 +68,7 @@ const Main = (props) => {
         ? itemsInCart.subTotal + selectedAddress.locality.charge
         : itemsInCart.subTotal
     );
-  }, [
-    itemsInCart,selectedAddress
-  ]);
+  }, [itemsInCart, selectedAddress]);
   const handleRefresh = () => {
     setRefresh(!refresh);
   };
@@ -89,7 +87,7 @@ const Main = (props) => {
     checkUserLogin,
     handleSelectedAddress,
     selectedAddress,
-    finalAmount
+    finalAmount,
   };
 
   return (

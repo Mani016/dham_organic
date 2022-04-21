@@ -105,7 +105,7 @@ const ProductDetails = () => {
   return (
     <Fragment>
       <MetaTags>
-        <title>Dhaam Organic| Product</title>
+        <title>Dhaam Organic| Product Details</title>
         <meta name='description' content='Organic Food' />
       </MetaTags>
       <LayoutOne>

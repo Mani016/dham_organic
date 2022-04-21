@@ -83,7 +83,6 @@ const useCart = () => {
       });
   }
   const getCartQuantity = (id, status) => {
-    console.log(status)
     return(
     <>
       {status !== 'OUT-OF-STOCK' ? (

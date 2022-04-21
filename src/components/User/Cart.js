@@ -70,7 +70,7 @@ const Cart = () => {
     <Fragment>
       <MetaTags>
         <title>Dhaam Organic| Cart</title>
-        <meta name='description' content='Organic Food React JS Template.' />
+        <meta name='description' content='Organic Food' />
       </MetaTags>
       <LayoutOne>
         <div>
@@ -88,7 +88,9 @@ const Cart = () => {
                 <h3> SHOPPING CART</h3>
               </div>
               {loading ? (
+                <div className="cart-loader">
                 <Loader msg={'Updating Cart'} />
+                </div>
               ) : (
                 <>
                   {!itemsInCart.cartDetails?.length ? (

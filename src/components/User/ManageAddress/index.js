@@ -71,7 +71,7 @@ const ManageAddress = (props) => {
           </div>
         ) : (
           <>
-            <h4>{title || 'Manage  Addresses'}</h4>
+            <h3>{title || 'Manage  Addresses'}</h3>
             <div className='address_listing d-flex'>
               {user.address?.length > 0 && (
                 <div className='d-flex address_listing'>

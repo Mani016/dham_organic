@@ -81,7 +81,7 @@ class Team extends Component{
           <title>Dhaam Organic| Team</title>
           <meta
             name="description"
-            content="Organic Food React JS Template."
+            content="Organic Food"
           />
         </MetaTags>
         <LayoutOne>

@@ -11,7 +11,7 @@ const NotFound = () => {
         <title>Dhaam Organic| Not Found</title>
         <meta
           name="description"
-          content="404 page of React JS Organic Food Template."
+          content="404 page"
         />
       </MetaTags> 
       <LayoutOne> 

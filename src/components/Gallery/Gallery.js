@@ -52,7 +52,7 @@ const Gallery = () => {
     <Fragment>
       <MetaTags>
         <title>Dhaam Organic| Gallery </title>
-        <meta name='description' content='Organic Food React JS Template.' />
+        <meta name='description' content='Organic Food' />
       </MetaTags>
       <LayoutOne>
         <div className='work-page-two'>

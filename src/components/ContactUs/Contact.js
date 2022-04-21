@@ -58,7 +58,7 @@ const Contact = () => {
     <Fragment>
       <MetaTags>
         <title>Dhaam Organic| Contact Us</title>
-        <meta name='description' content='Organic Food React JS Template.' />
+        <meta name='description' content='Organic Food' />
       </MetaTags>
       <LayoutOne>
         <div className='contact-page'>

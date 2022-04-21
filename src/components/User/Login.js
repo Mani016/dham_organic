@@ -1,37 +1,19 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../../layouts/LayoutOne';
 import Typewriter from 'typewriter-effect';
 import logo from '../../assets/images/dhaam_logo.png';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import agent from '../../agent';
 import Alert from '../../Utils/Alert';
 import { API_STATUS } from '../../constant';
-import {
-  setItemToSessionStore,
-  HANDLE_ERROR,
-  getItemFromSessionStore,
-} from '../../Utils/utils';
-import AppContext from '../../Context';
+import { setItemToSessionStore, HANDLE_ERROR } from '../../Utils/utils';
+import loadImg from '../../assets/images/loading.gif';
+
 const Login = () => {
-  const [isLogin, setIsLogin] = React.useState(false);
   const [mobileNum, setMobileNum] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [loading, setLoading] = React.useState(false);
-  let history = useHistory();
-  const { user } = useContext(AppContext);
-
-  React.useEffect(() => {
-    let isActive = true;
-    if (isActive) {
-      if (getItemFromSessionStore('token')) {
-        setIsLogin(true);
-      }
-    }
-    return () => {
-      isActive = false;
-    };
-  }, []);
 
   function LogIn() {
     let formIsComplete = true;
@@ -104,50 +86,51 @@ const Login = () => {
             <div className='col-md-5 col-xs-12 login'>
               <div id='login-form-wrapper'>
                 <div id='login-form'>
-                  {/**/}
-                  {!isLogin ? (
-                    <div className='coupon_info'>
-                      <div className='register mb-5'>
-                        <div className='title form-title'>
-                          LOGIN TO YOUR ACCOUNT
-                        </div>
-                        <Link to='/sign-up' className='text-primary'>
-                          {' '}
-                          Need an account?
-                        </Link>
+                  <div className='coupon_info'>
+                    <div className='register mb-5'>
+                      <div className='title form-title'>
+                        LOGIN TO YOUR ACCOUNT
                       </div>
+                      <Link to='/sign-up' className='text-primary'>
+                        {' '}
+                        Need an account?
+                      </Link>
+                    </div>
 
-                      <div>
-                        <p className='input_fields input_name'>
-                          <label>
-                            Mobile<span className='required'>*</span>
-                          </label>
-                          <input
-                            type='number'
-                            onInput={(e) =>
-                              (e.target.value = e.target.value.slice(0, 10))
-                            }
-                            placeholder='Mobile Number'
-                            onChange={({ target }) => {
-                              setMobileNum(target.value);
-                            }}
-                            value={mobileNum}
-                          />
-                        </p>
-                        <p className='input_fields input_name'>
-                          <label>
-                            Password<span className='required'>*</span>
-                          </label>
-                          <input
-                            type='password'
-                            placeholder='Enter Password'
-                            onChange={({ target }) => {
-                              setPassword(target.value);
-                            }}
-                            value={password}
-                          />
-                        </p>
-                        <div className='d-flex my-3 justify-content-center'>
+                    <div>
+                      <p className='input_fields input_name'>
+                        <label>
+                          Mobile<span className='required'>*</span>
+                        </label>
+                        <input
+                          type='number'
+                          onInput={(e) =>
+                            (e.target.value = e.target.value.slice(0, 10))
+                          }
+                          placeholder='Mobile Number'
+                          onChange={({ target }) => {
+                            setMobileNum(target.value);
+                          }}
+                          value={mobileNum}
+                        />
+                      </p>
+                      <p className='input_fields input_name'>
+                        <label>
+                          Password<span className='required'>*</span>
+                        </label>
+                        <input
+                          type='password'
+                          placeholder='Enter Password'
+                          onChange={({ target }) => {
+                            setPassword(target.value);
+                          }}
+                          value={password}
+                        />
+                      </p>
+                      <div className='d-flex my-3 justify-content-center'>
+                        {loading ? (
+                          <img src={loadImg} className='white_load' alt='' />
+                        ) : (
                           <input
                             type='button'
                             name='send'
@@ -158,44 +141,10 @@ const Login = () => {
                             className='submit-contact submitBnt '
                             value='Login'
                           />
-                        </div>
+                        )}
                       </div>
                     </div>
-                  ) : (
-                    <>
-                      <div className='register'>
-                        <img src={user} alt='' className='user_login_img' />
-                        <div className='sub-title login_screen'>
-                          Welcome {user.name}
-                        </div>
-                        <div className='sub-title login_screen my-3'>
-                          {user.email}
-                        </div>
-                      </div>
-                      <div className='d-flex mt-5 justify-content-center'>
-                        <input
-                          type='button'
-                          id='submit'
-                          name='send'
-                          onClick={() => history.push('/my-account')}
-                          className='submit-contact submitBnt mx-2'
-                          value='Portal'
-                        />
-                        <input
-                          type='button'
-                          id='submit'
-                          name='send'
-                          onClick={() => {
-                            setIsLogin(false);
-                            sessionStorage.clear();
-                            window.location = '/login';
-                          }}
-                          className='cancel-contact submitBnt'
-                          value='Log Out'
-                        />
-                      </div>
-                    </>
-                  )}
+                  </div>
                 </div>
               </div>
             </div>

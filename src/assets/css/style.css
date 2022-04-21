@@ -6394,6 +6394,33 @@ input[type='number'] {
   margin-top: 10px;
   transition: 0.3s;
 }
+.refresh_btn {
+  background: #ffbe16;
+  border: none;
+  color: #fff;
+  padding: 3px;
+  width: 110px;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+.download_invoice  {
+  border: 1px solid #ff6e00;
+  color: #ff6e00;
+
+  padding: 3px;
+  width: 110px;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: 0.3s;
+  background: transparent;
+  width: max-content;
+  padding: 0px 16px;
+}
+.download_invoice.cancel  {
+  border: 1px solid #cb0021;
+  color: #cb0021;
+}
 
 .manage_address {
   border-left: 1px solid #4ca853;
@@ -6647,7 +6674,7 @@ input[type='number'] {
 .order_status.hand-over {
   background: #17a2b8;
 }
-.order_status.delievered {
+.order_status.delivered {
   background: #28a745;
 }
 .order_status.cancelled {
@@ -6775,6 +6802,8 @@ input[type='number'] {
 }
 
 .get_details:hover, 
+.download_invoice:hover,
+.refresh_btn:hover,
 .edit_profile_btn:hover, 
 .header_cart_box:hover,
 .update_btn:hover,
@@ -6784,4 +6813,17 @@ input[type='number'] {
 .submit-contact:hover {
   opacity: 0.8;
   transform: translateY(-2px);
+}
+.order-heading-container{
+  flex-direction: column;
+  margin-bottom: 13px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.cart-loader{
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

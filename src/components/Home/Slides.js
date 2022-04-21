@@ -57,7 +57,7 @@ class Slides extends Component{
 					            <div className="row">
 						            <div className="col-lg-6 col-sm-12">
 									  <h5>{val.smallTitle}</h5> 
-						              <h2>{val.title}</h2>
+						              <h1>{val.title}</h1>
 						              <p>{val.description}</p>
 						              <div className="slider_btn animated fadeInDown">
                                         <Link to="contact" className="slider_btn_one more-link ">Contact Us</Link>

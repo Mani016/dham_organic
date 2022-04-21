@@ -8,8 +8,11 @@ const OrderDetail = (props) => {
     <Sidebar onClose={onClose} isOpen={isOpen}>
       <h3>Order Id #{data.orderId}</h3>
       <p>
-        {data.orderStatus} on {moment(data.orderUpdatedAt).format('llll')} by{' '}
-        {data.deliveryBoyName}
+        {` ${data.orderStatus} on ${moment(data.orderUpdatedAt).format(
+          'llll'
+        )} ${
+          data.orderStatus === 'DELIVERED' ? `by ${data.deliveryBoyName}` : ''
+        }`}
       </p>
       <h4 className='item_count'>{data.orderItem?.length} Items</h4>
       {data.orderItem &&

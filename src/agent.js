@@ -5,19 +5,18 @@ import Alert from './Utils/Alert';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = 'https://api-dhaam.herokuapp.com/api/';
+const API_ROOT = 'https://dhaam-api.herokuapp.com/api/';
 // const API_ROOT = 'http://localhost:8000/api/';
 
 const responseBody = (res) => res.body;
 const errorBody = (err) => {
-  console.log(err.response);
   if (err.response.status === 403) {
     sessionStorage.clear();
     Alert.showToastAlert('error', 'Session Expired');
     setTimeout(() => (window.location = '/login'), 2000);
   } else {
     return err.response.body;
-  } 
+  }
 };
 const token = getItemFromSessionStore('token');
 const createdBy = '620aae3e90e0a582e3d93ee5';
@@ -78,12 +77,15 @@ const Client = {
     requests.post('client/auth/deleteProfilePic', { ...payload }),
   update: (payload) => requests.post('client/auth/update', { ...payload }),
   changePassword: (payload) =>
-  requests.post('client/auth/changePassword', { ...payload, companyId, createdBy }),
+    requests.post('client/auth/changePassword', {
+      ...payload,
+      companyId,
+      createdBy,
+    }),
 };
 const Category = {
   get: (payload) =>
     requests.post('admin/category', { ...payload, companyId, createdBy }),
-
 };
 const Product = {
   get: (payload) =>
@@ -149,6 +151,8 @@ const Orders = {
       clientId,
     }),
   getById: (payload) => requests.post(`client/order/getOrderById`, payload),
+  cancelOrder: (payload) =>
+    requests.post('client/order/cancelOrder', { clientId, ...payload }),
 };
 const Services = {
   Auth,
