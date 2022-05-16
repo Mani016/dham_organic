@@ -79,7 +79,7 @@ const Contact = () => {
                 <div className='row'>
                   <div className='col-sm-12 map-container'>
                     {/* contact map */}
-                    <ContactMap latitude='19.313299' longitude='-81.254601' />
+                    <ContactMap latitude='28.656983867439934' longitude='76.75205565870088' />
                   </div>
                   <div className='col-md-8 col-sm-12 inner-contact'>
                     <div className='contact-form'>
@@ -154,7 +154,7 @@ const Contact = () => {
                     <div className='contact_pg_address'>
                       <h3>
                         Hello there <br />
-                        got a project?
+                        any issue?
                       </h3>
                       <div className='single_con_add'>
                         <a href='#/'>
@@ -164,7 +164,7 @@ const Contact = () => {
                           <span>Company Address :</span>
                         </p>
                         <p>
-                          <span>3567 New Alaska, us</span>
+                          <span>Village Chhudani Dhaam, Haryana 124504</span>
                         </p>
                       </div>
                       <div className='single_con_add'>
@@ -175,7 +175,7 @@ const Contact = () => {
                           <span>Email Address :</span>
                         </p>
                         <p>
-                          <span>example@email .com</span>
+                          <span><a href="mailto:dhaamorganic@gmail.com">dhaamorganic@gmail.com</a></span>
                         </p>
                       </div>
                       <div className='single_con_add'>
@@ -186,7 +186,7 @@ const Contact = () => {
                           <span>Contact Us :</span>
                         </p>
                         <p>
-                          <span>+77-00-222-1111</span>
+                          <span><a href='tel:9266027544'> 9266027544</a></span>
                         </p>
                       </div>
                     </div>

@@ -2182,6 +2182,7 @@ section {
   padding: 50px 40px 45px;
   position: relative;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.07);
+  height: 550px;
 }
 
 .team_wrp:hover {
@@ -2289,7 +2290,7 @@ section {
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .testi_info {
   position: relative;
@@ -2310,7 +2311,7 @@ section {
 }
 
 .testi_info p {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 32px;
   color: #61657a;
   margin-bottom: 15px;
@@ -2340,8 +2341,9 @@ section {
 
 .testi_sing_img img {
   border-radius: 50%;
-  width: 335px;
+  width: 191px;
   position: absolute;
+  object-fit: scale-down;
 }
 
 .testi_sing_img img:nth-child(3) {
@@ -5834,7 +5836,7 @@ p.title-country {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 85px 35px 0;
+  padding: 85px 20px 0;
 }
 .offCanvasWidgetSocial a {
   font-size: 17px;
@@ -6826,4 +6828,7 @@ input[type='number'] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+a{
+  color: inherit;
 }

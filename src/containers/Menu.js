@@ -37,22 +37,33 @@ const Menu = () => {
             <Navbar expand='lg' sticky='top' id='navigation'>
               <Nav className='mr-auto'>
                 <ul>
-                  <li>
-                    <Link to='about'>About Us</Link>
-                  </li>
                   <li className='has-sub'>
-                    <Link to='#/'>Our Company</Link>
+                    <Link to='/'>Our Concepts</Link>
                     <ul>
                       <li>
-                        <a href='/#how-it-done'>How It Done</a>
+                        <a href='/our-concepts/dhaam-story'>Dhaam Story</a>
                       </li>
                       <li>
-                        <Link to='/organic-farming'>Organic Farming</Link>
+                        <Link to='/our-concepts/about-us'>About Us</Link>
                       </li>
                       <li>
-                        <Link to='/gallery'>Farm Gallery</Link>
+                        <Link to='/our-concepts/team'>Team</Link>
                       </li>
                     </ul>
+                  </li>
+                  <li className='has-sub'>
+                    <Link to='/'>Organic Food</Link>
+                    <ul>
+                      <li>
+                        <a href='/organic-food/need'>Need</a>
+                      </li>
+                      <li>
+                        <Link to='/organic-food/stages'>Stages</Link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <Link to='/farm-gallery'>Farm Gallery</Link>
                   </li>
                   <li>
                     <Link to='/categories'>Categories</Link>
@@ -72,11 +83,15 @@ const Menu = () => {
           {/* Start: Cart  */}
           <div className='header_cart'>
             <ul>
-              <li className='header_cart_icon header_cart_box cursor-pointer' onClick={()=>setIsOpen(true)}>
+              <li
+                className='header_cart_icon header_cart_box cursor-pointer'
+                onClick={() => setIsOpen(true)}
+              >
                 <i className='icon-glyph-13'></i>
                 <span className='number_cart'>
-                  {itemsInCart.cartDetails?.length ? `${itemsInCart.cartDetails.length} items  |  ₹${itemsInCart?.subTotal} ` : 'my cart'} 
-                  
+                  {itemsInCart.cartDetails?.length
+                    ? `${itemsInCart.cartDetails.length} items  |  ₹${itemsInCart?.subTotal} `
+                    : 'my cart'}
                 </span>
               </li>
               <li className='header_cart_icon'>
@@ -88,14 +103,14 @@ const Menu = () => {
           </div>
           {/* End: Cart  */}
         </div>
-   
+
         {/* container */}
       </div>
       <CartSidebar
-          isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
-          data={itemsInCart}
-        />
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        data={itemsInCart}
+      />
       {/* End: header navigation */}
     </div>
   );

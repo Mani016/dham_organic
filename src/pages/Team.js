@@ -10,47 +10,24 @@ class Team extends Component{
 	const teamlistarray = [
 		{
 			id:1,
-			name:"Adama",
+			name:"Sumit Dagar",
 			work:"Web Dev", 
-			image:'assets/images/team1.jpg'
+			image:'assets/images/team1.jpg',
+			desc:'A passionate farmer and an indulgent, generous person, he is the brain behind ‘DHAAM Organics’'
 		},
 		{
 			id:2,
-			name:"Few",
+			name:"ANITA DHANKAR DAGAR ",
 			work:"De Dev",
-			image:'assets/images/team2.jpg'
-		},
-		{
-			id:3,
-			name:"Crew",
-			work:"Fe Dev",
-			image:'assets/images/team3.jpg'
-		},
-		{
-			id:4,
-			name:"Few",
-			work:"De Dev",
-			image:'assets/images/team2.jpg'
-		},
-		{
-			id:5,
-			name:"Adama",
-			work:"Web Dev", 
-			image:'assets/images/team1.jpg'
-		},
-		{
-			id:5,
-			name:"Crew",
-			work:"Fe Dev",
-			image:'assets/images/team3.jpg'
+			image:'assets/images/team2.jpg',
+			desc:'The heart and soul of the DHAAM Family'
 		},
 	]
  
 
     const teamlistmap = teamlistarray.map((valu, i) => {
         return(
-
-			<div className="col-md-4 col-sm-12" key={i}>
+			<div className="col-md-4 col-sm-12 h-100" key={i}>
 				<div className="team_wrp">
 	                <div className="team_img"> 
 	                    <img src={`${valu.image}`} alt="team" />
@@ -58,6 +35,7 @@ class Team extends Component{
 	                <div className="team_info">
 	                    <h4>{valu.name}</h4>
 	                    <p>{valu.work}</p> 
+						<p className="f-12">{valu.desc}</p>
                         <ul className="social list-inline">
                             <li>
                                 <ExternalLink href="https://facebook.com"><i className="fa fa-facebook"></i></ExternalLink>
@@ -90,16 +68,16 @@ class Team extends Component{
  
 			{/*====================  breadcrumb area ====================*/}
 
-			<Breadcrumb title="Our Team" />
+			<Breadcrumb title="KNOW YOUR DHAAM FAMILY" />
 		
 			{/*====================  End of breadcrumb area  ====================*/} 
 
 			<section className="team_section">	
 				<div className="container">	
 					<div className="base-header"> 
-						<h3>Our Team Member</h3>
+						<h3>DHAAM FAMILY</h3>
 					</div>
-					<div className="row">
+					<div className="row justify-content-center">
 						{teamlistmap}
 					</div>
 				</div>

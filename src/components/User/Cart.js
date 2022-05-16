@@ -37,6 +37,7 @@ const Cart = () => {
     if (!selectedAddress?.locality) {
       Alert.showToastAlert('warning', 'Select Address');
     } else {
+      setLoading(true);
       const payload = {
         orderItem: itemsInCart.cartDetails?.map((item) => ({
           price: item.subTotal,

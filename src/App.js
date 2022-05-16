@@ -1,20 +1,22 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ScrollToTop from "./helpers/ScrollToTop";
-import Home from "./components/Home/Home"; 
-import About from "./components/AboutUs/About"; 
-import Contact from "./components/ContactUs/Contact"; 
-import Team from "./pages/Team";  
-import Cart from "./components/User/Cart"; 
-import NotFound from "./pages/NotFound"; 
-import OrganicFarming from "./pages/OrganicFarming";
-import Login from "./components/User/Login";
-import SignUp from "./components/User/SignUp";
-import Profile from "./components/User/Profile";
-import Product from "./components/Products";
-import ProductDetails from "./components/Products/ProductDetails";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ScrollToTop from './helpers/ScrollToTop';
+import Home from './components/Home/Home';
+import About from './components/AboutUs/About';
+import Contact from './components/ContactUs/Contact';
+import Team from './pages/Team';
+import Cart from './components/User/Cart';
+import NotFound from './pages/NotFound';
+import Login from './components/User/Login';
+import SignUp from './components/User/SignUp';
+import Profile from './components/User/Profile';
+import Product from './components/Products';
+import ProductDetails from './components/Products/ProductDetails';
 import Category from './components/Categories/Categories';
 import Gallery from './components/Gallery/Gallery';
+import DhaamStory from './components/OurConcepts/DhaamStory';
+import Need from './components/OrganicFood/Need';
+import Stages from './components/OrganicFood/Stages';
 // import UserDashboard from "./pages/ProductDetails";
 
 function App() {
@@ -24,61 +26,69 @@ function App() {
         <Switch>
           <Route
             exact
-            path={`${process.env.PUBLIC_URL + "/"}`}
+            path={`${process.env.PUBLIC_URL + '/'}`}
             component={Home}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/home"}`}
+            path={`${process.env.PUBLIC_URL + '/home'}`}
             component={Home}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/about"}`}
+            path={`${process.env.PUBLIC_URL + '/our-concepts/about-us'}`}
             component={About}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/gallery"}`}
+            path={`${process.env.PUBLIC_URL + '/farm-gallery'}`}
             component={Gallery}
           />
-           <Route
-            path={`${process.env.PUBLIC_URL + "/organic-farming"}`}
-            component={OrganicFarming}
-          />
-          
           <Route
-            path={`${process.env.PUBLIC_URL + "/contact"}`}
+            path={`${process.env.PUBLIC_URL + '/our-concepts/dhaam-story'}`}
+            component={DhaamStory}
+          />
+
+          <Route
+            path={`${process.env.PUBLIC_URL + '/contact'}`}
             component={Contact}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/team"}`}
+            path={`${process.env.PUBLIC_URL + '/our-concepts/team'}`}
             component={Team}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/categories"}`}
+            path={`${process.env.PUBLIC_URL + '/organic-food/need'}`}
+            component={Need}
+          />
+           <Route
+            path={`${process.env.PUBLIC_URL + '/organic-food/stages'}`}
+            component={Stages}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/categories'}`}
             component={Category}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/category/:id"}`}
+            path={`${process.env.PUBLIC_URL + '/category/:id'}`}
             component={Product}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/product/:id"}`}
+            path={`${process.env.PUBLIC_URL + '/product/:id'}`}
             component={ProductDetails}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + "/checkout"}`}
+            path={`${process.env.PUBLIC_URL + '/checkout'}`}
             component={Cart}
           />
-           <Route
-            path={`${process.env.PUBLIC_URL + "/my-account"}`}
+          <Route
+            path={`${process.env.PUBLIC_URL + '/my-account'}`}
             component={Profile}
           />
-          
-           <Route
-            path={`${process.env.PUBLIC_URL + "/login"}`}
+
+          <Route
+            path={`${process.env.PUBLIC_URL + '/login'}`}
             component={Login}
           />
-           <Route
-            path={`${process.env.PUBLIC_URL + "/sign-up"}`}
+          <Route
+            path={`${process.env.PUBLIC_URL + '/sign-up'}`}
             component={SignUp}
           />
           <Route exact component={NotFound} />

@@ -1,6 +1,7 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import marker from '../../assets/images/map.png';
 
 const ContactMap = props => {
   const mapStyles = {
@@ -11,16 +12,17 @@ const ContactMap = props => {
   return (
     <Map
       google={props.google}
-      zoom={10}
+      zoom={15}
       style={mapStyles}
       initialCenter={{ lat: props.latitude, lng: props.longitude }}
     >
       <Marker
         position={{ lat: props.latitude, lng: props.longitude }}
         icon={{
-          url: `${process.env.PUBLIC_URL + "/images/icons/map.png"}`
+          url: marker
         }}
         animation={props.google.maps.Animation.BOUNCE}
+        className="marker"
       />
     </Map>
   );

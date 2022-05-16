@@ -44,7 +44,7 @@ const OrderHistory = () => {
       .then((res) => {
         // If the response is successful
         if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-          setRefresh(!refresh); 
+          setRefresh(!refresh);
           // If the status is success
         } else {
           HANDLE_ERROR(MESSAGES, setLoading); // Handle the error
@@ -68,11 +68,13 @@ const OrderHistory = () => {
     <div className='past_order'>
       <div className='order-heading-container'>
         <div>
-        <h3 className="mb-0">Order History</h3>
-        <small>Last Updated at :- {moment().format('DD-MM-YYYY hh:mm a')}</small>
+          <h3 className='mb-0'>Order History</h3>
+          <small>
+            Last Updated at :- {moment().format('DD-MM-YYYY hh:mm a')}
+          </small>
         </div>
-        <button className='refresh_btn' onClick={()=>handleRefresh()}>
-          <i className='fa fa-refresh mx-2'  />
+        <button className='refresh_btn' onClick={() => handleRefresh()}>
+          <i className='fa fa-refresh mx-2' />
           Refresh
         </button>
       </div>
@@ -88,7 +90,9 @@ const OrderHistory = () => {
                   <span
                     className={`order_status ${item.orderStatus.toLowerCase()}`}
                   >
-                    {item.orderStatus}
+                    {item.orderCancelledBy
+                      ? item.orderStatus + ' by you'
+                      : item.orderStatus}
                   </span>
                   <div className='left'>
                     <img src={logo} alt='' />
@@ -127,7 +131,12 @@ const OrderHistory = () => {
                           />
                         )}
                         {item.orderStatus.includes(['RECEIVED']) && (
-                          <button className='download_invoice cancel mx-2' onClick={()=>handleCancel(item.orderId)}>Cancel Order</button>
+                          <button
+                            className='download_invoice cancel mx-2'
+                            onClick={() => handleCancel(item.orderId)}
+                          >
+                            Cancel Order
+                          </button>
                         )}
                       </div>
                       <div className='deliever'>
