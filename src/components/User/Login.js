@@ -14,6 +14,7 @@ const Login = () => {
   const [mobileNum, setMobileNum] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [loading, setLoading] = React.useState(false);
+  const [showPassword, setShowPassword] = React.useState(false);
 
   function LogIn() {
     let formIsComplete = true;
@@ -87,7 +88,7 @@ const Login = () => {
               <div id='login-form-wrapper'>
                 <div id='login-form'>
                   <div className='coupon_info'>
-                    <div className='register mb-5'>
+                    <div className='register mb-2'>
                       <div className='title form-title'>
                         LOGIN TO YOUR ACCOUNT
                       </div>
@@ -115,17 +116,31 @@ const Login = () => {
                         />
                       </p>
                       <p className='input_fields input_name'>
+                        <span className='d-flex align-items-center cursor-pointer'>
                         <label>
                           Password<span className='required'>*</span>
                         </label>
-                        <input
-                          type='password'
-                          placeholder='Enter Password'
-                          onChange={({ target }) => {
-                            setPassword(target.value);
-                          }}
-                          value={password}
-                        />
+                        {showPassword ? (
+                            <i
+                              className='fa fa-eye ml-3'
+                              onClick={() => setShowPassword(!showPassword)}
+                            />
+                          ) : (
+                            <i
+                              className='fa fa-eye-slash ml-3'
+                              onClick={() => setShowPassword(!showPassword)}
+                            />
+                          )}
+                        </span>
+                          <input
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder='Enter Password'
+                            onChange={({ target }) => {
+                              setPassword(target.value);
+                            }}
+                            value={password}
+                          />
+                       
                       </p>
                       <div className='d-flex my-3 justify-content-center'>
                         {loading ? (
@@ -138,7 +153,7 @@ const Login = () => {
                               LogIn();
                             }}
                             disabled={loading}
-                            className='submit-contact submitBnt '
+                            className='submit-contact submitBnt mx-2'
                             value='Login'
                           />
                         )}

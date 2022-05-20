@@ -29,13 +29,13 @@ class Need extends Component {
     const serviceBottomArray = [
       {
         icon: 'process_3.png',
-        title: 'Fresh Vegetable',
-        des: 'Experienced staff read nal Experienced sto help you full Prond Experienced eaelp you help anytime you',
+        title: 'What all is Organic?',
+        des: 'Any food products produced or involving production without the use of chemical fertilizers, pesticides, or other artificial chemicals.',
       },
       {
         icon: 'process_4.png',
-        title: 'Fresh Fruits',
-        des: 'Experienced staff read nal Experienced sto help you full Prond Experienced eaelp you help anytime you',
+        title: 'It is the way of life.',
+        des: 'Staples produced by organic farming will not only satiate your hunger but also provide you with a sense of well being.',
       },
     ];
 

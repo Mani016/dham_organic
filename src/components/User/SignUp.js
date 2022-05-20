@@ -16,15 +16,12 @@ const SignUp = () => {
   const [created, setCreated] = React.useState(false);
   const [password, setPassword] = React.useState('');
   const [OTP, setOTP] = React.useState('');
-  const [loading,setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const [showPassword, setShowPassword] = React.useState(false);
 
   function GetOtp() {
     let formIsComplete = true;
-    if (
-      name === '' ||
-      mobileNum === '' ||
-      password === '' 
-    ) {
+    if (name === '' || mobileNum === '' || password === '') {
       Alert.showToastAlert('warning', 'Required fields cannot be empty');
       formIsComplete = false;
     }
@@ -44,9 +41,9 @@ const SignUp = () => {
       }
     }
     if (email !== '') {
-        if (
-            !RegExp(
-            // eslint-disable-next-line
+      if (
+        !RegExp(
+          // eslint-disable-next-line
           /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/
         ).test(email)
       ) {
@@ -68,9 +65,9 @@ const SignUp = () => {
       agent.Auth.register(data)
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-              Alert.showToastAlert('success', res.message);
-              setCreated(true);
-              setLoading(false);
+            Alert.showToastAlert('success', res.message);
+            setCreated(true);
+            setLoading(false);
           } else {
             HANDLE_ERROR(res.message, setLoading);
             setCreated(false);
@@ -101,9 +98,9 @@ const SignUp = () => {
             setItemToSessionStore('justOnce', true);
             setItemToSessionStore('clientId', res.data.user.id);
             setTimeout(function () {
-                window.location = '/my-account';
-              }, 1000);
-              setLoading(false);
+              window.location = '/my-account';
+            }, 1000);
+            setLoading(false);
           } else {
             HANDLE_ERROR(res.message, setLoading);
           }
@@ -125,7 +122,7 @@ const SignUp = () => {
                 <div className='logo_login'>
                   <img src={logo} alt='Dhaam Organic' />
                 </div>
-                <div className='title'>Welcome to Dhaam Organic!</div>
+                <div className='title mb-5'>Welcome to Dhaam Organic!</div>
                 <div className='description'>
                   <Typewriter
                     options={{
@@ -184,11 +181,24 @@ const SignUp = () => {
                           />
                         </p>
                         <p className='input_fields input_name'>
-                          <label>
-                            password<span className='required'>*</span>
-                          </label>
+                          <span className='d-flex align-items-center cursor-pointer'>
+                            <label>
+                              Password<span className='required'>*</span>
+                            </label>
+                            {showPassword ? (
+                              <i
+                                className='fa fa-eye ml-3'
+                                onClick={() => setShowPassword(!showPassword)}
+                              />
+                            ) : (
+                              <i
+                                className='fa fa-eye-slash ml-3'
+                                onClick={() => setShowPassword(!showPassword)}
+                              />
+                            )}
+                          </span>
                           <input
-                            type='text'
+                            type={showPassword ? 'text' : 'password'}
                             placeholder='Enter Password'
                             onChange={({ target }) => {
                               setPassword(target.value);

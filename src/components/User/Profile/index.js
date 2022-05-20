@@ -15,7 +15,7 @@ import Sidebar from '../../reusables/Sidebar';
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState(
-    getItemFromSessionStore('activeTab')
+    getItemFromSessionStore('activeTab') || 'orders'
   );
   const [isOpen, setIsOpen] = useState(false);
   const [component, setComponent] = useState('');
