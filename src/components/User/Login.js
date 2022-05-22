@@ -76,7 +76,7 @@ const Login = () => {
                     }}
                     onInit={(typewriter) => {
                       typewriter
-                        .typeString('Know your farmer, know your food')
+                        .typeString('Know your Farmer, Know your Food')
                         .deleteAll()
                         .start();
                     }}

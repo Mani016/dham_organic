@@ -6,17 +6,17 @@ class Funfact extends Component {
     const funfactArray = [
       {
         icon: 'icon-glyph-142',
-        countNumber: 175,
-        title: 'Award Winner',
+        countNumber: 2,
+        title: 'Certificates',
       },
       {
         icon: 'icon-glyph-226',
-        countNumber: 275,
-        title: 'Visited Farms ',
+        countNumber: 42,
+        title: 'Total Farms ',
       },
       {
         icon: 'icon-glyph-2',
-        countNumber: 324,
+        countNumber: '350+',
         title: 'Happy Customers ',
       },
     ];

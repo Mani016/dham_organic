@@ -14,6 +14,7 @@ const Gallery = () => {
   useEffect(() => {
     let isActive = true;
     if (isActive) {
+      setLoading(true);
       agent.Gallery.getAll()
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {

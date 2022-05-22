@@ -125,7 +125,7 @@ const GalleryContent = () => {
               <Slider {...settings}>{ImageGalleryDataList}</Slider>
             </div>
             <div className='project_btn text-center'>
-              <Link to='gallery' className='more-link'>
+              <Link to='/farm-gallery' className='more-link'>
                 View More
               </Link>
             </div>
