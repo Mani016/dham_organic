@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import pgs from '../../assets/images/pgs_india_organic.jpeg';
 
