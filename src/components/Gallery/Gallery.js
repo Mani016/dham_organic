@@ -7,7 +7,7 @@ import { API_STATUS } from '../../constant';
 import { HANDLE_ERROR } from '../../Utils/utils';
 import Loader from '../../components/reusables/Loader';
 
-const Gallery = () => {
+const Gallery = ({ type }) => {
   const [galleryListArray, setGalleryListArray] = useState([]);
   const [loading, setLoading] = React.useState(false);
 
@@ -43,6 +43,7 @@ const Gallery = () => {
           <div className='project-hover'>
             <div className='project_cnt'>
               <h6>{valu.title}</h6>
+              <h6>{valu.description}</h6>
             </div>
           </div>
         </div>
@@ -68,7 +69,7 @@ const Gallery = () => {
               {/* Heading */}
               <div className='base-header'>
                 <small>Our Latest Work</small>
-                <h3>Our Farm Gallery</h3>
+                <h3>Our {type === 'farm' ? 'Farm' : 'Event'} Gallery</h3>
               </div>
               {/* End: Heading */}
               {loading ? (

@@ -6,7 +6,7 @@ import agent from '../../agent';
 import { API_STATUS } from '../../constant';
 import Loader from '../reusables/Loader';
 
-const GalleryContent = () => {
+const GalleryContent = ({ type }) => {
   var settings = {
     autoplay: true,
     autoplaySpeed: 4000,
@@ -98,6 +98,7 @@ const GalleryContent = () => {
           </div>
           <div className='project_text'>
             <h4>{val.title}</h4>
+            <h4>{val.description}</h4>
           </div>
         </div>
       </div>
@@ -115,8 +116,10 @@ const GalleryContent = () => {
               <div className='row'>
                 <div className='col-lg-6 col-sm-12'>
                   <div className='base-header base_header_left'>
-                    <small>Our Latest Product</small>
-                    <h3> Special Gallery </h3>
+                    <h3>
+                      {' '}
+                      Special {type === 'farm' ? 'Farm' : 'Event'} Gallery{' '}
+                    </h3>
                   </div>
                 </div>
               </div>
@@ -125,7 +128,10 @@ const GalleryContent = () => {
               <Slider {...settings}>{ImageGalleryDataList}</Slider>
             </div>
             <div className='project_btn text-center'>
-              <Link to='/farm-gallery' className='more-link'>
+              <Link
+                to={type === 'farm' ? '/farm-gallery' : 'event-gallery'}
+                className='more-link'
+              >
                 View More
               </Link>
             </div>

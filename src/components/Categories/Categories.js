@@ -25,7 +25,11 @@ export const CategoryCard = ({ item = [] }) => {
               <Link to={`category/${valu._id}`}>
                 <h4>{valu.name}</h4>
               </Link>
-              <p>{valu.description}</p>
+              <p>
+                {valu.description.length > 120
+                  ? valu.description.slice(0, 120) + '....'
+                  : valu.description}
+              </p>
             </div>
             <Link to={`category/${valu._id}`} className='serv_link'>
               <i className='icon-glyph-40'></i>
@@ -109,7 +113,7 @@ const Category = () => {
                 <Loader />
               ) : (
                 <>
-                 {paginationLayout()}
+                  {paginationLayout()}
                   <div className='row'>
                     <CategoryCard item={data.data || []} />
                   </div>

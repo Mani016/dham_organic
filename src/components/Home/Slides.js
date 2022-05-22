@@ -9,13 +9,37 @@ class Slides extends Component{
 
         let slideImages = [
             {
-                img:'slider1.jpeg',
+                img:'slider1.webp',
                 smallTitle: 'Professional Cleaning Services',
                 title:"A huge variety fruits & vegetables.",
 				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
             },
             {
-                img:'slider2.jpeg',
+                img:'slider2.webp',
+                smallTitle:"Professional Cleaning Services",
+                title:"A huge variety fruits & vegetables.",
+				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
+            },
+			{
+                img:'slider3.webp',
+                smallTitle:"Professional Cleaning Services",
+                title:"A huge variety fruits & vegetables.",
+				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
+            },
+			{
+                img:'slider4.webp',
+                smallTitle:"Professional Cleaning Services",
+                title:"A huge variety fruits & vegetables.",
+				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
+            },
+			{
+                img:'slider5.webp',
+                smallTitle:"Professional Cleaning Services",
+                title:"A huge variety fruits & vegetables.",
+				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
+            },
+			{
+                img:'slider6.webp',
                 smallTitle:"Professional Cleaning Services",
                 title:"A huge variety fruits & vegetables.",
 				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
@@ -75,9 +99,7 @@ class Slides extends Component{
 	    <div className="slides_wrapper">
 			<div className="slider_home">
 		        <Swiper {...properties}>
-
 		            {ImageGalleryDataList}
-
 		        </Swiper>
 			</div>
 	    </div> 

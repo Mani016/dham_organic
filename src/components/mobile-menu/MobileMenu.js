@@ -43,6 +43,7 @@ const MobileMenu = () => {
   };
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [showSubMenu1, setShowSubMenu1] = useState(false);
+  const [showSubMenu2, setShowSubMenu2] = useState(false);
   return (
     <div className='offcanvasMobileMenu' id='offcanvas-mobile-menu'>
       <button
@@ -62,11 +63,11 @@ const MobileMenu = () => {
                 onClick={() => setShowSubMenu(!showSubMenu)}
               >
                 <div className='d-flex justify-content-between align-items-center'>
-                Our Concepts <i className='fa fa-caret-down'/>
+                  Our Concepts <i className='fa fa-caret-down' />
                 </div>
                 <ul className={showSubMenu ? 'active' : ''}>
                   <li>
-                    <a href='/our-concepts/dhaam-story'>Dhaam Story</a>
+                  <Link to='/our-concepts/dhaam-story'>Dhaam Story</Link>
                   </li>
                   <li>
                     <Link to='/our-concepts/about-us'>About Us</Link>
@@ -81,19 +82,33 @@ const MobileMenu = () => {
                 onClick={() => setShowSubMenu1(!showSubMenu1)}
               >
                 <div className='d-flex justify-content-between align-items-center'>
-                Organic Food <i className='fa fa-caret-down'/>
+                  Organic Food <i className='fa fa-caret-down' />
                 </div>
                 <ul className={showSubMenu1 ? 'active' : ''}>
                   <li>
-                    <a href='/organic-food/need'>Need</a>
+                    <Link to='/organic-food/need'>Need</Link>
                   </li>
                   <li>
                     <Link to='/organic-food/stages'>Stages</Link>
                   </li>
                 </ul>
               </li>
-              <li>
-                <Link to='/farm-gallery'>Farm Gallery</Link>
+              <li
+                className='has-sub'
+                onClick={() => setShowSubMenu2(!showSubMenu2)}
+              >
+                <div className='d-flex justify-content-between align-items-center'>
+                  Gallery
+                  <i className='fa fa-caret-down' />
+                </div>
+                <ul className={showSubMenu2 ? 'active' : ''}>
+                  <li>
+                    <Link to='/farm-gallery'>Farm Gallery</Link>
+                  </li>
+                  <li>
+                    <Link to='/event-gallery'>Event Gallery</Link>
+                  </li>
+                </ul>
               </li>
               <li>
                 <Link to='/categories'>Categories</Link>
@@ -108,13 +123,18 @@ const MobileMenu = () => {
           <div className='header_top_right list-unstyled'>
             <ul>
               <li>
-                <i className='fa fa-phone'></i> <a href='tel:9266027544'> 9266027544</a>
+                <i className='fa fa-phone'></i>{' '}
+                <a href='tel:9266027544'> 9266027544</a>
               </li>
               <li className='d-flex'>
-                <i className='fa fa-envelope'></i><a href="mailto:dhaamorganic@gmail.com">dhaamorganic@gmail.com</a>
+                <i className='fa fa-envelope'></i>
+                <a href='mailto:dhaamorganic@gmail.com'>
+                  dhaamorganic@gmail.com
+                </a>
               </li>
               <li>
-                <i className='fa fa-globe'></i> Village Chhudani Dhaam, Haryana 124504
+                <i className='fa fa-globe'></i> Village Chhudani Dhaam, Haryana
+                124504
               </li>
             </ul>
           </div>
@@ -123,8 +143,12 @@ const MobileMenu = () => {
           <div className='header_top_left'>
             <ul className='header_socil list-inline'>
               <li>
-                <a href='https://www.facebook.com/groups/303331530978336/?ref=share' 
-                target='_blank' rel='noopener noreferrer' className='fa fa-facebook'></a>
+                <a
+                  href='https://www.facebook.com/groups/303331530978336/?ref=share'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='fa fa-facebook'
+                ></a>
               </li>
               <li>
                 <Link to='#/' className='fa fa-twitter'></Link>

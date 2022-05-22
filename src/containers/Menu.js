@@ -29,7 +29,7 @@ const Menu = () => {
         <div className='container'>
           <div className='logo'>
             <Link to={process.env.PUBLIC_URL + '/'}>
-              <img src={dhaam_logo} alt='' />
+              <img src={dhaam_logo} alt='menu' />
             </Link>
           </div>
 
@@ -41,7 +41,7 @@ const Menu = () => {
                     <Link to='/'>Our Concepts</Link>
                     <ul>
                       <li>
-                        <a href='/our-concepts/dhaam-story'>Dhaam Story</a>
+                        <Link to='/our-concepts/dhaam-story'>Dhaam Story</Link>
                       </li>
                       <li>
                         <Link to='/our-concepts/about-us'>About Us</Link>
@@ -55,15 +55,23 @@ const Menu = () => {
                     <Link to='/'>Organic Food</Link>
                     <ul>
                       <li>
-                        <a href='/organic-food/need'>Need</a>
+                        <Link to='/organic-food/need'>Need</Link>
                       </li>
                       <li>
                         <Link to='/organic-food/stages'>Stages</Link>
                       </li>
                     </ul>
                   </li>
-                  <li>
-                    <Link to='/farm-gallery'>Farm Gallery</Link>
+                  <li className='has-sub'>
+                    <Link to='/'>Gallery</Link>
+                    <ul>
+                      <li>
+                        <Link to='/farm-gallery'>Farm Gallery</Link>
+                      </li>
+                      <li>
+                        <Link to='/event-gallery'>Event Gallery</Link>
+                      </li>
+                    </ul>
                   </li>
                   <li>
                     <Link to='/categories'>Categories</Link>

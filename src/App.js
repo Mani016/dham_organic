@@ -13,11 +13,11 @@ import Profile from './components/User/Profile';
 import Product from './components/Products';
 import ProductDetails from './components/Products/ProductDetails';
 import Category from './components/Categories/Categories';
-import Gallery from './components/Gallery/Gallery';
 import DhaamStory from './components/OurConcepts/DhaamStory';
 import Need from './components/OrganicFood/Need';
 import Stages from './components/OrganicFood/Stages';
-// import UserDashboard from "./pages/ProductDetails";
+import FarmGallery from './components/Gallery/FarmGallery';
+import EventGallery from './components/Gallery/EventGallery';
 
 function App() {
   return (
@@ -39,7 +39,11 @@ function App() {
           />
           <Route
             path={`${process.env.PUBLIC_URL + '/farm-gallery'}`}
-            component={Gallery}
+            component={FarmGallery}
+          />
+           <Route
+            path={`${process.env.PUBLIC_URL + '/event-gallery'}`}
+            component={EventGallery}
           />
           <Route
             path={`${process.env.PUBLIC_URL + '/our-concepts/dhaam-story'}`}

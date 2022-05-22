@@ -72,7 +72,7 @@ const Testimonial = () => {
     <div>
       <div className='container'>
         <div className='base-header'>
-          <small>Client Satisfait </small>
+        <small>Client Satisfait </small>
           <h3>What Consumers Say </h3>
         </div>
         {loading ? (

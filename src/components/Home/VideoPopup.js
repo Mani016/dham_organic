@@ -10,7 +10,7 @@ const VideoPopup = () => {
         <ModalVideo
             channel="youtube"
             isOpen={modalStatus}
-            videoId="BDYUV7tx_pM"
+            videoId="C_ne1TBEOEc"
             onClose={() => isOpen(false)}
         />
         <button onClick={() => isOpen(true)} className="play_btn">

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../../../layouts/LayoutOne';
+import Slides from './Slides';
 import Breadcrumb from '../../reusables/Breadcrumb';
 
 const DhaamStory = () => {
@@ -22,8 +23,10 @@ const DhaamStory = () => {
           <div className='organic_farming_content'>
             <div className='container '>
               <div className='row'>
-                <div className='col-sm-12'>
-                  <h4><b>OUR CONCEPTS</b></h4>
+                <div className='col-12'>
+                <h4>
+                    <b>OUR CONCEPTS</b>
+                  </h4>
                   <p>
                     We at ‘Dhaam Organics’ nurture and cultivate plants without
                     the use of any chemical fertilisers , pesticides or GMOs. We
@@ -33,10 +36,16 @@ const DhaamStory = () => {
                     deliver will always be Fresh, Healthy, Eco-friendly and
                     Premium in their taste.
                   </p>
-
                   <img src='http://jvesri.org/images/activites.jpg' alt='' />
-                  <h4><b>DHAAM STORY</b></h4>
-                  <p>
+
+                </div>
+                <div className='col-sm-12 col-lg-12'>
+                
+
+                  <h4>
+                    <b>DHAAM STORY</b>
+                  </h4>
+                  <p className="text-justify">
                     ‘Dhaam Organics’ is a joint initiative by the 8th generation
                     of our family tree. Our goal is to become a leading player
                     in the field of biological agriculture.
@@ -69,6 +78,10 @@ const DhaamStory = () => {
                     are released by the food products when you consume them.{' '}
                     <br />
                   </p>
+                </div>
+                <div className="col-lg-12">
+              <Slides />
+
                 </div>
               </div>
             </div>

@@ -27,20 +27,21 @@ const Footer = () => {
       <div className='container'>
         <div className='row'>
           {/*  Start:About  */}
-          <div className='col-lg-4 col-sm-12'>
+          <div className='col-lg-5 col-sm-12'>
             <div className='widget'>
               <div className='footer_logo'>
                 <img
                   className='img-responsive'
-                  src='assets/images/footer_logo.png'
+                  src='/assets/images/dhaam_images/dhaam_logo.png'
                   alt=''
                 />
               </div>
               <div className='footer_p'>
                 <p className='footer_para'>
-                  Loren ipsum dolor conse ctetur at adipis cing elit sed do eiu
-                  smod of tempor inci didunt know youlab a et dolore magna
-                  aliqua{' '}
+                  Eating organic isn't a trend, it's a return to tradition.’
+                  Working towards this vision of providing pesticide free,
+                  chemical free, unadulterated organic food products to our
+                  supporters.
                 </p>
               </div>
               <div className='footer_socil'>
@@ -56,38 +57,11 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href='//twitter.com'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      <i className='fa fa-twitter'></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href='//facebook.com'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      <i className='fa fa-behance'></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href='//instagram.com'
                       target='_blank'
                       rel='noopener noreferrer'
                     >
                       <i className='fa fa-instagram'></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href='//pinterest.com'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      <i className='fa fa-pinterest'></i>
                     </a>
                   </li>
                 </ul>
@@ -97,9 +71,10 @@ const Footer = () => {
           {/*  End:About  */}
 
           {/*  Start:Quick Link  */}
-          <div className='col-lg-4 col-sm-12'>
+          <div className='col-lg-3 col-sm-12'>
+           
             <div className='widget quick_lnk'>
-              <h5>Quick Link</h5>
+              <h5>Quick Links</h5>
               <ul>
                 <li>
                   <Link to={process.env.PUBLIC_URL + '/our-concepts/about-us'}>
@@ -107,7 +82,9 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to={process.env.PUBLIC_URL + '/our-concepts/dhaam-story'}>
+                  <Link
+                    to={process.env.PUBLIC_URL + '/our-concepts/dhaam-story'}
+                  >
                     Dhaam Story
                   </Link>
                 </li>
@@ -117,8 +94,8 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to={process.env.PUBLIC_URL + '/categories'}>
-                    Categories
+                  <Link to={process.env.PUBLIC_URL + '/farm-gallery'}>
+                    Farm Gallery
                   </Link>
                 </li>
                 <li>
@@ -127,47 +104,39 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          {/*  End:Quick Link  */}
 
-          {/*  Start:Latest post   */}
+          {/*  Start:Facebook page  */}
           <div className='col-lg-4 col-sm-12'>
             <div className='widget'>
-              <h5>Latest Articles</h5>
-              <ul className='footer_recent_blog'>
-                <li>
-                  <img
-                    className='img-responsive'
-                    src='assets/images/blog1.jpg'
-                    alt=''
-                  />
-                  <span className='post_cont'>
-                    <span className='post-date'>
-                      <i className='fa fa-calendar'></i>March 14, 2019
-                    </span>
-                    <Link to={process.env.PUBLIC_URL + '/single-blog'}>
-                      <span>How to Eat Organic Foods</span>
-                    </Link>
-                  </span>
-                </li>
-                <li>
-                  <img
-                    className='img-responsive'
-                    src='assets/images/blog2.jpg'
-                    alt=''
-                  />
-                  <span className='post_cont'>
-                    <span className='post-date'>
-                      <i className='fa fa-calendar'></i>March 14, 2019
-                    </span>
-                    <Link to={process.env.PUBLIC_URL + '/single-blog'}>
-                      <span>How to Eat Organic Foods</span>
-                    </Link>
-                  </span>
-                </li>
-              </ul>
+              <iframe
+                src='https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F303331530978336&width=300&height=130&show_metadata=true&adapt_container_width=true&appId=306728041628985&embedded=true'
+                width={300}
+                height={350}
+                style={{ border: 'none', overflow: 'hidden' }}
+                // scrolling='no'
+                // frameBorder='0'
+                target='_top'
+                title='Facebook Group'
+                allowFullScreen={true}
+                allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share'
+              ></iframe>
+            </div>
+            <div className='widget'>
+              <iframe
+                src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdhaamorganic&width=300&height=200&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=306728041628985'
+                width={300}
+                height={200}
+                style={{ border: 'none', overflow: 'hidden' }}
+                scrolling='no'
+                frameBorder='0'
+                allowFullScreen={true}
+                title='Facebook Page'
+                allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share'
+              ></iframe>
             </div>
           </div>
-          {/*  End:Latest post  */}
+
+          {/*  End:Facebook page */}
 
           <button
             className={`scrollup ${scroll > top ? 'show' : ''}`}

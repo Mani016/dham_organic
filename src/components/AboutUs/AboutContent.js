@@ -1,4 +1,5 @@
 import React from "react"; 
+import Slides from './Slides';
 
 const AboutContent = () => {
   return (
@@ -8,7 +9,8 @@ const AboutContent = () => {
             <div className="row">
                 <div className="col-md-6 col-sm-12">
                     <div className="about_img"> 
-                        <img src="https://santhemes.com/blackgallery/FuodBorne-react/assets/images/about.jpg" alt="about" /> 
+                    <Slides/>
+                        {/* <img src="/assets/images/dhaam_images/group1.jpeg" alt="about" />  */}
                     </div>
                 </div>
                 <div className="col-md-6 col-sm-12">

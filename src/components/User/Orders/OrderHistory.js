@@ -95,7 +95,7 @@ const OrderHistory = () => {
                       : item.orderStatus}
                   </span>
                   <div className='left'>
-                    <img src={logo} alt='' />
+                    <img src={logo} alt='logo' />
                   </div>
                   <div className='txtb'>
                     <p>{item.orderId}</p>

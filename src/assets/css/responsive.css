@@ -280,6 +280,9 @@
 	.team-section {
 		background-position: center;
 	}
+	.height_custom{
+		height: 870px;
+	}
 
 	.testi-section {
 		padding-bottom: 163px;
@@ -501,7 +504,9 @@
 	.single_slider {
 		height: 800px;
 	}
-
+	.single_slider_about {
+		height: 580px;
+	}
 	.single_slider .container {
 		margin-top: -20px;
 	}
@@ -604,7 +609,7 @@
 		padding: 15px 17px;
 	}
 
-	.facts_wrapper h3 {
+	.facts_wrapper h4 {
 		margin-top: 20px;
 	}
 
@@ -1047,6 +1052,9 @@
 	.team_wrp::after {
 		background-size: cover;
 	}
+	.height_custom{
+		height: 100%;
+	}
 	.shop-product-area .category,
 	.tags {
 		margin-bottom: 5px;
@@ -1058,5 +1066,8 @@
 	.navigation .logo img {
 		width: auto;
 		object-fit: contain;
+	}
+	.height_custom{
+		height: 100%;
 	}
 }

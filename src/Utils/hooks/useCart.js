@@ -98,7 +98,7 @@ const useCart = () => {
                 <i className='fa fa-minus'></i>
               </div>
               {loading ? (
-                <img src={loadImg} className='white_load' alt='' />
+                <img src={loadImg} className='white_load' alt='cart' />
               ) : (
                 <input
                   className='cart-plus-minus-box'
@@ -116,7 +116,7 @@ const useCart = () => {
           ) : (
             <div onClick={() => addToCart(id)} className='prod_add_cart_btn'>
               {loading ? (
-                <img src={loadImg} className='white_load' alt='' />
+                <img src={loadImg} className='white_load' alt='loader' />
               ) : (
                 'Add To Cart'
               )}

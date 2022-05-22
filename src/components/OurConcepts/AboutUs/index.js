@@ -9,7 +9,7 @@ class AboutUs extends Component {
     const serviceTopArray = [
       {
         image:
-          '	https://santhemes.com/blackgallery/FuodBorne-react/assets/images/blog5.jpg',
+          '/assets/images/dhaam_images/group1.jpeg',
         title: 'ORGANIC FOOD – WHAT WE ALL NEED TO KNOW',
         desc: [
           'If we talk about Organic farming system in India, we know that it is not novel and is being followed from ancient times by our fore-fathers. ',

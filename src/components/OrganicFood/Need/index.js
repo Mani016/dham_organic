@@ -8,7 +8,7 @@ class Need extends Component {
     const serviceTopArray = [
       {
         image:
-          '	https://santhemes.com/blackgallery/FuodBorne-react/assets/images/blog5.jpg',
+          'slider14.jpg',
         title: 'ORGANIC FOOD – WHAT WE ALL NEED TO KNOW',
         desc: [
           'If we talk about Organic farming system in India, we know that it is not novel and is being followed from ancient times by our fore-fathers. ',
@@ -28,12 +28,12 @@ class Need extends Component {
 
     const serviceBottomArray = [
       {
-        icon: 'process_3.png',
+        icon: 'slider17.jpeg',
         title: 'What all is Organic?',
         des: 'Any food products produced or involving production without the use of chemical fertilizers, pesticides, or other artificial chemicals.',
       },
       {
-        icon: 'process_4.png',
+        icon: 'slider18.jpeg',
         title: 'It is the way of life.',
         des: 'Staples produced by organic farming will not only satiate your hunger but also provide you with a sense of well being.',
       },
@@ -42,7 +42,7 @@ class Need extends Component {
     const serviceToptMap = serviceTopArray.map((val, i) => {
       return (
         <div className='single_service_left' key={i}>
-          {val.image && <img src={val.image} alt='needs' />}
+          {val.image && <img src={`/assets/images/dhaam_images/${val.image}`} alt='needs' />}
           <h4>{val.title}</h4>
           {val.desc.map((item, i) => (
             <p key={i}>{item}</p>
@@ -56,7 +56,7 @@ class Need extends Component {
         <div className='col-md-12 col-sm-12' key={i}>
           <div className='sing_service_item'>
             <div className='icon-serv'>
-              <img src={`assets/images/${val.icon}`} alt='' />
+              <img src={`/assets/images/dhaam_images/${val.icon}`} alt='' />
             </div>
             <h4>{val.title}</h4>
             <p>{val.des}</p>

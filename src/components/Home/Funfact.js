@@ -16,19 +16,24 @@ class Funfact extends Component {
       },
       {
         icon: 'icon-glyph-2',
+        countNumber: '2500+',
+        title: 'Orders Till Date',
+      },
+      {
+        icon: 'icon-glyph-2',
         countNumber: '350+',
         title: 'Happy Customers ',
-      },
+      }
     ];
 
     const funfactMap = funfactArray.map((valu, i) => {
       return (
-        <div className='col-md-4 col-sm-12' key={i}>
+        <div className='col-md-3 col-sm-12' key={i}>
           <div className='facts_wrapper'>
             <div className='icon-lay'>
               <i className={`${valu.icon}`}></i>
             </div>
-            <h3 className='stat-count count'>{valu.countNumber}</h3>
+            <h4 className='stat-count count'>{valu.countNumber}</h4>
             <h5>{valu.title}</h5>
           </div>
         </div>
