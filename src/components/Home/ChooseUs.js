@@ -26,15 +26,15 @@ const ChooseUs = () => {
 	                        <div className="special_ser_icon">
 	                            <i className="icon-glyph-11"></i>
 	                        </div>
-	                        <h4>Quick Response </h4>
-	                        <p>Emergency response time is one hour or less guaranteed at live person will answer your call or you can enter service</p>
+	                        <h4>High Quality</h4>
+	                        <p>We believe in delivering less but extremely high quality food that you will look forward to have over and over again.</p>
 	                    </div>                 
 	                    <div className="special_ser_item">
 	                        <div className="special_ser_icon">
 	                            <i className="icon-glyph-30"></i>
 	                        </div>
-	                        <h4>Very Fast Services</h4>
-	                        <p>Emergency response time is one hour or less guaranteed at live person will answer your call or you can enter service</p>
+	                        <h4>Develop From Scratch</h4>
+	                        <p>We develop everything from scratch; every ingredient, every product has its own unique touch to it, and we take a lot of time formulating and making sure they actually work.</p>
 	                    </div> 
 	                </div>  
 	            </div>  

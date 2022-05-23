@@ -23,7 +23,6 @@ const Home = () => {
         <AboutContent />
         <Funfact />
         <WorkProcess/>
-        <GalleryContent type="event"/>
         <GalleryContent type="farm"/>
         <OurCategories />
         <Experts/>

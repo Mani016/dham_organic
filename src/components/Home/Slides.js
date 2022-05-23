@@ -10,39 +10,55 @@ class Slides extends Component{
         let slideImages = [
             {
                 img:'slider1.webp',
-                smallTitle: 'Professional Cleaning Services',
-                title:"A huge variety fruits & vegetables.",
-				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
+                smallTitle: 'Know Your Farmer, Know Your Food',
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },
             {
                 img:'slider2.webp',
-                smallTitle:"Professional Cleaning Services",
-                title:"A huge variety fruits & vegetables.",
-				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
+                smallTitle:"Know Your Farmer, Know Your Food",
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },
 			{
                 img:'slider3.webp',
-                smallTitle:"Professional Cleaning Services",
-                title:"A huge variety fruits & vegetables.",
-				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
+                smallTitle:"Know Your Farmer, Know Your Food",
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },
 			{
-                img:'slider4.webp',
-                smallTitle:"Professional Cleaning Services",
-                title:"A huge variety fruits & vegetables.",
-				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
+                img:'slider7.jpeg',
+                smallTitle:"Know Your Farmer, Know Your Food",
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+				description:"Our Mission is to be a faithful brand which provides genuine organic products for day-to-day requirements. We serve a wide variety of essentials ranging from food products like flour, daliya to fruits and hair oil. We want to inspire people resurge and promote the tradition of food and wellness. ",
             },
 			{
-                img:'slider5.webp',
-                smallTitle:"Professional Cleaning Services",
-                title:"A huge variety fruits & vegetables.",
-				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
+                img:'slider8.jpeg',
+                smallTitle:"Know Your Farmer, Know Your Food",
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },
 			{
-                img:'slider6.webp',
-                smallTitle:"Professional Cleaning Services",
-                title:"A huge variety fruits & vegetables.",
+                img:'slider8.jpg',
+                smallTitle:"Know Your Farmer, Know Your Food",
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+            },
+            {
+                img:'slider9.jpg',
+                smallTitle:"Know Your Farmer, Know Your Food",
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
 				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
+            },
+            {
+                img:'slider11.jpg',
+                smallTitle:"Know Your Farmer, Know Your Food",
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+            },
+            {
+                img:'slider12.jpg',
+                smallTitle:"Know Your Farmer, Know Your Food",
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+            },
+            {
+                img:'slider14.jpg',
+                smallTitle:"Know Your Farmer, Know Your Food",
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },
         ];
 
@@ -52,11 +68,11 @@ class Slides extends Component{
             speed: 1000,
             watchSlidesVisibility: true,
 			effect: 'slide',
-			pagination: {
-				el: '.swiper-pagination',
-				type: 'bullets',
-				clickable: true
-			},
+			// pagination: {
+			// 	el: '.swiper-pagination',
+			// 	type: 'bullets',
+			// 	clickable: true
+			// },
             navigation: {
                 nextEl: '.st-swiper-button-next',
                 prevEl: '.st-swiper-button-prev'
@@ -74,7 +90,7 @@ class Slides extends Component{
 	 
         let ImageGalleryDataList = slideImages.map((val, i) => {
             return(
-	            <div className="single_slider slide_bg_1" style={{'backgroundImage': `url(assets/images/${val.img})`}} key={i}> 
+	            <div className="single_slider slide_bg_1"  key={i}> 
 		            <div className="slider_item_tb">
 			            <div className="slider_item_tbcell">
 				            <div className="container">
@@ -82,11 +98,13 @@ class Slides extends Component{
 						            <div className="col-lg-6 col-sm-12">
 									  <h5>{val.smallTitle}</h5> 
 						              <h1>{val.title}</h1>
-						              <p>{val.description}</p>
 						              <div className="slider_btn animated fadeInDown">
-                                        <Link to="contact" className="slider_btn_one more-link ">Contact Us</Link>
+                                        <Link to="/categories" className="slider_btn_one more-link ">Our Categories</Link>
                                       </div>
 						            </div>
+						            <div className="col-lg-6 col-sm-12 home_slides" >
+                                        <img src={`/assets/images/dhaam_images/${val.img}`} alt="slider" className="img-fluid" />
+                                    </div>
 					            </div>
 				            </div>
 			            </div>

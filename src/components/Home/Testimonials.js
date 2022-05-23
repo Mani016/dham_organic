@@ -4,7 +4,7 @@ import { HANDLE_ERROR } from '../../Utils/utils';
 import agent from '../../agent';
 import { API_STATUS } from '../../constant';
 import Loader from '../reusables/Loader';
-
+import './testimonials.scss'
 const Testimonials = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -35,15 +35,54 @@ const Testimonials = () => {
       isActive = false;
     };
   }, []);
-  var settings = {
+  const [nav1, setNav1] = useState();
+  const [nav2, setNav2] = useState();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sliderSettings = {
     dots: false,
-    arrows: false,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
-  };
+    autoplay: false,
+    arrows: false,
 
+  };
+  const thumbSliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: false,
+    centerMode: true,
+    focusOnSelect: true,
+    centerPadding: '20px',
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 350,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+          centerMode: true,
+        },
+      },
+    ],
+  };
+  const slider2Settings = {
+    ...thumbSliderSettings,
+    afterChange: (current) => setActiveIndex(current),
+  };
   let ImageeTestiDataList = data.map((val, i) => {
     return (
       <div className='item' key={`val_${i}`}>
@@ -56,6 +95,7 @@ const Testimonials = () => {
             <div className='testi_img'>
               <h4>
                 {val.name}
+                <span>{val.locality}</span>
                 <span>{val.designation}</span>
               </h4>
             </div>
@@ -76,20 +116,33 @@ const Testimonials = () => {
           <Loader />
         ) : (
           <div className='row'>
-            <div className='col-md-4 col-sm-12 testi_sing_img'>
-              <div className='testi_sing_img'>
-                {data.map((val, i) => (
-                  <img
-                    alt='team'
-                    className='bounce_animate'
-                    src={val.image.path}
-                    key={i}
-                  />
-                ))}
-              </div>
-            </div>
-            <div className='col-md-8 col-sm-12'>
-              <Slider {...settings}>{ImageeTestiDataList}</Slider>
+            <div className='col-md-12 col-sm-12'>
+              <Slider
+                asNavFor={nav2}
+                ref={(slider1) => setNav1(slider1)}
+                {...sliderSettings}
+              >
+                {ImageeTestiDataList}
+              </Slider>
+              <Slider
+                {...slider2Settings}
+                asNavFor={nav1}
+                ref={(slider2) => setNav2(slider2)}
+                className='thumbSliderWrapper'
+              >
+                {data.map((item, index) => {
+                  return (
+                    <div
+                      className={`tThumbSlider ${
+                        activeIndex === index? ' active' : ''
+                      }`}
+                      key={item}
+                    >
+                      <img src={item.image.path} alt={item.name} />
+                    </div>
+                  );
+                })}
+              </Slider>
             </div>
           </div>
         )}

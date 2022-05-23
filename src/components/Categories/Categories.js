@@ -14,12 +14,11 @@ export const CategoryCard = ({ item = [] }) => {
     <>
       {item.map((valu, i) => (
         <div className='col-md-4 col-sm-12 mb-5' key={i}>
+              <Link to={`category/${valu._id}`}>
           <div className='service-item'>
             <div className='img_serv'>
-              <Link to={`category/${valu._id}`}>
                 {' '}
                 <img src={valu.image.path} alt='product' />
-              </Link>
             </div>
             <div className='service_text'>
               <Link to={`category/${valu._id}`}>
@@ -35,6 +34,8 @@ export const CategoryCard = ({ item = [] }) => {
               <i className='icon-glyph-40'></i>
             </Link>
           </div>
+          </Link>
+
         </div>
       ))}
     </>

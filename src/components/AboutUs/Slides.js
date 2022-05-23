@@ -16,16 +16,16 @@ class Slides extends Component {
         img: 'slider3.webp',
       },
       {
-        img: 'slider4.webp',
+        img:'slider7.jpeg',
       },
       {
-        img: 'slider5.webp',
+        img:'slider8.jpeg',
       },
       {
-        img: 'slider6.webp',
+        img:'slider8.jpg',
       },
       {
-        img: 'slider7.jpeg',
+        img:'slider9.jpg',
       },
     ];
 
@@ -43,7 +43,7 @@ class Slides extends Component {
     let ImageGalleryDataList = slideImages.map((val, i) => {
       return (
         <div
-          className='single_slider slide_bg_1 single_slider_about'
+          className='single_slider slide_bg_1 single_slider_about bg-white'
           style={{ backgroundImage: `url(/assets/images/dhaam_images/${val.img})` }}
           key={i}
         >
