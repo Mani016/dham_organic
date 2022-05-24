@@ -68,6 +68,7 @@ class Slides extends Component{
             speed: 1000,
             watchSlidesVisibility: true,
 			effect: 'slide',
+            
 			// pagination: {
 			// 	el: '.swiper-pagination',
 			// 	type: 'bullets',
@@ -102,7 +103,7 @@ class Slides extends Component{
                                         <Link to="/categories" className="slider_btn_one more-link ">Our Categories</Link>
                                       </div>
 						            </div>
-						            <div className="col-lg-6 col-sm-12 home_slides" >
+						            <div className="col-lg-6 mt-5 mt-lg-0 col-sm-12 home_slides" >
                                         <img src={`/assets/images/dhaam_images/${val.img}`} alt="slider" className="img-fluid" />
                                     </div>
 					            </div>

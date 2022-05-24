@@ -13,6 +13,8 @@
       height: 76px;
       width: 76px;
       border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
     }
     transition: all 0.3s ease-in-out;
     transform: scale(1);

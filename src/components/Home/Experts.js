@@ -43,7 +43,7 @@ const Experts = () => {
 
   let ImageeTestiDataList = imageTestiData.map((val, i) => {
     return (
-      <div className='item' key={i}>
+      <div className='item p-5 pb-0' key={i}>
         {/* <div className='testi_wrp'> */}
           <div className='testi_info'>
             <p>{val.content}</p>

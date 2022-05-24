@@ -88,7 +88,7 @@ const Testimonials = () => {
       <div className='item' key={`val_${i}`}>
         <div className='testi_wrp'>
           <img src={val.image.path} alt='' />
-          <div>
+          <div style={{flex:1}}>
             <div className='testi_info'>
               <p>{val.msg}</p>
             </div>
