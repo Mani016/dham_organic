@@ -6,13 +6,13 @@ const ChooseUs = () => {
 	<section 
     className="whychose-section" 
     style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/bg_1.jpeg"})`
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/bg_1.webp"})`
     }}
     > 
 	    <div className="container">
 	        <div className="row">
 	            <div className="col-lg-5 col-sm-12">
-	               <div className="whychose_bg" style={{backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/dhaam_images/slider20.jpeg"})` }}></div> 
+	               <div className="whychose_bg" style={{backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/dhaam_images/slider20.webp"})` }}></div> 
 	            </div> 
 	            <div className="col-lg-7 col-sm-12 my-auto">
 	                <div className="whychose_wrp" style={{background: "#4ba755" }}>

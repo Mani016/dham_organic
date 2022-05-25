@@ -69,7 +69,7 @@ const GalleryContent = ({ type }) => {
     let isActive = true;
     if (isActive) {
       setLoading(true)
-      agent.Gallery.getAll()
+      agent.Gallery.getAll({type})
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
             setImageGalleryData(res.data);
@@ -85,7 +85,7 @@ const GalleryContent = ({ type }) => {
     return () => {
       isActive = false;
     };
-  }, []);
+  }, [type]);
 
   let ImageGalleryDataList = imageGalleryData.map((val, i) => {
     return (

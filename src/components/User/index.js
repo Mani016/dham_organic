@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from 'react';
 import { MetaTags } from 'react-meta-tags';
 import AppContext from '../../Context';
 import LayoutOne from '../../layouts/LayoutOne';
-import user_img from '../../../assets/images/user.png';
+import user_img from '../../../assets/images/user.webp';
 
 const DashboardWrapper = (props) => {
   const { user } = useContext(AppContext);

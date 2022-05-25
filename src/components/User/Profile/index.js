@@ -3,7 +3,7 @@ import { MetaTags } from 'react-meta-tags';
 import LayoutOne from '../../../layouts/LayoutOne';
 import ManageAddress from '../ManageAddress';
 import OrderHistory from '../Orders/OrderHistory';
-import user_img from '../../../assets/images/user.png';
+import user_img from '../../../assets/images/user.webp';
 import AppContext from '../../../Context';
 import {
   getItemFromSessionStore,

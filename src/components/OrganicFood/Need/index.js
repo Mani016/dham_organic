@@ -8,7 +8,7 @@ class Need extends Component {
     const serviceTopArray = [
       {
         image:
-          'slider14.jpg',
+          'slider14.webp',
         title: 'ORGANIC FOOD – WHAT WE ALL NEED TO KNOW',
         desc: [
           'If we talk about Organic farming system in India, we know that it is not novel and is being followed from ancient times by our fore-fathers. ',
@@ -28,12 +28,12 @@ class Need extends Component {
 
     const serviceBottomArray = [
       {
-        icon: 'slider17.jpeg',
+        icon: 'slider17.webp',
         title: 'What all is Organic?',
         des: 'Any food products produced or involving production without the use of chemical fertilizers, pesticides, or other artificial chemicals.',
       },
       {
-        icon: 'slider18.jpeg',
+        icon: 'slider18.webp',
         title: 'It is the way of life.',
         des: 'Staples produced by organic farming will not only satiate your hunger but also provide you with a sense of well being.',
       },

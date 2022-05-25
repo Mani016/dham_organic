@@ -9,7 +9,7 @@ const AboutContent = () => {
           <div className='col-md-6 col-sm-12'>
             <div className='about_img'>
               <Slides />
-              {/* <img src="/assets/images/dhaam_images/group1.jpeg" alt="about" />  */}
+              {/* <img src="/assets/images/dhaam_images/group1.webp" alt="about" />  */}
             </div>
           </div>
           <div className='col-md-6 col-sm-12'>

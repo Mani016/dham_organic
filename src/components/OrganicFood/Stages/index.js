@@ -23,12 +23,12 @@ class Stages extends Component {
 
     const serviceBottomArray = [
       {
-        icon: 'farmers.jpg',
+        icon: 'farmers.webp',
         title: 'Friendly Neighbourhood Farmers',
         des: 'We are the “Friendly Neighbourhood Farmers” who have been involved in agriculture since many generations and we are well aware of the soil and its requirements in our region.',
       },
       {
-        icon: 'land.jpeg',
+        icon: 'land.webp',
         title: 'Sustainable Farming',
         des: 'Our land is already suitable for organic Farming.',
       },

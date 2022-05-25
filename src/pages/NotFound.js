@@ -15,7 +15,7 @@ const NotFound = () => {
         />
       </MetaTags> 
       <LayoutOne> 
-        <div className="errorPage" style={{backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/bg_3.jpeg"})` }}>
+        <div className="errorPage" style={{backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/bg_3.webp"})` }}>
           <div className="container">
             <div className="row">
               <div className="col-sm-12 text-center"> 

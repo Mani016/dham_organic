@@ -45,7 +45,7 @@ class Funfact extends Component {
         className='video-section'
         style={{
           backgroundImage: `url(${
-            process.env.PUBLIC_URL + '/assets/images/video_bg.jpeg'
+            process.env.PUBLIC_URL + '/assets/images/video_bg.webp'
           })`,
         }}
       >

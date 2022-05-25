@@ -9,7 +9,7 @@ class AboutUs extends Component {
     const serviceTopArray = [
       {
         image:
-          '/assets/images/dhaam_images/group1.jpeg',
+          '/assets/images/dhaam_images/group1.webp',
         title: 'ORGANIC FOOD – WHAT WE ALL NEED TO KNOW',
         desc: [
           'If we talk about Organic farming system in India, we know that it is not novel and is being followed from ancient times by our fore-fathers. ',
@@ -44,12 +44,12 @@ class AboutUs extends Component {
 
     const serviceBottomArray = [
       {
-        icon: 'process_3.png',
+        icon: 'process_3.webp',
         title: 'Fresh Vegetable',
         des: 'Experienced staff read nal Experienced sto help you full Prond Experienced eaelp you help anytime you',
       },
       {
-        icon: 'process_4.png',
+        icon: 'process_4.webp',
         title: 'Fresh Fruits',
         des: 'Experienced staff read nal Experienced sto help you full Prond Experienced eaelp you help anytime you',
       },

@@ -1,6 +1,6 @@
 import React from 'react';
 import jsPDFInvoiceTemplate, { OutputType } from "./jspdf-invoice-template";
-import dhaam_logo from '../../../assets/images/dhaam_logo.png';
+import dhaam_logo from '../../../assets/images/dhaam_logo.webp';
 import moment from "moment";
 import agent from '../../../agent';
 import { useState } from "react";

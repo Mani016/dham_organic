@@ -36,7 +36,7 @@ const DhaamStory = () => {
                     deliver will always be Fresh, Healthy, Eco-friendly and
                     Premium in their taste.
                   </p>
-                  <img src='http://jvesri.org/images/activites.jpg' alt='' />
+                  <img src='http://jvesri.org/images/activites.webp' alt='' />
 
                 </div>
                 <div className='col-sm-12 col-lg-12'>

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../../Context';
-import user_default_img from '../../../assets/images/user.png';
+import user_default_img from '../../../assets/images/user.webp';
 import agent from '../../../agent';
 import { API_STATUS } from '../../../constant';
 import Alert from '../../../Utils/Alert';

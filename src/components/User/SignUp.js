@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../../layouts/LayoutOne';
 import Typewriter from 'typewriter-effect';
-import logo from '../../assets/images/dhaam_logo.png';
+import logo from '../../assets/images/dhaam_logo.webp';
 import { Link } from 'react-router-dom';
 import agent from '../../agent';
 import Alert from '../../Utils/Alert';

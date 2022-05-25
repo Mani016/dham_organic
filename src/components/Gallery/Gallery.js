@@ -15,7 +15,7 @@ const Gallery = ({ type }) => {
     let isActive = true;
     if (isActive) {
       setLoading(true);
-      agent.Gallery.getAll()
+      agent.Gallery.getAll({ type })
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
             setGalleryListArray(res.data);
@@ -31,7 +31,7 @@ const Gallery = ({ type }) => {
     return () => {
       isActive = false;
     };
-  }, []);
+  }, [type]);
 
   const galleryListMap = galleryListArray.map((valu, i) => {
     return (
@@ -60,7 +60,11 @@ const Gallery = ({ type }) => {
         <div className='work-page-two'>
           {/*====================  breadcrumb area ====================*/}
 
-          <Breadcrumb title='Our Gallery' />
+          <Breadcrumb title={`Our ${type === 'FARM'
+                    ? 'Farms'
+                    : type === 'EVENT'
+                    ? 'Events'
+                    : 'Products'} Gallery`} />
 
           {/*====================  End of breadcrumb area  ================*/}
 
@@ -69,7 +73,15 @@ const Gallery = ({ type }) => {
               {/* Heading */}
               <div className='base-header'>
                 <small>Our Latest Work</small>
-                <h3>Our {type === 'farm' ? 'Farm' : 'Event'} Gallery</h3>
+                <h3>
+                  Our{' '}
+                  {type === 'FARM'
+                    ? 'Farms'
+                    : type === 'EVENT'
+                    ? 'Events'
+                    : 'Products'}{' '}
+                  Gallery
+                </h3>
               </div>
               {/* End: Heading */}
               {loading ? (

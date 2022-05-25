@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import MobileMenu from '../components/mobile-menu/MobileMenu';
 import MobileBtn from '../components/mobile-menu/MobileBtn';
-import dhaam_logo from '../assets/images/dhaam_logo.png';
+import dhaam_logo from '../assets/images/dhaam_logo.webp';
 import { getItemFromSessionStore } from '../Utils/utils';
 import AppContext from '../Context';
 import CartSidebar from '../components/User/CartSidebar';
@@ -70,6 +70,9 @@ const Menu = () => {
                       </li>
                       <li>
                         <Link to='/event-gallery'>Event Gallery</Link>
+                      </li>
+                      <li>
+                        <Link to='/products-gallery'>Products Gallery</Link>
                       </li>
                     </ul>
                   </li>

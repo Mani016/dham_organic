@@ -12,20 +12,20 @@ class Team extends Component {
       {
         name: 'Sumit Dagar',
         designation: 'Brain',
-        image: '/assets/images/dhaam_images/sumit.jpg',
+        image: '/assets/images/dhaam_images/sumit.webp',
       },
       {
         name: 'Anita Dhankar Dagar',
         designation: 'Heart And Soul',
-        image: '/assets/images/dhaam_images/anita.jpg',
+        image: '/assets/images/dhaam_images/anita.webp',
       },
       {
-        image: '/assets/images/dhaam_images/santosh_dagar.jpg',
+        image: '/assets/images/dhaam_images/santosh_dagar.webp',
         name:"Santosh Dagar",
         designation: 'Iron Lady',
       },
       {
-        image:'/assets/images/dhaam_images/rama_rathee_ji.jpg',
+        image:'/assets/images/dhaam_images/rama_rathee_ji.webp',
         name: 'Rama Rani Rathee',
         designation:"Patron And Supporter",
     },
@@ -68,7 +68,7 @@ class Team extends Component {
         className='team-section'
         style={{
           backgroundImage: `url(${
-            process.env.PUBLIC_URL + '/assets/images/bg_3.jpeg'
+            process.env.PUBLIC_URL + '/assets/images/bg_3.webp'
           })`,
         }}
       >

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import logo from '../../../assets/images/dhaam_logo.png';
+import logo from '../../../assets/images/dhaam_logo.webp';
 import { API_STATUS, MESSAGES } from '../../../constant';
 import OrderDetail from './OrderDetail';
 import agent from '../../../agent';

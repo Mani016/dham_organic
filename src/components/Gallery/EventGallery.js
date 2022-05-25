@@ -2,7 +2,7 @@ import React from 'react';
 import Gallery from './Gallery';
 
 const EventGallery = () => {
-  return <Gallery type='event' />;
+  return <Gallery type='EVENT' />;
 };
 
 export default EventGallery;

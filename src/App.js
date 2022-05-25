@@ -18,6 +18,7 @@ import Need from './components/OrganicFood/Need';
 import Stages from './components/OrganicFood/Stages';
 import FarmGallery from './components/Gallery/FarmGallery';
 import EventGallery from './components/Gallery/EventGallery';
+import ProductsGallery from './components/Gallery/ProductsGallery';
 
 function App() {
   return (
@@ -44,6 +45,10 @@ function App() {
            <Route
             path={`${process.env.PUBLIC_URL + '/event-gallery'}`}
             component={EventGallery}
+          />
+            <Route
+            path={`${process.env.PUBLIC_URL + '/products-gallery'}`}
+            component={ProductsGallery}
           />
           <Route
             path={`${process.env.PUBLIC_URL + '/our-concepts/dhaam-story'}`}

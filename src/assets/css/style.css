@@ -1040,17 +1040,17 @@ section {
 /*  Slider Area Styling */
 
 .slide_bg_1 {
-  background: #f0f0f0 url('/assets/images/slider1.jpeg') no-repeat scroll right
+  background: #f0f0f0 url('/assets/images/slider1.webp') no-repeat scroll right
     center;
 }
 
 .slide_bg_2 {
-  background: #f0f0f0 url('/assets/images/slider2.jpeg') no-repeat scroll right
+  background: #f0f0f0 url('/assets/images/slider2.webp') no-repeat scroll right
     center;
 }
 
 .slide_bg_3 {
-  background: #f0f0f0 url('/assets/images/slider3.jpeg') no-repeat scroll right
+  background: #f0f0f0 url('/assets/images/slider3.webp') no-repeat scroll right
     center;
 }
 
@@ -1929,7 +1929,7 @@ section {
 .pricing-section {
   padding-bottom: 0px;
   background: #f6f8ff;
-  background: url('/assets/images/bg_2.jpg') no-repeat top center;
+  background: url('/assets/images/bg_2.webp') no-repeat top center;
   background-position: 50% 0%;
 }
 
@@ -2177,7 +2177,7 @@ section {
 
 .team-section {
   padding-bottom: 115px;
-  background-image: url('/assets/images/bg_3.jpeg');
+  background-image: url('/assets/images/bg_3.webp');
 }
 
 .team_wrp {
@@ -2217,7 +2217,7 @@ section {
   right: 0;
   bottom: 0;
   top: 0px;
-  background: url('/assets/images/team_bg.png') no-repeat top center;
+  background: url('/assets/images/team_bg.webp') no-repeat top center;
 }
 
 .team_img img {
@@ -2598,7 +2598,7 @@ section {
 }
 
 .contact_bg {
-  background: #f6f8ff url('/assets/images/contact_bg.jpg');
+  background: #f6f8ff url('/assets/images/contact_bg.webp');
   background-position: right center;
   background-repeat: no-repeat;
   height: 673px;
@@ -3065,7 +3065,7 @@ header {
       Call to action Section
   ------------------------------------------------------*/
 .cta_bg {
-  background-image: url('/assets/images/cta_bg.jpg');
+  background-image: url('/assets/images/cta_bg.webp');
   background-position: right center;
   background-repeat: no-repeat;
   height: 300px;
@@ -3136,35 +3136,35 @@ header {
 /* Work items ------------------*/
 
 .single-project-item {
-  background-image: url(/assets/images/work-1.jpg);
+  background-image: url(/assets/images/work-1.webp);
 }
 
 .project-bg-2 {
-  background-image: url(/assets/images/work-2.jpg);
+  background-image: url(/assets/images/work-2.webp);
 }
 
 .project-bg-3 {
-  background-image: url(/assets/images/work-3.jpg);
+  background-image: url(/assets/images/work-3.webp);
 }
 
 .project-bg-4 {
-  background-image: url(/assets/images/work-4.jpg);
+  background-image: url(/assets/images/work-4.webp);
 }
 
 .project-bg-5 {
-  background-image: url(/assets/images/work-5.jpg);
+  background-image: url(/assets/images/work-5.webp);
 }
 
 .project-bg-6 {
-  background-image: url(/assets/images/work-6.jpg);
+  background-image: url(/assets/images/work-6.webp);
 }
 
 .project-bg-7 {
-  background-image: url(/assets/images/work-7.jpg);
+  background-image: url(/assets/images/work-7.webp);
 }
 
 .project-bg-8 {
-  background-image: url(/assets/images/work-8.jpg);
+  background-image: url(/assets/images/work-8.webp);
 }
 
 .single-project-item {

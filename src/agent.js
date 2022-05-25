@@ -5,8 +5,8 @@ import Alert from './Utils/Alert';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = 'https://dhaam-api.herokuapp.com/api/';
-// const API_ROOT = 'http://localhost:8000/api/';
+// const API_ROOT = 'https://dhaam-api.herokuapp.com/api/';
+const API_ROOT = 'http://localhost:8000/api/';
 
 const responseBody = (res) => res.body;
 const errorBody = (err) => {
@@ -132,7 +132,7 @@ const Localities = {
     requests.post('admin/locality', { ...payload, companyId, createdBy }),
 };
 const Gallery = {
-  getAll: () => requests.post('admin/gallery/getImages', { companyId }),
+  getAll: (payload) => requests.post('admin/gallery/getImages', { companyId, ...payload }),
 };
 const Address = {
   add: (payload) =>

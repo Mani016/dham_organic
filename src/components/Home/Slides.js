@@ -9,6 +9,11 @@ class Slides extends Component{
 
         let slideImages = [
             {
+                img:'dhaam_banner.webp',
+                smallTitle: 'Know Your Farmer, Know Your Food',
+                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+            },
+            {
                 img:'slider1.webp',
                 smallTitle: 'Know Your Farmer, Know Your Food',
                 title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
@@ -24,39 +29,39 @@ class Slides extends Component{
                 title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },
 			{
-                img:'slider7.jpeg',
+                img:'slider7.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
                 title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
 				description:"Our Mission is to be a faithful brand which provides genuine organic products for day-to-day requirements. We serve a wide variety of essentials ranging from food products like flour, daliya to fruits and hair oil. We want to inspire people resurge and promote the tradition of food and wellness. ",
             },
 			{
-                img:'slider8.jpeg',
+                img:'slider8.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
                 title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },
 			{
-                img:'slider8.jpg',
+                img:'slider8.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
                 title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },
             {
-                img:'slider9.jpg',
+                img:'slider9.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
                 title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
 				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
             },
             {
-                img:'slider11.jpg',
+                img:'slider11.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
                 title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },
             {
-                img:'slider12.jpg',
+                img:'slider12.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
                 title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },
             {
-                img:'slider14.jpg',
+                img:'slider14.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
                 title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
             },

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Breadcrumb = ({ title }) => {
   return (
 
-    <header id="page-top" className="blog-banner" style={{backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/header.jpeg"})` }}> 
+    <header id="page-top" className="blog-banner" style={{backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/images/header.webp"})` }}> 
         <div className="container" id="blog">
             <div className="row blog-header text-center">
                 <div className="col-sm-12"> 

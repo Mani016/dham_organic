@@ -7,32 +7,32 @@ class WorkProcess extends Component{
 
     const workProcesstArray = [
         {
-            image:'process_1.png',
+            image:'process_1.webp',
             number:'01',
             title:'Step 01',
             description: 'Organically grown crops tend use natural fertilizers like manure to improve growth to plant . ',
-            arrowIcon:'shape1.png',
+            arrowIcon:'shape1.webp',
         },
         {
-            image:'process_2.png',
+            image:'process_2.webp',
             number:'02',
             title:'Step 02',
             description: 'Organically grown crops tend use natural fertilizers like manure to improve growth to plant . ',
-            arrowIcon:'shape2.png',
+            arrowIcon:'shape2.webp',
         },
         {
-            image:'process_3.png',
+            image:'process_3.webp',
             number:'03',
             title:'Step 03',
             description: 'Organically grown crops tend use natural fertilizers like manure to improve growth to plant . ',
-            arrowIcon:'shape1.png',
+            arrowIcon:'shape1.webp',
         },
         {
-            image:'process_4.png',
+            image:'process_4.webp',
             number:'04',
             title:'Step 04',
             description: 'Organically grown crops tend use natural fertilizers like manure to improve growth to plant . ',
-            arrowIcon:'shape1.png',
+            arrowIcon:'shape1.webp',
         },
     ]
  

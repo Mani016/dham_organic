@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { animateScroll } from 'react-scroll';
 import { Link } from 'react-router-dom';
-// import dhaam_logo from '../assets/images/dhaam_logo.png';
 const Footer = () => {
   const [scroll, setScroll] = useState(0);
   const [top, setTop] = useState(0);
@@ -32,7 +31,7 @@ const Footer = () => {
               <div className='footer_logo'>
                 <img
                   className='img-responsive'
-                  src='/assets/images/dhaam_images/dhaam_logo.png'
+                  src='/assets/images/dhaam_images/dhaam_logo.webp'
                   alt=''
                 />
               </div>

@@ -106,7 +106,10 @@ const MobileMenu = () => {
                     <Link to='/farm-gallery'>Farm Gallery</Link>
                   </li>
                   <li>
-                    <Link to='/event-gallery'>Event Gallery</Link>
+                    <Link to='/event-gallery'>Events Gallery</Link>
+                  </li>
+                  <li>
+                    <Link to='/products-gallery'>Products Gallery</Link>
                   </li>
                 </ul>
               </li>

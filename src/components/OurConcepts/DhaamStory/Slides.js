@@ -7,22 +7,22 @@ class Slides extends Component {
   render() {
     let slideImages = [
       {
-        img: 'slider12.jpg',
+        img: 'slider12.webp',
       },
       {
-        img: 'slider11.jpg',
+        img: 'slider11.webp',
       },
       {
-        img: 'slider13.jpg',
+        img: 'slider13.webp',
       },
       {
-        img: 'slider14.jpg',
+        img: 'slider14.webp',
       },
       {
-        img: 'slider15.jpg',
+        img: 'slider15.webp',
       },
       {
-        img: 'slider16.jpg',
+        img: 'slider16.webp',
       },
     ];
 

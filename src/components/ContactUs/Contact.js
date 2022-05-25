@@ -153,8 +153,7 @@ const Contact = () => {
                   <div className='col-md-4 col-sm-12'>
                     <div className='contact_pg_address'>
                       <h3>
-                        Hello there <br />
-                        any issue?
+                      Discover the healthy food with DHAAM <br />
                       </h3>
                       <div className='single_con_add'>
                         <a href='#/'>
