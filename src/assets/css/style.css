@@ -2301,6 +2301,8 @@ section {
   width: 150px;
   height: 150px;
   border-radius: 100%;
+  object-fit: cover;
+  object-position: top;
   /* object-fit: contain; */
 }
 .testi_info {
@@ -3696,6 +3698,9 @@ header {
   width: 100%;
   background: #f1f6fa;
   padding: 30px;
+}
+.widget iframe{
+  padding: 0px 2px;
 }
 /* - Widget Search */
 

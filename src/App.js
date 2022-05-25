@@ -19,6 +19,7 @@ import Stages from './components/OrganicFood/Stages';
 import FarmGallery from './components/Gallery/FarmGallery';
 import EventGallery from './components/Gallery/EventGallery';
 import ProductsGallery from './components/Gallery/ProductsGallery';
+import TestimonialsGallery from './components/Gallery/TestimonialsGallery/index';
 
 function App() {
   return (
@@ -45,6 +46,10 @@ function App() {
            <Route
             path={`${process.env.PUBLIC_URL + '/event-gallery'}`}
             component={EventGallery}
+          />
+             <Route
+            path={`${process.env.PUBLIC_URL + '/testimonials-gallery'}`}
+            component={TestimonialsGallery}
           />
             <Route
             path={`${process.env.PUBLIC_URL + '/products-gallery'}`}

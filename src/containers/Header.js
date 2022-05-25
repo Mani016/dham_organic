@@ -30,12 +30,8 @@ const Header = () => {
                 <i className='fa fa-facebook'></i>
               </a>
             </li>
-            <li>
-              <a href='//twitter.com' target='_blank' rel='noopener noreferrer'>
-                <i className='fa fa-twitter'></i>
-              </a>
-            </li>
-            <li>
+          
+            {/* <li>
               <a
                 href='//instagram.com'
                 target='_blank'
@@ -43,16 +39,8 @@ const Header = () => {
               >
                 <i className='fa fa-instagram'></i>
               </a>
-            </li>
-            <li>
-              <a
-                href='//pinterest.com'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <i className='fa fa-pinterest'></i>
-              </a>
-            </li>
+            </li> */}
+          
           </ul>
         </div>
       </div>

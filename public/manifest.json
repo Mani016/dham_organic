@@ -3,17 +3,17 @@
   "name": "dhaam_organic - Organic Food React JS Template",
   "icons": [
     {
-      "src": "dhaam_logo.webp",
+      "src": "dhaam_logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "dhaam_logo.webp",
+      "src": "dhaam_logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "dhaam_logo.webp",
+      "src": "dhaam_logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

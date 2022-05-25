@@ -24,14 +24,14 @@ const ChooseUs = () => {
 	                    {/* End: Header Section */}
 	                    <div className="special_ser_item">
 	                        <div className="special_ser_icon">
-	                            <i className="icon-glyph-11"></i>
+	                            <i className="fa fa-quora"></i>
 	                        </div>
 	                        <h4>High Quality</h4>
 	                        <p>We believe in delivering less but extremely high quality food that you will look forward to have over and over again.</p>
 	                    </div>                 
 	                    <div className="special_ser_item">
 	                        <div className="special_ser_icon">
-	                            <i className="icon-glyph-30"></i>
+	                            <i className="fa fa-magic"></i>
 	                        </div>
 	                        <h4>Develop From Scratch</h4>
 	                        <p>We develop everything from scratch; every ingredient, every product has its own unique touch to it, and we take a lot of time formulating and making sure they actually work.</p>

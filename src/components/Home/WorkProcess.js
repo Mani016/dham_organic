@@ -10,28 +10,35 @@ class WorkProcess extends Component{
             image:'process_1.webp',
             number:'01',
             title:'Step 01',
-            description: 'Organically grown crops tend use natural fertilizers like manure to improve growth to plant . ',
+            description: 'First and Foremost, we grow crops in our farms using holistic system of Organic Farming.',
+            arrowIcon:'shape1.webp',
+        },
+        {
+            image:'process_1.webp',
+            number:'02',
+            title:'Step 02',
+            description: 'As the crops mature, they have to be harvested and cereals and grains are dried for storage. Fruits and vegetables are stored in a way to keep their freshness intact without use of chemicals.',
             arrowIcon:'shape1.webp',
         },
         {
             image:'process_2.webp',
             number:'02',
             title:'Step 02',
-            description: 'Organically grown crops tend use natural fertilizers like manure to improve growth to plant . ',
+            description: 'These food stuffs are then sent over to be either ground to make flours or Whole grain products. Vegetables are used to make pickles which are packed. Fresh fruits and vegetables are packed to be delivered.',
             arrowIcon:'shape2.webp',
         },
         {
             image:'process_3.webp',
             number:'03',
             title:'Step 03',
-            description: 'Organically grown crops tend use natural fertilizers like manure to improve growth to plant . ',
+            description: 'Delivery team members who are the connecting link between Farmers and Customers collect all the products.',
             arrowIcon:'shape1.webp',
         },
         {
             image:'process_4.webp',
             number:'04',
             title:'Step 04',
-            description: 'Organically grown crops tend use natural fertilizers like manure to improve growth to plant . ',
+            description: 'These products are then delivered to our customers so that they can enjoy the freshness and health of Fresh Organic Products.',
             arrowIcon:'shape1.webp',
         },
     ]
@@ -64,7 +71,7 @@ class WorkProcess extends Component{
 
              {/* Heading */}
              <div className="base-header">
-                <small>Working Process</small>
+                <small>MODES OF OPERATION</small>
                 <h3>How does we work</h3>
              </div>  
         	{/* End: Heading */}

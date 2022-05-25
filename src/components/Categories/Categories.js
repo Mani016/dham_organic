@@ -14,28 +14,25 @@ export const CategoryCard = ({ item = [] }) => {
     <>
       {item.map((valu, i) => (
         <div className='col-md-4 col-sm-12 mb-5' key={i}>
-              <Link to={`category/${valu._id}`}>
           <div className='service-item'>
-            <div className='img_serv'>
+            <Link to={`category/${valu._id}`}>
+              <div className='img_serv'>
                 {' '}
                 <img src={valu.image.path} alt='product' />
-            </div>
-            <div className='service_text'>
-              <Link to={`category/${valu._id}`}>
+              </div>
+              <div className='service_text'>
                 <h4>{valu.name}</h4>
-              </Link>
-              <p>
-                {valu.description.length > 120
-                  ? valu.description.slice(0, 120) + '....'
-                  : valu.description}
-              </p>
-            </div>
+                <p>
+                  {valu.description.length > 120
+                    ? valu.description.slice(0, 120) + '....'
+                    : valu.description}
+                </p>
+              </div>
+            </Link>
             <Link to={`category/${valu._id}`} className='serv_link'>
               <i className='icon-glyph-40'></i>
             </Link>
           </div>
-          </Link>
-
         </div>
       ))}
     </>

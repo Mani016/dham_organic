@@ -7,7 +7,7 @@ import OurCategories from '../Categories/OurCategories';
 import GalleryContent from '../Gallery/GalleryContent';
 import Funfact from './Funfact';
 import Slides from './Slides';
-import WorkProcess from './WorkProcess';
+// import WorkProcess from './WorkProcess';
 import ChooseUs from './ChooseUs';
 import Experts from './Experts';
 import Testimonials from './Testimonials';
@@ -22,7 +22,7 @@ const Home = () => {
         <Slides />
         <AboutContent />
         <Funfact />
-        <WorkProcess/>
+        {/* <WorkProcess/> */}
         <GalleryContent type="EVENT"/>
         <OurCategories />
         <Experts/>

@@ -74,6 +74,9 @@ const Menu = () => {
                       <li>
                         <Link to='/products-gallery'>Products Gallery</Link>
                       </li>
+                      <li>
+                        <Link to='/testimonials-gallery'>Testimoials Gallery</Link>
+                      </li>
                     </ul>
                   </li>
                   <li>
