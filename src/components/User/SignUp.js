@@ -67,6 +67,7 @@ const SignUp = () => {
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
 //             setCreated(true);
+             Alert.showToastAlert('success', res.message);
             setItemToSessionStore('token', res.data.token);
             setItemToSessionStore('justOnce', true);
             setItemToSessionStore('clientId', res.data.user.id);
