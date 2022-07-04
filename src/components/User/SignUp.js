@@ -158,7 +158,7 @@ const SignUp = () => {
                         Already have an account?
                       </Link>
                     </div>
-                    // {!created ? (
+                     {/*  {!created ? ( */}
                       <form>
                         <p className='input_fields input_name'>
                           <label>
@@ -238,45 +238,45 @@ const SignUp = () => {
                           />
                         </div>
                       </form>
-//                     ) : (
-//                       <form>
-//                         <p className='input_fields input_name'>
-//                           <label>
-//                             Mobile Number<span className='required'>*</span>
-//                           </label>
-//                           <input
-//                             type='number'
-//                             placeholder='Enter Mobile Number'
-//                             value={mobileNum}
-//                             disabled={true}
-//                           />
-//                         </p>
-//                         <p className='input_fields input_name'>
-//                           <label>
-//                             OTP<span className='required'>*</span>
-//                           </label>
-//                           <input
-//                             type='text'
-//                             placeholder='Enter OTP'
-//                             onChange={({ target }) => {
-//                               setOTP(target.value);
-//                             }}
-//                             value={OTP}
-//                             disabled={loading}
-//                           />
-//                         </p>
-//                         <div className='d-flex mt-3 mb-3 justify-content-center'>
-//                           <input
-//                             type='button'
-//                             name='send'
-//                             onClick={() => Register()}
-//                             className='submit-contact submitBnt mx-2'
-//                             value='Register'
-//                             disabled={loading}
-//                           />
-//                         </div>
-//                       </form>
-//                     )}
+  {/*                   ) : (
+                      <form>
+                        <p className='input_fields input_name'>
+                          <label>
+                            Mobile Number<span className='required'>*</span>
+                          </label>
+                          <input
+                            type='number'
+                            placeholder='Enter Mobile Number'
+                            value={mobileNum}
+                            disabled={true}
+                          />
+                        </p>
+                        <p className='input_fields input_name'>
+                          <label>
+                            OTP<span className='required'>*</span>
+                          </label>
+                          <input
+                            type='text'
+                            placeholder='Enter OTP'
+                            onChange={({ target }) => {
+                              setOTP(target.value);
+                            }}
+                            value={OTP}
+                            disabled={loading}
+                          />
+                        </p>
+                        <div className='d-flex mt-3 mb-3 justify-content-center'>
+                          <input
+                            type='button'
+                            name='send'
+                            onClick={() => Register()}
+                            className='submit-contact submitBnt mx-2'
+                            value='Register'
+                            disabled={loading}
+                          />
+                        </div>
+                      </form>
+                    )}*/}
                   </div>
                 </div>
               </div>
