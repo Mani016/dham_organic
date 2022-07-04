@@ -83,6 +83,7 @@ const SignUp = () => {
         });
     }
   }
+  
 //   function Register() {
 //     let formIsComplete = true;
 //     if (OTP === '') {
