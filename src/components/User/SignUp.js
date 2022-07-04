@@ -65,35 +65,7 @@ const SignUp = () => {
       agent.Auth.register(data)
         .then((res) => {
           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-            Alert.showToastAlert('success', res.message);
-            setCreated(true);
-            setLoading(false);
-          } else {
-            HANDLE_ERROR(res.message, setLoading);
-            setCreated(false);
-          }
-        })
-        .catch((err) => {
-          HANDLE_ERROR(err.message, setLoading);
-        });
-    }
-  }
-  function Register() {
-    let formIsComplete = true;
-    if (OTP === '') {
-      Alert.showToastAlert('warning', 'OTP is required');
-      formIsComplete = false;
-    }
-    if (formIsComplete) {
-      setLoading(true);
-      const data = {
-        otp: Number(OTP),
-        mobile: Number(mobileNum),
-      };
-      agent.Auth.otp(data)
-        .then((res) => {
-          if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-            setCreated(true);
+//             setCreated(true);
             setItemToSessionStore('token', res.data.token);
             setItemToSessionStore('justOnce', true);
             setItemToSessionStore('clientId', res.data.user.id);
@@ -103,11 +75,44 @@ const SignUp = () => {
             setLoading(false);
           } else {
             HANDLE_ERROR(res.message, setLoading);
+//             setCreated(false);
           }
         })
-        .catch((err) => HANDLE_ERROR(err.message, setLoading));
+        .catch((err) => {
+          HANDLE_ERROR(err.message, setLoading);
+        });
     }
   }
+//   function Register() {
+//     let formIsComplete = true;
+//     if (OTP === '') {
+//       Alert.showToastAlert('warning', 'OTP is required');
+//       formIsComplete = false;
+//     }
+//     if (formIsComplete) {
+//       setLoading(true);
+//       const data = {
+//         otp: Number(OTP),
+//         mobile: Number(mobileNum),
+//       };
+//       agent.Auth.otp(data)
+//         .then((res) => {
+//           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+//             setCreated(true);
+//             setItemToSessionStore('token', res.data.token);
+//             setItemToSessionStore('justOnce', true);
+//             setItemToSessionStore('clientId', res.data.user.id);
+//             setTimeout(function () {
+//               window.location = '/my-account';
+//             }, 1000);
+//             setLoading(false);
+//           } else {
+//             HANDLE_ERROR(res.message, setLoading);
+//           }
+//         })
+//         .catch((err) => HANDLE_ERROR(err.message, setLoading));
+//     }
+//   }
   return (
     <Fragment>
       <MetaTags>
@@ -152,7 +157,7 @@ const SignUp = () => {
                         Already have an account?
                       </Link>
                     </div>
-                    {!created ? (
+                    // {!created ? (
                       <form>
                         <p className='input_fields input_name'>
                           <label>
@@ -228,49 +233,49 @@ const SignUp = () => {
                             name='send'
                             onClick={() => GetOtp()}
                             className='submit-contact submitBnt mx-2'
-                            value='Get OTP'
-                          />
-                        </div>
-                      </form>
-                    ) : (
-                      <form>
-                        <p className='input_fields input_name'>
-                          <label>
-                            Mobile Number<span className='required'>*</span>
-                          </label>
-                          <input
-                            type='number'
-                            placeholder='Enter Mobile Number'
-                            value={mobileNum}
-                            disabled={true}
-                          />
-                        </p>
-                        <p className='input_fields input_name'>
-                          <label>
-                            OTP<span className='required'>*</span>
-                          </label>
-                          <input
-                            type='text'
-                            placeholder='Enter OTP'
-                            onChange={({ target }) => {
-                              setOTP(target.value);
-                            }}
-                            value={OTP}
-                            disabled={loading}
-                          />
-                        </p>
-                        <div className='d-flex mt-3 mb-3 justify-content-center'>
-                          <input
-                            type='button'
-                            name='send'
-                            onClick={() => Register()}
-                            className='submit-contact submitBnt mx-2'
                             value='Register'
-                            disabled={loading}
                           />
                         </div>
                       </form>
-                    )}
+//                     ) : (
+//                       <form>
+//                         <p className='input_fields input_name'>
+//                           <label>
+//                             Mobile Number<span className='required'>*</span>
+//                           </label>
+//                           <input
+//                             type='number'
+//                             placeholder='Enter Mobile Number'
+//                             value={mobileNum}
+//                             disabled={true}
+//                           />
+//                         </p>
+//                         <p className='input_fields input_name'>
+//                           <label>
+//                             OTP<span className='required'>*</span>
+//                           </label>
+//                           <input
+//                             type='text'
+//                             placeholder='Enter OTP'
+//                             onChange={({ target }) => {
+//                               setOTP(target.value);
+//                             }}
+//                             value={OTP}
+//                             disabled={loading}
+//                           />
+//                         </p>
+//                         <div className='d-flex mt-3 mb-3 justify-content-center'>
+//                           <input
+//                             type='button'
+//                             name='send'
+//                             onClick={() => Register()}
+//                             className='submit-contact submitBnt mx-2'
+//                             value='Register'
+//                             disabled={loading}
+//                           />
+//                         </div>
+//                       </form>
+//                     )}
                   </div>
                 </div>
               </div>
