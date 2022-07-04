@@ -19,6 +19,7 @@ const SignUp = () => {
   const [loading, setLoading] = React.useState(false);
   const [showPassword, setShowPassword] = React.useState(false);
 
+  
   function GetOtp() {
     let formIsComplete = true;
     if (name === '' || mobileNum === '' || password === '') {
