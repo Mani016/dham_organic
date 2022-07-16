@@ -6477,7 +6477,7 @@ input[type='number'] {
   color: #4ca853;
 }
 .address_box.add_more {
-  width: 270px;
+  max-width: 270px;
   display: flex;
   align-items: center;
   cursor: pointer;
