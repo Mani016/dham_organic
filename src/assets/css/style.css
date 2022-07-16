@@ -1350,6 +1350,21 @@ section {
   padding: 25px 25px 33px;
   position: relative;
 }
+.service_text p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.service_text h4{
+      max-width: 325px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: normal;
+}
 
 .serv_link {
   position: absolute;
