@@ -2076,8 +2076,8 @@ section {
     10. Gallery Section
   ------------------------------------------------------*/
 .project-section {
-  padding-top: 115px;
-  padding-bottom: 120px;
+  padding-top: 11px;
+  padding-bottom: 12px;
 }
 
 .project-section .base_header_left {
@@ -2352,6 +2352,7 @@ section {
   line-height: 32px;
   color: #61657a;
   margin-bottom: 15px;
+  text-align: justify;
 }
 
 .testi_img {
