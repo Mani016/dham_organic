@@ -1846,8 +1846,9 @@ section {
 }
 .product_img img {
   height: auto;
-  width: 200px !important;
-  width: auto;
+/*   width: 200px !important; */
+/*   width: auto; */
+  width: 100%;
   object-fit: contain;
   max-height: 150px;
   transition: transform 0.6s;
