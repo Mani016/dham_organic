@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import { API_STATUS } from '../../constant';
 import AppContext from '../../Context';
@@ -11,6 +11,7 @@ const useCart = () => {
     React.useContext(AppContext);
 
   const history = useHistory();
+  const [selectedId, setSelectedId] = useState('');
 
   function getItemQuantity(id) {
     let qty = 0;
@@ -24,6 +25,7 @@ const useCart = () => {
   }
   function addToCart(id) {
     if (checkUserLogin()) {
+      setSelectedId(id);
       setLoading(true);
       agent.Cart.add({ productId: id })
         .then((res) => {
@@ -31,12 +33,15 @@ const useCart = () => {
             Alert.showToastAlert('success', 'Product Added Successfully.');
             GetCart();
             setLoading(false);
+            setSelectedId('');
           } else {
             HANDLE_ERROR(res.message, setLoading);
+            setSelectedId('');
           }
         })
         .catch((err) => {
           HANDLE_ERROR(err.message, setLoading);
+          setSelectedId('');
         });
     } else {
       Alert.showToastAlert('error', 'Login Required');
@@ -45,6 +50,7 @@ const useCart = () => {
   }
   function subtractFromCart(id) {
     if (checkUserLogin()) {
+      setSelectedId(id);
       setLoading(true);
       agent.Cart.remove({ productId: id })
         .then((res) => {
@@ -52,11 +58,14 @@ const useCart = () => {
             Alert.showToastAlert('success', 'Product Removed Successfully.');
             GetCart();
             setLoading(false);
+            setSelectedId('');
           } else {
             HANDLE_ERROR(res.message, setLoading);
+            setSelectedId('');
           }
         })
         .catch((err) => {
+          setSelectedId('');
           HANDLE_ERROR(err.message, setLoading);
         });
     } else {
@@ -97,7 +106,7 @@ const useCart = () => {
               >
                 <i className='fa fa-minus'></i>
               </div>
-              {loading ? (
+              {(loading && id === selectedId)  ? (
                 <img src={loadImg} className='white_load' alt='cart' />
               ) : (
                 <input
@@ -108,14 +117,13 @@ const useCart = () => {
                   value={getItemQuantity(id)}
                 />
               )}
-
               <div className='inc qtybutton' onClick={() => addToCart(id)}>
                 <i className='fa fa-plus'></i>
               </div>
             </div>
           ) : (
             <div onClick={() => addToCart(id)} className='prod_add_cart_btn'>
-              {loading ? (
+              {loading && id === selectedId ? (
                 <img src={loadImg} className='white_load' alt='loader' />
               ) : (
                 'Add To Cart'
