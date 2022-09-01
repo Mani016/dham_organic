@@ -60,8 +60,5 @@
       "last 1 safari version",
       "ie 11"
     ]
-  },
-  "devDependencies": {
-    "node-sass": "^4.14.1"
   }
 }
