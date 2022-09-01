@@ -13,6 +13,7 @@
     "google-maps-react": "^2.0.6",
     "jspdf": "^2.5.1",
     "moment": "^2.29.1",
+    "node-sass": "7.0.1",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
     "react-app-polyfill": "^1.0.5",
