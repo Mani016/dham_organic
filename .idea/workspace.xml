@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ad64ab0-3c94-47e3-88de-38b6b3fcecd0" name="Changes" comment="Dhaam Updated">
-      <change afterPath="$PROJECT_DIR$/.idea/dham_organic.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/dhaam_images/Dr Rishi.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/dhaam_images/Sapna sehrawat.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/dhaam_images/dharmesh varma.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/dhaam_images/jaivik bharat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/dhaam_images/psg-logo.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ContactUs/farm-location/farm-location.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ContactUs/return-refund/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OrganicFood/faq/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OrganicFood/selection-of-farmer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OurConcepts/Experts/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OurConcepts/certifications/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/customer-reviews/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Categories/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/Categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Categories/OurCategories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/OurCategories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContactUs/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactUs/Contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Gallery/Gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gallery/Gallery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Experts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Experts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrganicFood/Stages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrganicFood/Stages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OurConcepts/DhaamStory/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OurConcepts/DhaamStory/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Products/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Products/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Team.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +50,7 @@
       <updated>1662048670924</updated>
       <workItem from="1662048672676" duration="4132000" />
       <workItem from="1662055655091" duration="35584000" />
-      <workItem from="1663145697331" duration="846000" />
+      <workItem from="1663145697331" duration="1793000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662049599973</created>
