@@ -4,7 +4,7 @@ import { HANDLE_ERROR } from '../../Utils/utils';
 import agent from '../../agent';
 import { API_STATUS } from '../../constant';
 import Loader from '../reusables/Loader';
-import './testimonials.scss'
+import './testimonials.css'
 const Testimonials = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
