@@ -42,16 +42,16 @@ const OurCategories = () => {
     <section className='service-section'>
       <div className='animate_icon'>
         <div className='animate_item animate_item1 bounce_animate'>
-          <img src='assets/images/animate_icon1.webp' alt='' />
+          <img src='/assets/images/animate_icon1.webp' alt='' />
         </div>
         <div className='animate_item animate_item2 bounce_animate'>
-          <img src='assets/images/animate_icon2.webp' alt='' />
+          <img src='/assets/images/animate_icon2.webp' alt='' />
         </div>
         <div className='animate_item animate_item3 bounce_animate'>
-          <img src='assets/images/animate_icon3.webp' alt='' />
+          <img src='/assets/images/animate_icon3.webp' alt='' />
         </div>
         <div className='animate_item animate_item4 bounce_animate'>
-          <img src='assets/images/animate_icon4.webp' alt='' />
+          <img src='/assets/images/animate_icon4.webp' alt='' />
         </div>
       </div>
       <div className='container'>

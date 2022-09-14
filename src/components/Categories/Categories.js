@@ -75,14 +75,14 @@ const Category = () => {
   return (
     <Fragment>
       <MetaTags>
-        <title>Dhaam Organic| Our Categories</title>
-        <meta name='description' content='Dhaam Organic | Our Categories' />
+        <title>Dhaam Organic|  Our Products</title>
+        <meta name='description' content='Dhaam Organic | Our Products' />
       </MetaTags>
       <LayoutOne>
         <div className='category-page'>
           {/*====================  breadcrumb area ====================*/}
 
-          <Breadcrumb title='Our Categories' />
+          <Breadcrumb title='Our Products' />
 
           {/*====================  End of breadcrumb area  ====================*/}
 
@@ -90,23 +90,19 @@ const Category = () => {
           <section className='service-section'>
             <div className='animate_icon'>
               <div className='animate_item animate_item1 bounce_animate'>
-                <img src='assets/images/animate_icon1.webp' alt='' />
+                <img src='/assets/images/animate_icon1.webp' alt='' />
               </div>
               <div className='animate_item animate_item2 bounce_animate'>
-                <img src='assets/images/animate_icon2.webp' alt='' />
+                <img src='/assets/images/animate_icon2.webp' alt='' />
               </div>
               <div className='animate_item animate_item3 bounce_animate'>
-                <img src='assets/images/animate_icon3.webp' alt='' />
+                <img src='/assets/images/animate_icon3.webp' alt='' />
               </div>
               <div className='animate_item animate_item4 bounce_animate'>
-                <img src='assets/images/animate_icon4.webp' alt='' />
+                <img src='/assets/images/animate_icon4.webp' alt='' />
               </div>
             </div>
             <div className='container'>
-              <div className='base-header'>
-                <small> Our Featured Categories</small>
-                <h3> Organic Categories</h3>
-              </div>
               {loading ? (
                 <Loader />
               ) : (

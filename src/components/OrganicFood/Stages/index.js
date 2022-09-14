@@ -75,7 +75,7 @@ class Stages extends Component {
           <div className='single-services-page'>
             {/*====================  breadcrumb area ====================*/}
 
-            <Breadcrumb title='ORGANIC FOOD: STAGES' />
+            <Breadcrumb title='PHASES IN FAMRING' />
 
             {/*====================  End of breadcrumb area  ====================*/}
 

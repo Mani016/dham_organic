@@ -25,9 +25,9 @@ class Team extends Component {
         designation: 'Iron Lady',
       },
       {
-        image:'/assets/images/dhaam_images/rama_rathee_ji.webp',
-        name: 'Rama Rani Rathee',
-        designation:"Patron And Supporter",
+        image:'/assets/images/dhaam_images/Sapna sehrawat.webp',
+        name: 'Sapna Sehrawat',
+        designation:"Pro Active Social Worker",
     },
     ];
     const teamlistMap = teamlistArray.map((valu, i) => {

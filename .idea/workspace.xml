@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5ad64ab0-3c94-47e3-88de-38b6b3fcecd0" name="Changes" comment="Dhaam Updated">
+      <change afterPath="$PROJECT_DIR$/.idea/dham_organic.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/dhaam_images/Dr Rishi.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/dhaam_images/Sapna sehrawat.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/dhaam_images/dharmesh varma.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/dhaam_images/jaivik bharat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/dhaam_images/psg-logo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ContactUs/farm-location/farm-location.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ContactUs/return-refund/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/OrganicFood/faq/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/OrganicFood/selection-of-farmer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/OurConcepts/Experts/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/OurConcepts/certifications/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/customer-reviews/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Categories/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Categories/OurCategories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/OurCategories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContactUs/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactUs/Contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery/Gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gallery/Gallery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Experts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Experts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Team.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrganicFood/Stages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrganicFood/Stages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurConcepts/DhaamStory/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OurConcepts/DhaamStory/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Products/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Products/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Team.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EAqKGIEt2diGPe7WJyLn2sR1xD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gagankumar/dham_organic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/gagankumar/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/222.3345.108/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5ad64ab0-3c94-47e3-88de-38b6b3fcecd0" name="Changes" comment="" />
+      <created>1662048670924</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662048670924</updated>
+      <workItem from="1662048672676" duration="4132000" />
+      <workItem from="1662055655091" duration="35584000" />
+      <workItem from="1663145697331" duration="846000" />
+    </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1662049599973</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662049599973</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <MESSAGE value="Dhaam Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dhaam Updated" />
+  </component>
+</project>

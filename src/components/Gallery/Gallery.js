@@ -64,26 +64,12 @@ const Gallery = ({ type }) => {
                     ? 'Farms'
                     : type === 'EVENT'
                     ? 'Events'
-                    : 'Products'} Gallery`} />
+                    : 'Exhibitions'} Gallery`} />
 
           {/*====================  End of breadcrumb area  ================*/}
 
           <section className='work-section'>
             <div className='container'>
-              {/* Heading */}
-              <div className='base-header'>
-                <small>Our Latest Work</small>
-                <h3>
-                  Our{' '}
-                  {type === 'FARM'
-                    ? 'Farms'
-                    : type === 'EVENT'
-                    ? 'Events'
-                    : 'Products'}{' '}
-                  Gallery
-                </h3>
-              </div>
-              {/* End: Heading */}
               {loading ? (
                 <Loader />
               ) : (

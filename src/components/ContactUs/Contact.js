@@ -2,7 +2,6 @@ import React, { Fragment, useState } from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../../layouts/LayoutOne';
 import Breadcrumb from '../reusables/Breadcrumb';
-import ContactMap from './ContactMap';
 import agent from '../../agent';
 import Alert from '../../Utils/Alert';
 import { API_STATUS } from '../../constant';
@@ -77,10 +76,6 @@ const Contact = () => {
               </div>
               <div className='contact_wrp'>
                 <div className='row'>
-                  <div className='col-sm-12 map-container'>
-                    {/* contact map */}
-                    <ContactMap latitude='28.656983867439934' longitude='76.75205565870088' />
-                  </div>
                   <div className='col-md-8 col-sm-12 inner-contact'>
                     <div className='contact-form'>
                       <form method='post' name='contact-form' id='contact-form'>

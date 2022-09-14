@@ -107,10 +107,6 @@ const Product = () => {
 					{/*==================== Products area  ====================*/}
 					<section className="product-section blog-section">
 						<div className="container">
-							<div className="base-header">
-								<small> Our Featured Products</small>
-								<h3> Organic Products</h3>
-							</div>
 							{loading ? (
 								<Loader />
 							) : (

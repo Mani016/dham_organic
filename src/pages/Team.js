@@ -24,10 +24,10 @@ class Team extends Component{
 		},
 		{
 			id:3,
-			name:"Rama Rani Rathee",
-			work:"Patron And Supporter",
-			image:'/assets/images/dhaam_images/rama_rathee_ji.webp',
-			desc:'Our patron and supporter at Dhaam is the Councilor Shrimati Rama Rani Ratheeji who has always been a source of inspiration to all. She is a versatile person with a touch of compassion. She has been actively involved in pushing us and advising us at all the stages of delivering our products. Her blessings have given us the impetus to grow our production and delivery services.'
+			name:"Sapna sehrawat",
+			work:"Pro Active Social Worker",
+			image:'/assets/images/dhaam_images/Sapna sehrawat.webp',
+			desc:'Sapna Sehrawat is a pro-active Social worker with the sole aim of touching lives with an optimistic joyful persona. She is a caring and compassionate person who is the Founder/Chairperson of Nishwarth Sewa foundation. This foundation is enthusiastically involved in supporting under privileged weaker section of the society. She has been associated with DHAAM since its nascent phase of conception and has given her valuable inputs to help us reach the pinnacle.'
 		},
 		{
 			id:4,

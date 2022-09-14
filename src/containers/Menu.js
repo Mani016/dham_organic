@@ -38,16 +38,23 @@ const Menu = () => {
               <Nav className='mr-auto'>
                 <ul>
                   <li className='has-sub'>
-                    <Link to='/'>Our Concepts</Link>
+                    <Link to='/'>ABOUT US
+                    </Link>
                     <ul>
                       <li>
-                        <Link to='/our-concepts/dhaam-story'>Dhaam Story</Link>
+                        <Link to='/about-us/dhaam-story'>Dhaam Story</Link>
                       </li>
                       <li>
-                        <Link to='/our-concepts/about-us'>About Us</Link>
+                        <Link to='/about-us/people-behind-dhaam'>PEOPLE BEHIND DHAAM</Link>
                       </li>
                       <li>
-                        <Link to='/our-concepts/team'>Team</Link>
+                        <Link to='/about-us/experts'>EXPERTS</Link>
+                      </li>
+                      <li>
+                        <Link to='/about-us/customer-reviews'>CUSTOMER REVIEWS</Link>
+                      </li>
+                      <li>
+                        <Link to='/about-us/certications'>CERTIFICATION</Link>
                       </li>
                     </ul>
                   </li>
@@ -58,7 +65,13 @@ const Menu = () => {
                         <Link to='/organic-food/need'>Need</Link>
                       </li>
                       <li>
-                        <Link to='/organic-food/stages'>Stages</Link>
+                        <Link to='/organic-food/phases-in-farming'>PHASES IN FAMRING</Link>
+                      </li>
+                      <li>
+                        <Link to='/organic-food/selection-of-farmer'>SELECTION OF FARMER</Link>
+                      </li>
+                      <li>
+                        <Link to='/organic-food/faq'>FAQ’s</Link>
                       </li>
                     </ul>
                   </li>
@@ -66,24 +79,38 @@ const Menu = () => {
                     <Link to='/'>Gallery</Link>
                     <ul>
                       <li>
-                        <Link to='/farm-gallery'>Farm Gallery</Link>
+                        <Link to='/farm-gallery'>FARM LANDSCAPE/SCENES</Link>
                       </li>
                       <li>
-                        <Link to='/event-gallery'>Event Gallery</Link>
+                        <Link to='/event-gallery'>EVENTS</Link>
                       </li>
                       <li>
-                        <Link to='/products-gallery'>Products Gallery</Link>
-                      </li>
-                      <li>
-                        <Link to='/testimonials-gallery'>Testimoials Gallery</Link>
+                        <Link to='/products-gallery'>EXHIBITIONS</Link>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <Link to='/categories'>Categories</Link>
+                    <Link to='/our-products'>OUR PRODUCTS</Link>
                   </li>
-                  <li>
-                    <Link to='/contact'>Contact</Link>
+                  <li className='has-sub'>
+                    <Link to='/contact'>Support</Link>
+                    <ul>
+                      <li>
+                        <Link to ='/contact'>
+                          Contact us
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to ='/return-refund-policy'>
+                          Refund and Return Policy
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to ='/farm-Location'>
+                          Farm location
+                        </Link>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </Nav>

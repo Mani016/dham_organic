@@ -20,6 +20,13 @@ import FarmGallery from './components/Gallery/FarmGallery';
 import EventGallery from './components/Gallery/EventGallery';
 import ProductsGallery from './components/Gallery/ProductsGallery';
 import TestimonialsGallery from './components/Gallery/TestimonialsGallery/index';
+import CustomerReviews from './components/customer-reviews/index'
+import selectionOfFarmer from "./components/OrganicFood/selection-of-farmer";
+import faq from "./components/OrganicFood/faq";
+import OurExperts from "./components/OurConcepts/Experts";
+import farmLocation from "./components/ContactUs/farm-location/farm-location";
+import returnRefund from "./components/ContactUs/return-refund";
+import Certification from "./components/OurConcepts/certifications";
 
 function App() {
   return (
@@ -40,6 +47,10 @@ function App() {
             component={About}
           />
           <Route
+            path={`${process.env.PUBLIC_URL + '/about-us/customer-reviews'}`}
+            component={CustomerReviews}
+          />
+          <Route
             path={`${process.env.PUBLIC_URL + '/farm-gallery'}`}
             component={FarmGallery}
           />
@@ -56,8 +67,12 @@ function App() {
             component={ProductsGallery}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + '/our-concepts/dhaam-story'}`}
+            path={`${process.env.PUBLIC_URL + '/about-us/dhaam-story'}`}
             component={DhaamStory}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/about-us/certications'}`}
+            component={Certification}
           />
 
           <Route
@@ -65,24 +80,44 @@ function App() {
             component={Contact}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + '/our-concepts/team'}`}
+            path={`${process.env.PUBLIC_URL + '/return-refund-policy'}`}
+            component={returnRefund}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/farm-Location'}`}
+            component={farmLocation}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/about-us/people-behind-dhaam'}`}
             component={Team}
           />
           <Route
             path={`${process.env.PUBLIC_URL + '/organic-food/need'}`}
             component={Need}
           />
-           <Route
-            path={`${process.env.PUBLIC_URL + '/organic-food/stages'}`}
+          <Route
+            path={`${process.env.PUBLIC_URL + '/organic-food/phases-in-farming'}`}
             component={Stages}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + '/categories'}`}
+            path={`${process.env.PUBLIC_URL + '/organic-food/selection-of-farmer'}`}
+            component={selectionOfFarmer}
+          />
+          <Route
+              path={`${process.env.PUBLIC_URL + '/organic-food/faq'}`}
+              component={faq}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/our-products'}`}
             component={Category}
           />
           <Route
             path={`${process.env.PUBLIC_URL + '/category/:id'}`}
             component={Product}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/about-us/experts'}`}
+            component={OurExperts}
           />
           <Route
             path={`${process.env.PUBLIC_URL + '/product/:id'}`}

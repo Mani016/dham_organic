@@ -26,14 +26,6 @@ const Experts = () => {
       name: 'Dr. Dharmesh Varma',
       designation: 'Organic Farming Expert',
     },
-    {
-      content: `Sarvjeet Singh Dhankar, our Family Organic Farming Specialist, whose area of study is plants and soil in order to increase soil productivity; develop better cultivation, planting and harvesting techniques; improve crop yield, quality of seed and nutritional values of crops.
-  
-          He has extensive knowledge of crops like Mustard, Wheat, Chana etc and helps us to manage crop planting and implementing efficient farming practices; improving crop efficiency and sorting any agricultural problems.
-          `,
-      name: 'Sarvjeet Singh Dhankhar',
-      designation: 'Specialist, Organic Farming',
-    },
   ];
 
   let ImageeTestiDataList = imageTestiData.map((val, i) => {
