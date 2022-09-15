@@ -99,7 +99,7 @@ class Slides extends Component{
 									  <h5>{val.smallTitle}</h5> 
 						              <h1>{val.title}</h1>
 						              <div className="slider_btn animated fadeInDown">
-                                        <Link to="/categories" className="slider_btn_one more-link ">Our Categories</Link>
+                                        <Link to="/our-products" className="slider_btn_one more-link ">Our Products</Link>
                                       </div>
 						            </div>
 						            <div className="col-lg-6 mt-5 mt-lg-0 col-sm-12 home_slides" >
