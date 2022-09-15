@@ -56,8 +56,8 @@ const OurCategories = () => {
       </div>
       <div className='container'>
         <div className='base-header'>
-          <small> Our Featured Categories</small>
-          <h3> Organic Categories</h3>
+          <small> Our Featured Products</small>
+          <h3> Organic Products</h3>
         </div>
         {loading ? (
           <Loader />
@@ -68,7 +68,7 @@ const OurCategories = () => {
           </div>
         )}
         <div className='project_btn text-center'>
-              <Link to='categories' className='more-link'>
+              <Link to='our-products' className='more-link'>
                 View More
               </Link>
         </div>
