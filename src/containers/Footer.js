@@ -81,7 +81,7 @@ const Footer = () => {
 								</li>
 								<li>
 									<Link
-										to={process.env.PUBLIC_URL + "/our-concepts/dhaam-story"}
+										to={process.env.PUBLIC_URL + "/about-us/dhaam-story"}
 									>
 										Dhaam Story
 									</Link>
