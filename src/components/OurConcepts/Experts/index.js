@@ -81,21 +81,15 @@ class OurExperts extends Component{
 
                         <section className="team_section">
                             <div className="container">
-                                <div className="base-header">
-                                    <h3>EXPERT ANALYSES & TESTIMONIALS</h3>
-                                </div>
                                 <div className="row justify-content-center">
                                     {teamlistmap}
                                 </div>
                             </div>
                         </section>
                     </div>
-
                 </LayoutOne>
             </Fragment>
-
         )
-
     }
 }
 

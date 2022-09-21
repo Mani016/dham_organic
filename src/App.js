@@ -16,10 +16,7 @@ import Category from './components/Categories/Categories';
 import DhaamStory from './components/OurConcepts/DhaamStory';
 import Need from './components/OrganicFood/Need';
 import Stages from './components/OrganicFood/Stages';
-import FarmGallery from './components/Gallery/FarmGallery';
-import EventGallery from './components/Gallery/EventGallery';
-import ProductsGallery from './components/Gallery/ProductsGallery';
-import TestimonialsGallery from './components/Gallery/TestimonialsGallery/index';
+import Gallery from './components/Gallery';
 import CustomerReviews from './components/customer-reviews/index'
 import selectionOfFarmer from "./components/OrganicFood/selection-of-farmer";
 import faq from "./components/OrganicFood/faq";
@@ -51,20 +48,8 @@ function App() {
             component={CustomerReviews}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + '/farm-gallery'}`}
-            component={FarmGallery}
-          />
-           <Route
-            path={`${process.env.PUBLIC_URL + '/event-gallery'}`}
-            component={EventGallery}
-          />
-             <Route
-            path={`${process.env.PUBLIC_URL + '/testimonials-gallery'}`}
-            component={TestimonialsGallery}
-          />
-            <Route
-            path={`${process.env.PUBLIC_URL + '/products-gallery'}`}
-            component={ProductsGallery}
+            path={`${process.env.PUBLIC_URL + '/gallery/:type'}`}
+            component={Gallery}
           />
           <Route
             path={`${process.env.PUBLIC_URL + '/about-us/dhaam-story'}`}

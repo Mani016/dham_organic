@@ -3,6 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="5ad64ab0-3c94-47e3-88de-38b6b3fcecd0" name="Changes" comment="Dhaam Updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutUs/AboutContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutUs/AboutContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery/EventGallery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery/FarmGallery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery/Gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gallery/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery/GalleryContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gallery/GalleryContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery/ProductsGallery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery/TestimonialsGallery/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Slides.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Slides.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Team.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrganicFood/Need/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrganicFood/Need/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrganicFood/Stages/Slides.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrganicFood/Stages/Slides.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrganicFood/Stages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrganicFood/Stages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrganicFood/faq/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrganicFood/faq/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurConcepts/DhaamStory/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OurConcepts/DhaamStory/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurConcepts/Experts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OurConcepts/Experts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurConcepts/certifications/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OurConcepts/certifications/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Products/ProductDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Products/ProductDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mobile-menu/MobileMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mobile-menu/MobileMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reusables/Breadcrumb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reusables/Breadcrumb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Team.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +42,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -80,5 +110,17 @@
     <MESSAGE value="test" />
     <MESSAGE value="Dhaam Updated" />
     <option name="LAST_COMMIT_MESSAGE" value="Dhaam Updated" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Gallery/index.js</url>
+          <line>16</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

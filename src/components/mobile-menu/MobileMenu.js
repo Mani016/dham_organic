@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import {GALLERY_TYPES} from "../../constant";
 
 const MobileMenu = () => {
   useEffect(() => {
@@ -44,6 +45,7 @@ const MobileMenu = () => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [showSubMenu1, setShowSubMenu1] = useState(false);
   const [showSubMenu2, setShowSubMenu2] = useState(false);
+  const [showSubMenu3, setShowSubMenu3] = useState(false);
   return (
     <div className='offcanvasMobileMenu' id='offcanvas-mobile-menu'>
       <button
@@ -63,18 +65,33 @@ const MobileMenu = () => {
                 onClick={() => setShowSubMenu(!showSubMenu)}
               >
                 <div className='d-flex justify-content-between align-items-center'>
-                  Our Concepts <i className='fa fa-caret-down' />
+                  About Us <i className='fa fa-caret-down' />
                 </div>
                 <ul className={showSubMenu ? 'active' : ''}>
                   <li>
-                  <Link to='/our-concepts/dhaam-story'>Dhaam Story</Link>
+                    <Link to='/about-us/dhaam-story'>Dhaam Story</Link>
                   </li>
                   <li>
-                    <Link to='/our-concepts/about-us'>About Us</Link>
+                    <Link to='/about-us/people-behind-dhaam'>PEOPLE BEHIND DHAAM</Link>
                   </li>
                   <li>
-                    <Link to='/our-concepts/team'>Team</Link>
+                    <Link to='/about-us/certications'>CERTIFICATION</Link>
                   </li>
+                  <li>
+                    <Link to='/about-us/experts'>EXPERTS</Link>
+                  </li>
+                  <li>
+                    <Link to='/about-us/customer-reviews'>CUSTOMER REVIEWS</Link>
+                  </li>
+                  {/*<li>*/}
+                  {/*<Link to='/our-concepts/dhaam-story'>Dhaam Story</Link>*/}
+                  {/*</li>*/}
+                  {/*<li>*/}
+                  {/*  <Link to='/our-concepts/about-us'>About Us</Link>*/}
+                  {/*</li>*/}
+                  {/*<li>*/}
+                  {/*  <Link to='/our-concepts/team'>Team</Link>*/}
+                  {/*</li>*/}
                 </ul>
               </li>
               <li
@@ -82,14 +99,20 @@ const MobileMenu = () => {
                 onClick={() => setShowSubMenu1(!showSubMenu1)}
               >
                 <div className='d-flex justify-content-between align-items-center'>
-                  Organic Food <i className='fa fa-caret-down' />
+                  Organic Nutrition <i className='fa fa-caret-down' />
                 </div>
                 <ul className={showSubMenu1 ? 'active' : ''}>
                   <li>
                     <Link to='/organic-food/need'>Need</Link>
                   </li>
                   <li>
-                    <Link to='/organic-food/stages'>Stages</Link>
+                    <Link to='/organic-food/selection-of-farmer'>SELECTION OF FARMER</Link>
+                  </li>
+                  <li>
+                    <Link to='/organic-food/phases-in-farming'>PHASES IN FAMRING</Link>
+                  </li>
+                  <li>
+                    <Link to='/organic-food/faq'>FAQ’s</Link>
                   </li>
                 </ul>
               </li>
@@ -102,25 +125,53 @@ const MobileMenu = () => {
                   <i className='fa fa-caret-down' />
                 </div>
                 <ul className={showSubMenu2 ? 'active' : ''}>
+                  {GALLERY_TYPES.map((item , index) => {
+                    return (
+                        <li key={index}>
+                          <Link  to={`/gallery/${item.key}`}>{item.label}</Link>
+                        </li>
+                    )
+                  })}
+                </ul>
+                {/*<ul  className={showSubMenu2 ? 'active' : ''}>*/}
+                {/*  <li>*/}
+                {/*    <Link to='/farm-gallery'>FARM LANDSCAPE</Link>*/}
+                {/*  </li>*/}
+                {/*  <li>*/}
+                {/*    <Link to='/event-gallery'>EVENTS</Link>*/}
+                {/*  </li>*/}
+                {/*  <li>*/}
+                {/*    <Link to='/products-gallery'>EXHIBITIONS</Link>*/}
+                {/*  </li>*/}
+                {/*</ul>*/}
+              </li>
+              <li>
+                <Link to='/our-products'>OUR PRODUCTS</Link>
+              </li>
+              <li className='has-sub'
+                  onClick={() => setShowSubMenu3(!showSubMenu3)}>
+                <div className='d-flex justify-content-between align-items-center'>
+                  Support
+                  <i className='fa fa-caret-down' />
+                </div>
+                {/*<Link to='/contact'>Support <i className='fa fa-caret-down' /></Link>*/}
+                <ul className={showSubMenu3 ? 'active' : ''}>
                   <li>
-                    <Link to='/farm-gallery'>Farm Gallery</Link>
+                    <Link to ='/contact'>
+                      Contact us
+                    </Link>
                   </li>
                   <li>
-                    <Link to='/event-gallery'>Events Gallery</Link>
+                    <Link to ='/return-refund-policy'>
+                      Refund and Return Policy
+                    </Link>
                   </li>
                   <li>
-                    <Link to='/products-gallery'>Products Gallery</Link>
-                  </li>
-                  <li>
-                  <Link to='/testimonials-gallery'>Testimoials Gallery</Link>
+                    <Link to ='/farm-Location'>
+                      Farm location
+                    </Link>
                   </li>
                 </ul>
-              </li>
-              <li>
-                <Link to='/categories'>Categories</Link>
-              </li>
-              <li>
-                <Link to='/contact'>Contact</Link>
               </li>
             </ul>
           </nav>

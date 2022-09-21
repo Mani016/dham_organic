@@ -130,7 +130,7 @@ const GalleryContent = ({ type }) => {
             </div>
             <div className='project_btn text-center'>
               <Link
-                to={type === 'farm' ? '/farm-gallery' : 'event-gallery'}
+                to={type === 'farm' ? '/gallery/landscape' : '/gallery/landscape'}
                 className='more-link'
               >
                 View More

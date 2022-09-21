@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { animateScroll } from "react-scroll";
 import { Link } from "react-router-dom";
+import {GALLERY_TYPES} from "../constant";
+
 const Footer = () => {
 	const [scroll, setScroll] = useState(0);
 	const [top, setTop] = useState(0);
@@ -88,14 +90,18 @@ const Footer = () => {
 								</li>
 								<li>
 									<Link to={process.env.PUBLIC_URL + "/organic-food/need"}>
-										Organic Food
+										Organic Nutrition
 									</Link>
 								</li>
-								<li>
-									<Link to={process.env.PUBLIC_URL + "/farm-gallery"}>
-										Farm Gallery
-									</Link>
-								</li>
+								{GALLERY_TYPES.map((item , index) => {
+									if (item.key === 'landscape') {
+										return (
+											<li  key={index}>
+												<Link  to={`/gallery/${item.key}`}>{item.label}</Link>
+											</li>
+										)
+									}
+								})}
 								<li>
 									<Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link>
 								</li>

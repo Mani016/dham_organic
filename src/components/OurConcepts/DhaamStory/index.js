@@ -12,10 +12,10 @@ const DhaamStory = () => {
         <meta name='description' content='Organic Food' />
       </MetaTags>
       <LayoutOne>
-        <div className='about-page'>
+        <div className=''>
           {/*====================  breadcrumb area ====================*/}
 
-          <Breadcrumb title='Welcome To Dhaam Organics' />
+          <Breadcrumb title='Welcome To Dhaam Organic' />
 
           {/*====================  End of breadcrumb area  ====================*/}
 
@@ -24,9 +24,9 @@ const DhaamStory = () => {
             <div className='container '>
               <div className='row'>
                 <div className='col-sm-12 col-lg-12'>
-                  <h4>
+                  <h1>
                     <b>DHAAM STORY</b>
-                  </h4>
+                  </h1>
                   <p className="text-justify">
                     ‘Dhaam Organics’ is a joint initiative by the 8th generation
                     of our family tree. Our goal is to become a leading player
@@ -57,21 +57,13 @@ const DhaamStory = () => {
                     <h4 className="mt-5">
                       <b>OUR MISSION</b>
                     </h4>
-                    Our Mission is to be an authentic FOOD brand which provides genuine
-                    unadulterated organic food products for fulfilling day-to-day requirements.
-                    We want to inspire and endorse the tradition of over-all wellbeing by
-                    consuming our organic healthy products.
-                    <br />
-                    At the onset we would like to assure you about the quality and taste
-                    of our products which we can easily say is our USP.
-                    <br />
-                    This can be testified by your own taste buds when you feel the goodness
-                    of Mother Earth and rich flavours in ‘Dhaam Organics’ Produce.
-                    <br />
-                    The nutritional value of the food stuffs is unsurpassed. The traditional
-                    methods that we use to prepare these products allow maximum nutrition to
-                    be retained and these nutrients are released by the food products when you consume them.
-                    <br />
+                    Our Mission is to be an authentic FOOD brand which provides genuine unadulterated organic food products for fulfilling day-to-day requirements. We want to inspire and endorse the tradition of over-all wellbeing by consuming our organic healthy products.<br/>
+
+                    At the onset we would like to assure you about the quality and taste of our products which we can easily say is our USP.<br/>
+
+                    This can be testified by your own taste buds when you feel the goodness of Mother Earth and rich flavours in ‘Dhaam Organics’ Produce.<br/>
+
+                    The nutritional value of the food stuffs is unsurpassed. The traditional methods that we use to prepare these products allow maximum nutrition to be retained and these nutrients are released by the food products when you consume them.<br/>
                   </p>
                   <p className="mb-5">
                     <h4 className="mt-5">

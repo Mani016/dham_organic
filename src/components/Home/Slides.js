@@ -11,59 +11,70 @@ class Slides extends Component{
             {
                 img:'dhaam_banner.webp',
                 smallTitle: 'Know Your Farmer, Know Your Food',
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
             },
             {
                 img:'slider1.webp',
                 smallTitle: 'Know Your Farmer, Know Your Food',
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
             },
             {
                 img:'slider2.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
             },
 			{
                 img:'slider3.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
             },
 			{
                 img:'slider7.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
 				description:"Our Mission is to be a faithful brand which provides genuine organic products for day-to-day requirements. We serve a wide variety of essentials ranging from food products like flour, daliya to fruits and hair oil. We want to inspire people resurge and promote the tradition of food and wellness. ",
             },
 			{
                 img:'slider8.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
             },
 			{
                 img:'slider8.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
             },
             {
                 img:'slider9.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
 				description:"As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci sed  altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.",
             },
             {
                 img:'slider11.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
             },
             {
                 img:'slider12.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
             },
             {
                 img:'slider14.webp',
                 smallTitle:"Know Your Farmer, Know Your Food",
-                title:"A huge variety fruits, vegetables, pickles, flour products, whole grain products, spices & hair/massage oil  .",
+                title:"Organic produce available from our farms at your doorstep. \n" +
+                    "Our aim is to perform sustainable agriculture, producing high-quality products by the use of processes that do not harm the environment, nor human, plant or animal health and welfare.",
             },
         ];
 
@@ -97,7 +108,7 @@ class Slides extends Component{
 					            <div className="row">
 						            <div className="col-lg-6 col-sm-12">
 									  <h5>{val.smallTitle}</h5> 
-						              <h1>{val.title}</h1>
+						              <p className="fs-2">{val.title}</p>
 						              <div className="slider_btn animated fadeInDown">
                                         <Link to="/our-products" className="slider_btn_one more-link ">Our Products</Link>
                                       </div>

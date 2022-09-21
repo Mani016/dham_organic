@@ -37,23 +37,14 @@ class Stages extends Component {
     const serviceToptMap = serviceTopArray.map((val, i) => {
       return (
         <div className='single_service_left' key={i}>
-          {/* {val.image && <img src={val.image} alt='needs' />} */}
           <Slides/>
-          <h4>{val.title}</h4>
-          <ol>
-            {val.desc.map((item, i) => (
-              <li key={i} className='mb-3'>
-                {item}
-              </li>
-            ))}
-          </ol>
         </div>
       );
     });
 
     const serviceBottomtMap = serviceBottomArray.map((val, i) => {
       return (
-        <div className='col-md-12 col-sm-12' key={i}>
+        <div className='col-md-6 col-sm-12' key={i}>
           <div className='sing_service_item'>
             <div className='icon-serv'>
               <img src={`/assets/images/dhaam_images/${val.icon}`} alt='' />
@@ -75,7 +66,7 @@ class Stages extends Component {
           <div className='single-services-page'>
             {/*====================  breadcrumb area ====================*/}
 
-            <Breadcrumb title='PHASES IN FAMRING' />
+            <Breadcrumb title='Phases In Farming' />
 
             {/*====================  End of breadcrumb area  ====================*/}
 
@@ -83,9 +74,9 @@ class Stages extends Component {
             <div className='single_service'>
               <div className='container'>
                 <div className='row'>
-                  <div className='col-md-8 col-sm-12'>{serviceToptMap}</div>
+                  <div className='col-md-12 col-sm-12'>{serviceToptMap}</div>
 
-                  <div className='col-md-4 col-sm-12'>
+                  <div className='col-md-12 col-sm-12'>
                     <div className='row single_service_left_botom'>
                       {serviceBottomtMap}
                     </div>

@@ -127,7 +127,7 @@ const ProductDetails = () => {
                       <div className='shop-products'>
                         <div className='single-item-detail'>
                           <div className='product-thumbnail'>
-                            {/* Image Gallery */}
+                            {/* Image Index */}
                             <Slider {...settings}>
                               {data.images?.map((slide, j) => (
                                 <div className='slide-img' key={j}>

@@ -17,7 +17,7 @@ class  Certification extends Component {
             },
             {
                 id: 2,
-                name: "Jaivik Bhara",
+                name: "Jaivik Bharat",
                 work: "Organic Farming Expert",
                 image: '/assets/images/dhaam_images/jaivik bharat.png',
                 desc: 'The unified logo is an identity mark to distinguish organic food products from non-organic ones supported with the tagline “Jaivik Bharat” at the bottom, which signifies Organic Food from India. Effectively intertwining all the elements of environment, the logo communicates adherence to the National Organic Standards.\n' +
@@ -53,65 +53,25 @@ class  Certification extends Component {
                 </MetaTags>
                 <LayoutOne>
 
-                    <div className="certications">
+                    <div className="certifications">
 
                         {/*====================  breadcrumb area ====================*/}
 
-                        <Breadcrumb title="Certications" />
+                        <Breadcrumb title="certifications" />
 
                         {/*====================  End of breadcrumb area  ====================*/}
 
                         <section className="Certications_section">
                             <div className="container">
-                                <div className="base-header">
-                                    <h3>OUR CERTIFICATIONS</h3>
-                                </div>
                                 <div className="row justify-content-center">
                                     {Certification}
                                 </div>
                             </div>
                         </section>
                     </div>
-
                 </LayoutOne>
             </Fragment>
-
         )
     }
-    // return (
-    //     <Fragment>
-    //         <MetaTags>
-    //             <title>Dhaam Organic| Certications</title>
-    //             <meta name='description' content='certications'/>
-    //         </MetaTags>
-    //         <LayoutOne>
-    //             {/*====================  breadcrumb area ====================*/}
-    //
-    //             <Breadcrumb title='certications' />
-    //
-    //             {/*====================  End of breadcrumb area  ====================*/}
-    //             <div className='single_service'>
-    //                 <div className='container'>
-    //                     <div className='row'>
-    //                         <div className='col-md-12 col-sm-12 '>
-    //                             <div className= "base-header base_header_left">
-    //                                 <small></small>
-    //                                 <h3>Our Certications</h3>
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                     <div className= "row">
-    //                         <div className="col-md-6 col-12 text-center">
-    //                             <img src = "/assets/images/dhaam_images/PGS-India-Organic-Logo.jpeg" alt="" />
-    //                         </div>
-    //                         <div className="col-md-6 col-12 text-center">
-    //                             <img src = "/assets/images/dhaam_images/jaivik bharat.png" alt="" />
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </LayoutOne>
-    //     </Fragment>
-    // );
 }
 export default Certification

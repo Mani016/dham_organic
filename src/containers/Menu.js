@@ -7,6 +7,8 @@ import dhaam_logo from '../assets/images/dhaam_logo.webp';
 import { getItemFromSessionStore } from '../Utils/utils';
 import AppContext from '../Context';
 import CartSidebar from '../components/User/CartSidebar';
+import {GALLERY_TYPES} from "../constant";
+
 
 const Menu = () => {
   const token = getItemFromSessionStore('token');
@@ -48,27 +50,27 @@ const Menu = () => {
                         <Link to='/about-us/people-behind-dhaam'>PEOPLE BEHIND DHAAM</Link>
                       </li>
                       <li>
+                        <Link to='/about-us/certications'>CERTIFICATION</Link>
+                      </li>
+                      <li>
                         <Link to='/about-us/experts'>EXPERTS</Link>
                       </li>
                       <li>
                         <Link to='/about-us/customer-reviews'>CUSTOMER REVIEWS</Link>
                       </li>
-                      <li>
-                        <Link to='/about-us/certications'>CERTIFICATION</Link>
-                      </li>
                     </ul>
                   </li>
                   <li className='has-sub'>
-                    <Link to='/'>Organic Food</Link>
+                    <Link to='/'>Organic NUTRITION</Link>
                     <ul>
                       <li>
                         <Link to='/organic-food/need'>Need</Link>
                       </li>
                       <li>
-                        <Link to='/organic-food/phases-in-farming'>PHASES IN FAMRING</Link>
+                        <Link to='/organic-food/selection-of-farmer'>SELECTION OF FARMER</Link>
                       </li>
                       <li>
-                        <Link to='/organic-food/selection-of-farmer'>SELECTION OF FARMER</Link>
+                        <Link to='/organic-food/phases-in-farming'>PHASES IN FARMING</Link>
                       </li>
                       <li>
                         <Link to='/organic-food/faq'>FAQ’s</Link>
@@ -78,15 +80,13 @@ const Menu = () => {
                   <li className='has-sub'>
                     <Link to='/'>Gallery</Link>
                     <ul>
-                      <li>
-                        <Link to='/farm-gallery'>FARM LANDSCAPE/SCENES</Link>
-                      </li>
-                      <li>
-                        <Link to='/event-gallery'>EVENTS</Link>
-                      </li>
-                      <li>
-                        <Link to='/products-gallery'>EXHIBITIONS</Link>
-                      </li>
+                      {GALLERY_TYPES.map((item , index) => {
+                        return (
+                            <li key={index}>
+                              <Link  to={`/gallery/${item.key}`}>{item.label}</Link>
+                            </li>
+                        )
+                      })}
                     </ul>
                   </li>
                   <li>

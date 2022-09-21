@@ -33,7 +33,7 @@ class Need extends Component {
         des: 'Any food products produced or involving production without the use of chemical fertilizers, pesticides, or other artificial chemicals.',
       },
       {
-        icon: 'slider18.webp',
+        icon: 'step-1.png',
         title: 'It is the way of life.',
         des: 'Staples produced by organic farming will not only satiate your hunger but also provide you with a sense of well being.',
       },
@@ -75,7 +75,7 @@ class Need extends Component {
           <div className='single-services-page'>
             {/*====================  breadcrumb area ====================*/}
 
-            <Breadcrumb title='ORGANIC FOOD: NEED' />
+            <Breadcrumb title='Need' />
 
             {/*====================  End of breadcrumb area  ====================*/}
 

@@ -82,15 +82,15 @@ class Team extends Component{
  
 			{/*====================  breadcrumb area ====================*/}
 
-			<Breadcrumb title="KNOW YOUR DHAAM FAMILY" />
+			<Breadcrumb title="People Behind Dhaam" />
 		
 			{/*====================  End of breadcrumb area  ====================*/} 
 
 			<section className="team_section">	
 				<div className="container">	
-					<div className="base-header"> 
-						<h3>DHAAM FAMILY</h3>
-					</div>
+					{/*<div className="base-header"> */}
+					{/*	<h3>DHAAM FAMILY</h3>*/}
+					{/*</div>*/}
 					<div className="row justify-content-center">
 						{teamlistmap}
 					</div>

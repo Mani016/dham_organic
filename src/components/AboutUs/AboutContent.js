@@ -17,7 +17,7 @@ const AboutContent = () => {
               <div className='about_item_tbcell'>
                 <div className='base-header base_header_left'>
                   <small>Welcome To Our Dhaam Organic</small>
-                  <h3>Organic Food - Farm Fresh Produce Right to Your Door</h3>
+                  <h3>WELCOME TO DHAAM ORGANIC</h3>
                 </div>
                 <div className='about_item'>
                   <h4>Foundation of Dhaam</h4>

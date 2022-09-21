@@ -138,10 +138,6 @@ const faq = () => {
                     <div className='container'>
                         <div className='row'>
                             <div className='col-md-12 col-sm-12 '>
-                                <div className= "base-header base_header_left">
-                                    <small></small>
-                                    <h3>Frequently Asked Questions</h3>
-                                </div>
                                 <Accordion>
                                     {accordionData.map(({title , content , eventKey}) =>
                                         <Card className= "cursor-pointer">

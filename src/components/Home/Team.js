@@ -3,8 +3,8 @@ import { ExternalLink } from 'react-external-link';
 
 class Team extends Component {
   state = {
-    heading: 'Meet Our Family',
-    subHeading: 'Our Family Members',
+    heading: 'People Behind Dhaam',
+    // subHeading: 'People Behind Dhaam',
   };
 
   render() {
