@@ -45,16 +45,10 @@ const Main = (props) => {
               setLoading(false);
             } else {
               HANDLE_ERROR(res.message, setLoading);
-              // setTimeout(function () {
-              //   window.location = '/login';
-              // }, 1000);
             }
           })
           .catch((err) => {
             HANDLE_ERROR(err.message, setLoading);
-            // setTimeout(function () {
-            //   window.location = '/login';
-            // }, 1000);
           });
       }
     }
