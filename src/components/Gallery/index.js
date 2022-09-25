@@ -1,12 +1,12 @@
-import React, { useEffect, useState, Fragment } from 'react';
-import MetaTags from 'react-meta-tags';
-import LayoutOne from '../../layouts/LayoutOne';
-import Breadcrumb from '../../components/reusables/Breadcrumb';
-import agent from '../../agent';
-import {API_STATUS, GALLERY_TYPES} from '../../constant';
-import { HANDLE_ERROR } from '../../Utils/utils';
-import Loader from '../../components/reusables/Loader';
-import {useParams} from "react-router-dom";
+import React, { useEffect, useState, Fragment } from "react";
+import MetaTags from "react-meta-tags";
+import LayoutOne from "../../layouts/LayoutOne";
+import Breadcrumb from "../../components/reusables/Breadcrumb";
+import agent from "../../agent";
+import { API_STATUS, GALLERY_TYPES } from "../../constant";
+import { HANDLE_ERROR } from "../../Utils/utils";
+import Loader from "../../components/reusables/Loader";
+import { useParams } from "react-router-dom";
 
 const Index = () => {
   const [galleryListArray, setGalleryListArray] = useState([]);
@@ -14,7 +14,7 @@ const Index = () => {
   const type = useParams().type;
   useEffect(() => {
     let isActive = true;
-    if (isActive && GALLERY_TYPES.map((item)=>item.key).includes(type)) {
+    if (isActive && GALLERY_TYPES.map((item) => item.key).includes(type)) {
       setLoading(true);
       agent.Gallery.getAll({ type: type.toUpperCase() })
         .then((res) => {
@@ -28,9 +28,7 @@ const Index = () => {
         .catch((err) => {
           HANDLE_ERROR(err.message, setLoading);
         });
-    }
-    else
-    {
+    } else {
       window.location = "/";
     }
 
@@ -41,13 +39,13 @@ const Index = () => {
 
   const galleryListMap = galleryListArray.map((valu, i) => {
     return (
-      <div className='col-md-4 col-sm-12 web graphics' key={i}>
+      <div className="col-md-4 col-sm-12 web graphics" key={i}>
         <div
-          className='single-project-item'
+          className="single-project-item"
           style={{ backgroundImage: `url(${valu.image.path})` }}
         >
-          <div className='project-hover'>
-            <div className='project_cnt'>
+          <div className="project-hover">
+            <div className="project_cnt">
               <h6>{valu.title}</h6>
               <h6>{valu.description}</h6>
             </div>
@@ -59,23 +57,35 @@ const Index = () => {
   return (
     <Fragment>
       <MetaTags>
-        <title>Our gallery</title>
-        <meta name='description' content='Organic Food' />
+        <title>gallery</title>
+        <meta name="description" content="Organic Food" />
       </MetaTags>
       <LayoutOne>
-        <div className='work-page-two'>
+        <div className="work-page-two">
           {/*====================  breadcrumb area ====================*/}
 
-          <Breadcrumb title={`Our ${GALLERY_TYPES.filter((item)=>item.key === type)?.[0]?.label} Gallery`} />
+          <Breadcrumb
+            title={`${
+              GALLERY_TYPES.filter((item) => item.key === type)?.[0]?.label
+            }`}
+          />
 
           {/*====================  End of breadcrumb area  ================*/}
-          <section className='work-section'>
-            <div className='container'>
-              <p className="mb-5"> {GALLERY_TYPES.filter((item)=>item.key === type)?.[0]?.desc}</p>
+          <section className="work-section">
+            <div className="container">
+              <p className="mb-5">
+                {" "}
+                {GALLERY_TYPES.filter((item) => item.key === type)?.[0]?.desc}
+              </p>
+              {GALLERY_TYPES.filter(
+                (item) => item.key === type
+              )?.[0]?.points?.map((item, index) => {
+                return <p className="mb-50" key={index}>{item}</p>;
+              })}
               {loading ? (
                 <Loader />
               ) : (
-                <div className='row projects-list'>{galleryListMap}</div>
+                <div className="row projects-list">{galleryListMap}</div>
               )}
             </div>
           </section>

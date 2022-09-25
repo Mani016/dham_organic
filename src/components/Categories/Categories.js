@@ -21,7 +21,7 @@ export const CategoryCard = ({ item = [] }) => {
                 <img src={valu.image.path} alt='product' />
               </div>
               <div className='service_text'>
-                <h4>{valu.name}</h4>
+                <h4 className='text-uppercase'>{valu.name}</h4>
                 <p>
                   {valu.description.length > 120
                     ? valu.description.slice(0, 120) + '....'

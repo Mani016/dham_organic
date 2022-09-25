@@ -1,27 +1,27 @@
-import React, { Fragment, useContext, useState } from 'react';
-import { MetaTags } from 'react-meta-tags';
-import LayoutOne from '../../../layouts/LayoutOne';
-import ManageAddress from '../ManageAddress';
-import OrderHistory from '../Orders/OrderHistory';
-import user_img from '../../../assets/images/user.webp';
-import AppContext from '../../../Context';
+import React, { Fragment, useContext, useState } from "react";
+import { MetaTags } from "react-meta-tags";
+import LayoutOne from "../../../layouts/LayoutOne";
+import ManageAddress from "../ManageAddress";
+import OrderHistory from "../Orders/OrderHistory";
+import user_img from "../../../assets/images/user.webp";
+import AppContext from "../../../Context";
 import {
   getItemFromSessionStore,
   setItemToSessionStore,
-} from '../../../Utils/utils';
-import EditProfile from './Edit';
-import ChangePassword from './ChangePassword';
-import Sidebar from '../../reusables/Sidebar';
+} from "../../../Utils/utils";
+import EditProfile from "./Edit";
+import ChangePassword from "./ChangePassword";
+import Sidebar from "../../reusables/Sidebar";
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState(
-    getItemFromSessionStore('activeTab') || 'orders'
+    getItemFromSessionStore("activeTab") || "orders"
   );
   const [isOpen, setIsOpen] = useState(false);
-  const [component, setComponent] = useState('');
+  const [component, setComponent] = useState("");
   const { user } = useContext(AppContext);
   const handleActiveTab = (tab) => {
-    setItemToSessionStore('activeTab', tab);
+    setItemToSessionStore("activeTab", tab);
     setActiveTab(tab);
   };
   const handleModal = (value) => {
@@ -35,30 +35,30 @@ const Profile = () => {
     <Fragment>
       <MetaTags>
         <title>Dhaam Organic | My Account</title>
-        <meta name='description' content='Login' />
+        <meta name="description" content="Login" />
       </MetaTags>
       <LayoutOne>
-        <div className='dashboard'>
-          <div className='container '>
-            <div className='top py-4'>
-              <div className='detail_box d-flex align-items-center'>
-                <img src={user.image?.path || user_img} alt='' width='90' />
+        <div className="dashboard">
+          <div className="container ">
+            <div className="top py-4">
+              <div className="detail_box d-flex align-items-center">
+                <img src={user.image?.path || user_img} alt="" width="90" />
                 <div>
                   <p>{user.name}</p>
-                  <div className='other_details py-1'>
+                  <div className="other_details py-1">
                     <span>{user.mobile}</span>
-                    <span>{user.email || ''}</span>
+                    <span>{user.email || ""}</span>
                   </div>
                   <div>
                     <button
-                      className='edit_profile_btn mb-2 mb-md-0 mr-3'
-                      onClick={() => handleModal('edit')}
+                      className="edit_profile_btn mb-2 mb-md-0 mr-3"
+                      onClick={() => handleModal("edit")}
                     >
                       Edit Profile
                     </button>
                     <button
-                      className='edit_profile_btn mb-2 mb-md-0'
-                      onClick={() => handleModal('change_password')}
+                      className="edit_profile_btn mb-2 mb-md-0"
+                      onClick={() => handleModal("change_password")}
                     >
                       Change Password
                     </button>
@@ -67,38 +67,39 @@ const Profile = () => {
               </div>
               <div>
                 <button
-                  className='edit_profile_btn mb-2 mb-md-0 mr-3'
+                  className="edit_profile_btn mb-2 mb-md-0 mr-3"
                   onClick={() => {
-                    sessionStorage.clear();
-                    window.location = '/login';
+                    localStorage.clear();
+                    window.location = "/login";
                   }}
                 >
-                  <i className='fa fa-sign-out' /> Log Out
+                  <i className="fa fa-sign-out" /> Log Out
                 </button>
               </div>
             </div>
           </div>
-          <div className='container my-3'>
-            <div className='tab_box'>
-              <div className='row'>
-                <div className='col-md-3'>
+          <div className="container my-3">
+            <div className="tab_box">
+              <div className="row">
+                <div className="col-md-3">
                   <ul>
                     <li
-                      onClick={() => handleActiveTab('orders')}
-                      className={activeTab === 'orders' ? 'active' : ''}
+                      onClick={() => handleActiveTab("orders")}
+                      className={activeTab === "orders" ? "active" : ""}
                     >
                       Orders
                     </li>
                     <li
-                      onClick={() => handleActiveTab('address')}
-                      className={activeTab === 'address' ? 'active' : ''}
+                      onClick={() => handleActiveTab("address")}
+                      className={activeTab === "address" ? "active" : ""}
                     >
                       Manage Address
                     </li>
+                
                   </ul>
                 </div>
-                <div className='col-md-9'>
-                  {activeTab === 'orders' ? (
+                <div className="col-md-9">
+                  {activeTab === "orders" ? (
                     <OrderHistory />
                   ) : (
                     <ManageAddress />
@@ -106,12 +107,12 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-          </div>{' '}
+          </div>{" "}
           <Sidebar onClose={() => handleClose()} isOpen={isOpen}>
-            {component === 'edit' && (
+            {component === "edit" && (
               <EditProfile handleClose={handleClose} isOpen={isOpen} />
             )}
-            {component === 'change_password' && <ChangePassword />}
+            {component === "change_password" && <ChangePassword />}
           </Sidebar>
         </div>
       </LayoutOne>

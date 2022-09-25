@@ -55,10 +55,9 @@ class Funfact extends Component {
               <div className='video_wrp'>
                 <VideoPopup />
                 <p>Watch Our organic food Video</p>
-                <h2>
-                  Everyone's body is different, it will take to see changes in
-                  your body .
-                </h2>
+                <h3>
+                  <q>I would rather be on my farm than be emperor of the world.</q>- George Washington
+                </h3>
               </div>
               <div className='funfact_wapr row'>{funfactMap}</div>
             </div>

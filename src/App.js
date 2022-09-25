@@ -56,7 +56,7 @@ function App() {
             component={DhaamStory}
           />
           <Route
-            path={`${process.env.PUBLIC_URL + '/about-us/certications'}`}
+            path={`${process.env.PUBLIC_URL + '/about-us/certifications'}`}
             component={Certification}
           />
 

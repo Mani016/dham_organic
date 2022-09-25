@@ -12,7 +12,7 @@ const OurCategories = () => {
     setLoading(true);
     const payload = {
       page: 1,
-      limit: 4,
+      limit: 3,
       status: true,
     };
     agent.Category.get(payload)

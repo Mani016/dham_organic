@@ -30,12 +30,12 @@ const faq = () => {
             eventKey: '3'
         },
         {
-            title: '5. IS THE NUTRITIONAL VALUE OF ORGANIC FOOD PRODUCTS GREATER OR LEASSER THAN SAME FOOD PRODUCTS AVAILABLE IN MARKETS AS FORTIFIED FOODS?',
+            title: '5. IS THE NUTRITIONAL VALUE OF ORGANIC FOOD PRODUCTS GREATER OR LESSER THAN SAME FOOD PRODUCTS AVAILABLE IN MARKETS AS FORTIFIED FOODS?',
             content: `Organic varieties provide significantly greater levels of vitamin C, iron, magnesium, and phosphorus than non-organic varieties of the same foods. While being higher in these nutrients, they are also significantly lower in nitrates and pesticide residues. In addition, organic foods typically provide greater levels of a number of important antioxidant phytochemicals.`,
             eventKey: '4'
         },
         {
-            title: '6. WHAT ARE THE ORGANIC FOOD CERTICATIONS?',
+            title: '6. WHAT ARE THE ORGANIC FOOD CERTIFICATIONS?',
             content: `Currently, 2 systems of certification are present under the Food Safety and Standards Regulations, 2017 (Organic Food). One is the Participatory Guarantee System (PGS - India) and the other one is the National Programme for Organic Production (NPOP).`,
             eventKey: '5'
         },
@@ -141,7 +141,7 @@ const faq = () => {
                                 <Accordion>
                                     {accordionData.map(({title , content , eventKey}) =>
                                         <Card className= "cursor-pointer">
-                                            <Accordion.Toggle as={Card.Header} eventKey= {eventKey}>
+                                            <Accordion.Toggle as={Card.Header} eventKey= {eventKey} className="text-uppercase">
                                                 {title}
                                             </Accordion.Toggle>
 

@@ -2,7 +2,6 @@ import React, {Component, Fragment} from "react";
 import MetaTags from "react-meta-tags";
 import LayoutOne from "../../../layouts/LayoutOne";
 import Breadcrumb from "../../reusables/Breadcrumb";
-import {ExternalLink} from "react-external-link";
 
 class  Certification extends Component {
     render()
@@ -35,7 +34,7 @@ class  Certification extends Component {
                         </div>
                         <div className="team_info">
                             <h4>{valu.name}</h4>
-                            <p>{valu.work}</p>
+                            <p className="text-center font-weight-bolder">{valu.work}</p>
                             <p className="f-12">{valu.desc}</p>
                         </div>
                     </div>
@@ -45,10 +44,10 @@ class  Certification extends Component {
         return(
             <Fragment>
                 <MetaTags>
-                    <title>Dhaam Organic| Certications</title>
+                    <title>Dhaam Organic| Certifications</title>
                     <meta
                         name="description"
-                        content="Certications"
+                        content="certifications"
                     />
                 </MetaTags>
                 <LayoutOne>

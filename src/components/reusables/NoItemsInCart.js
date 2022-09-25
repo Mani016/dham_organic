@@ -18,7 +18,7 @@ const NoItemsInCart = (props) => {
       ></div>
       <div className='no_items_title'>{title}</div>
       <div className='no_items_sub_title'>{subTitle}</div>
-      <Link to='/categories' className='no_items_btn my-5'>
+      <Link to='/our-products' className='no_items_btn my-5'>
         {btnTxt}
       </Link>
     </div>

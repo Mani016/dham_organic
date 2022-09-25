@@ -34,7 +34,7 @@ class Need extends Component {
       },
       {
         icon: 'step-1.png',
-        title: 'It is the way of life.',
+        title: 'Organic is the way of life.',
         des: 'Staples produced by organic farming will not only satiate your hunger but also provide you with a sense of well being.',
       },
     ];
@@ -75,7 +75,7 @@ class Need extends Component {
           <div className='single-services-page'>
             {/*====================  breadcrumb area ====================*/}
 
-            <Breadcrumb title='Need' />
+            <Breadcrumb title='Organic Farming' />
 
             {/*====================  End of breadcrumb area  ====================*/}
 

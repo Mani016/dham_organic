@@ -50,7 +50,7 @@ const Menu = () => {
                         <Link to='/about-us/people-behind-dhaam'>PEOPLE BEHIND DHAAM</Link>
                       </li>
                       <li>
-                        <Link to='/about-us/certications'>CERTIFICATION</Link>
+                        <Link to='/about-us/certifications'>CERTIFICATION</Link>
                       </li>
                       <li>
                         <Link to='/about-us/experts'>EXPERTS</Link>

@@ -106,11 +106,10 @@ const Testimonials = () => {
   });
 
   return (
-    <div className='testi mb-0'>
+    <div className='testi mb-0 mt-2'>
       <div className='container'>
         <div className='base-header'>
-          <small>Client Satisfait </small>
-          <h3>What Consumers Say </h3>
+          <h3>Dhaam Patrons</h3>
         </div>
         {loading ? (
           <Loader />

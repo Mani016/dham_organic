@@ -20,7 +20,7 @@ const { user } = useContext(AppContext);
         if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
           Alert.showToastAlert('success', res.message);
           setTimeout(function () {
-            sessionStorage.clear()
+            localStorage.clear()
             window.location = '/login';
           }, 1000);
         } else {

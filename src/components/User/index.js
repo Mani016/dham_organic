@@ -43,7 +43,7 @@ const DashboardWrapper = (props) => {
               <div
                 className={'acount_inactive_status mx-2 my-1 cursor-pointer'}
                 onClick={() => {
-                  sessionStorage.clear();
+                  localStorage.clear();
                   window.location = '/login';
                 }}
               >

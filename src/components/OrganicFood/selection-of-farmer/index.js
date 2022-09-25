@@ -24,7 +24,7 @@ const selectionOfFarmer = () => {
                                     <div className='about_item_tbcell'>
                                         <div className='base-header base_header_left'>
                                             <small></small>
-                                            <h3>Farmers with Resolve of Organic</h3>
+                                            <h3 className="text-uppercase">Farmers with Resolve of Organic</h3>
                                         </div>
 
                                         <div className='about_item'>
@@ -50,13 +50,13 @@ const selectionOfFarmer = () => {
                                                 farmers and with methods that keep the nutrient content balanced.
                                                 There is no use of chemicals so there are no side effects on health
                                                 of people consuming our food. This is the most important role we want
-                                                to play in your life – Farmers with Resolve of Organic.
+                                                to play in your life –<br/> Farmers with Resolve of Organic.
                                             </p>
                                             <p>
                                                 We always meet the deadlines of delivering you happiness on
                                                 time which is our first and foremost priority. Our team of
                                                 dedicated delivery persons are always on time with your deliveries.
-                                                We are vigilant of deadlines, and committed to exceeding client expectations
+                                                We are vigilant of deadlines, and committed to exceeding client expectations.
                                             </p>
                                         </div>
                                     </div>

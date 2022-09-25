@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../../layouts/LayoutOne';
 import Typewriter from 'typewriter-effect';
@@ -43,7 +43,8 @@ const Login = () => {
             setItemToSessionStore('clientId', res.data.user.id);
             setItemToSessionStore('activeTab', 'orders');
             setTimeout(function () {
-              window.location = '/my-account';
+              window.history.go(-1)
+              // window.location = '/my-account';
               setLoading(false);
             }, 1000);
           } else {
@@ -53,6 +54,11 @@ const Login = () => {
         .catch((err) => HANDLE_ERROR(err.message, setLoading));
     }
   }
+  useEffect(()=>{
+    if(localStorage.getItem("clientId")){
+      window.location = "/my-account";
+    }
+  },[])
   return (
     <Fragment>
       <MetaTags>

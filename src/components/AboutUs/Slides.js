@@ -22,7 +22,7 @@ class Slides extends Component {
         img:'slider8.webp',
       },
       {
-        img:'slider8.webp',
+        img:'slider11.webp',
       },
       {
         img:'slider9.webp',

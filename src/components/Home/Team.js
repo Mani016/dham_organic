@@ -15,7 +15,7 @@ class Team extends Component {
         image: '/assets/images/dhaam_images/sumit.webp',
       },
       {
-        name: 'Anita Dhankar Dagar',
+        name: 'Anita Dhankhar Dagar',
         designation: 'Heart And Soul',
         image: '/assets/images/dhaam_images/anita.webp',
       },

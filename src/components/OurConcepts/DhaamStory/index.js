@@ -15,7 +15,7 @@ const DhaamStory = () => {
         <div className=''>
           {/*====================  breadcrumb area ====================*/}
 
-          <Breadcrumb title='Welcome To Dhaam Organic' />
+          <Breadcrumb title='Dhaam Organic' />
 
           {/*====================  End of breadcrumb area  ====================*/}
 
@@ -28,7 +28,7 @@ const DhaamStory = () => {
                     <b>DHAAM STORY</b>
                   </h1>
                   <p className="text-justify">
-                    ‘Dhaam Organics’ is a joint initiative by the 8th generation
+                    ‘Dhaam Organic’ is a joint initiative by the 8<sup>th</sup> generation
                     of our family tree. Our goal is to become a leading player
                     in the field of biological agriculture.
                     <br /> We wish to be known as Organic Farmers and Food
@@ -45,7 +45,7 @@ const DhaamStory = () => {
                     <h4 className= "mt-5">
                       <b>OUR CONCEPTS</b>
                     </h4>
-                    We at ‘Dhaam Organics’ nurture and cultivate plants without
+                    We at ‘Dhaam Organic’ nurture and cultivate plants without
                     the use of any chemical fertilisers , pesticides or GMOs. We
                     bring you these Food Products that are unsurpassed in
                     Quality and excellence, and one of the finest products in
@@ -61,7 +61,7 @@ const DhaamStory = () => {
 
                     At the onset we would like to assure you about the quality and taste of our products which we can easily say is our USP.<br/>
 
-                    This can be testified by your own taste buds when you feel the goodness of Mother Earth and rich flavours in ‘Dhaam Organics’ Produce.<br/>
+                    This can be testified by your own taste buds when you feel the goodness of Mother Earth and rich flavours in ‘Dhaam Organic’ Produce.<br/>
 
                     The nutritional value of the food stuffs is unsurpassed. The traditional methods that we use to prepare these products allow maximum nutrition to be retained and these nutrients are released by the food products when you consume them.<br/>
                   </p>
@@ -70,7 +70,7 @@ const DhaamStory = () => {
                       <b>OUR VISION</b>
                     </h4>
                     As organic moves beyond a niche, DHAAM organic is very clear about what the future holds for us all. The movement needs to be prepared to cope with future environmental challenges and market trends.
-                    Hence DHAAM Organics has led a participatory vision and strategy process to prepare the movement to proactively face the future with its step-be-step approach.
+                    Hence DHAAM Organic has led a participatory vision and strategy process to prepare the movement to proactively face the future with its step-be-step approach.
                     A holistic one-stop-edifice to switch to a sustainable way to life, with a diverse product portfolio that attends to a variety of needs for daily living.
                     A catalyst that promotes better health for farmers and their families, workers and consumers at large, at the same time increasing awareness and education encouraging more and more people to make this very important transition.
                     A unique and uncluttered segment focussed platform with right promotion support to help reach their products to the right consumers.

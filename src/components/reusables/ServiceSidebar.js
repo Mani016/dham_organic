@@ -59,7 +59,7 @@ class ServiceSidebar extends Component{
                     </div>
                     <div className="single-contact-info">
                         <i className="fa fa-globe"></i>
-                        <p>Village Chhudani Dhaam <br/>Haryana 124504</p>
+                        <p>Village Chhudani Dhaam <br/>Haryana-124504</p>
                     </div> 
                 </div>
             </div>

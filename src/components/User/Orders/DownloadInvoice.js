@@ -1,6 +1,6 @@
 import React from 'react';
 import jsPDFInvoiceTemplate, { OutputType } from "./jspdf-invoice-template";
-import dhaam_logo from '../../../assets/images/dhaam_logo.webp';
+import dhaam_logo from '../../../assets/images/dhaam_logo.png';
 import moment from "moment";
 import agent from '../../../agent';
 import { useState } from "react";
@@ -48,7 +48,7 @@ const DownloadInvoice = ({ showTxt, orderId }) => {
       },
       business: {
         name: "Dhaam Organic",
-        address: "Village Chhudani Dhaam, Haryana 124504",
+        address: "Village Chhudani Dhaam, Haryana-124504",
         phone: "9266027544,9810179526,8800203622",
         email: "dhaamorganic@gmail.com",
         email_1: "",
@@ -57,7 +57,7 @@ const DownloadInvoice = ({ showTxt, orderId }) => {
       contact: {
         label: "Invoice issued for:",
         name: details.clientId?.name,
-        address: details?.locality,
+        address: details?.clientId?.address?.[0]?.address,
         phone: String(details.clientId?.mobile),
         email: details.clientId?.email,
         // otherInfo: "www.website.al",
@@ -87,7 +87,7 @@ const DownloadInvoice = ({ showTxt, orderId }) => {
           item.price,
           item.quantity,
           item.unit,
-          item.size,
+          item.size !=="None" ? item.size : "-",
           item.discount ? `${item.discount}%` : "-",
           item.finalPrice,
           item.subTotal,

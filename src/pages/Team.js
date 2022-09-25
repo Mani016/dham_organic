@@ -13,18 +13,18 @@ class Team extends Component{
 			name:"Sumit Dagar",
 			work:"Brain", 
 			image:'/assets/images/dhaam_images/sumit.webp',
-			desc:'A passionate organic farmer and an indulgent, generous person, he is the brain behind ‘DHAAM Organics’. He has been very passionate about his life as an organic farmer who is trying to revive the farming methods which were used since ancient times. He wants to help other farmers to realise the importance of growing crops organically without the use of any chemicals. He follows the adage “Grow Healthy, Eat Healthy, Live Healthy”.'
+			desc:'A passionate organic farmer and an indulgent, generous person, he is the brain behind ‘DHAAM Organic’. He has been very passionate about his life as an organic farmer who is trying to revive the farming methods which were used since ancient times. He wants to help other farmers to realise the importance of growing crops organically without the use of any chemicals. He follows the adage “Grow Healthy, Eat Healthy, Live Healthy”.'
 		},
 		{
 			id:2,
-			name:"Anita Dhankar Dagar",
+			name:"Anita Dhankhar Dagar",
 			work:"Heart And Soul",
 			image:'/assets/images/dhaam_images/anita.webp',
 			desc:'The heart and soul of the DHAAM Family. A Proud and ambitious daughter of Indian Air Force Veteran. This has instilled a strong sense of discipline and iron will in her to excel at any and everything she gets her hand on. She along with her soulmate has had a cherished dream of serving people with healthy, nutritious and organic food products. She is the brain behind sales and marketing strategies of these products which Dhaam grows. Currently she is working with Ganga Group of Institutions and also working to achieve the dreams of Dhaam.'
 		},
 		{
 			id:3,
-			name:"Sapna sehrawat",
+			name:"Sapna Sehrawat",
 			work:"Pro Active Social Worker",
 			image:'/assets/images/dhaam_images/Sapna sehrawat.webp',
 			desc:'Sapna Sehrawat is a pro-active Social worker with the sole aim of touching lives with an optimistic joyful persona. She is a caring and compassionate person who is the Founder/Chairperson of Nishwarth Sewa foundation. This foundation is enthusiastically involved in supporting under privileged weaker section of the society. She has been associated with DHAAM since its nascent phase of conception and has given her valuable inputs to help us reach the pinnacle.'
@@ -48,7 +48,7 @@ class Team extends Component{
 	                </div>
 	                <div className="team_info">
 	                    <h4>{valu.name}</h4>
-	                    <p>{valu.work}</p> 
+	                    <p className='text-center font-weight-bolder'>{valu.work}</p> 
 						<p className="f-12">{valu.desc}</p>
                         <ul className="social list-inline">
                             <li>

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Fragment } from 'react';
 import MetaTags from 'react-meta-tags';
 import LayoutOne from '../../layouts/LayoutOne';
@@ -13,9 +14,9 @@ const SignUp = () => {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [mobileNum, setMobileNum] = React.useState('');
-  const [created, setCreated] = React.useState(false);
+  // const [created, setCreated] = React.useState(false);
   const [password, setPassword] = React.useState('');
-  const [OTP, setOTP] = React.useState('');
+  // const [OTP, setOTP] = React.useState('');
   const [loading, setLoading] = React.useState(false);
   const [showPassword, setShowPassword] = React.useState(false);
 
