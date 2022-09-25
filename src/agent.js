@@ -10,7 +10,7 @@ const API_ROOT = 'https://dhaam-api.herokuapp.com/api/';
 
 const responseBody = (res) => res.body;
 const errorBody = (err) => {
-  if (err.response.status === 403) {
+  if (err.response?.status === 403) {
     localStorage.clear();
     Alert.showToastAlert('error', 'Session Expired');
     setTimeout(() => (window.location = '/login'), 2000);

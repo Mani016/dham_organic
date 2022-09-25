@@ -157,7 +157,7 @@ const Contact = () => {
                         <p>
                           <span>Farm Address :</span>
                         </p>
-                        <address className="mb-0">
+                        <address className="mb-0 mb-0 ml-5 pl-3">
                           Village Chhudani Dhaam, Haryana-124504
                         </address>
                       </div>
@@ -168,13 +168,9 @@ const Contact = () => {
                         <p>
                           <span>Email Address :</span>
                         </p>
-                        <p>
-                          <span>
-                            <a href="mailto:dhaamorganic@gmail.com">
-                              dhaamorganic@gmail.com
-                            </a>
-                          </span>
-                        </p>
+                        <a href="mailto:dhaamorganic@gmail.com">
+                          dhaamorganic@gmail.com
+                        </a>
                       </div>
                       <div className="single_con_add">
                         <a href="#/">

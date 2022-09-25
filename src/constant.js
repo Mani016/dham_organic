@@ -29,12 +29,12 @@ export const GALLERY_TYPES = [
     points: [
       "INDIAN AGRICULTURAL RESEARCH INSTITUTE, PUSA, NEW DELHI\n" +
         "\n" +
-        "IARI is the leading institution for agricultural research, education and extension in the country. \n" +
+        "(IARI) is the leading institution for agricultural research, education and extension in the country. \n" +
         "We get the knowledge of Organic Farming and all the technical matters related to it from Pusa Institute. Organic Farming related issues are all resolved through training in this renowned institute.\n" +
         "\n",
       "KRISHI VIGYAN KENDRA, UJWA, NEW DELHI \n" +
         "\n" +
-        "Krishi Vigyan Kendra is an integral part of the National Agricultural Research System (NARS). \n" +
+        "is an integral part of the National Agricultural Research System (NARS). \n" +
         "It aims at assessment of location specific technology modules in agriculture. \n" +
         "\n" +
         "KVKs have been functioning as Knowledge and Resource Centres of agriculture technology for improving the agricultural economy of the district and helping farmers like us \n" +
@@ -43,7 +43,7 @@ export const GALLERY_TYPES = [
         "\n",
       "CENTRE OF EXCELLENCE FOR VEGETABLES (An Indo-Israel Project), Gharaunda, Haryana \n" +
         "\n" +
-        "This institute provides guidance for selection of good quality seeds. Knowing about the seeds and then procuring them is an essential part of good crop. \n" +
+        " provides guidance for selection of good quality seeds. Knowing about the seeds and then procuring them is an essential part of good crop. \n" +
         "There are new formulas and techniques to make the production of vegetables better in every condition and weather. This training is obtained from the Indo Israel Institute.",
     ],
   },

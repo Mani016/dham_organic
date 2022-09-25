@@ -19,7 +19,7 @@ class OurExperts extends Component {
       },
       {
         id: 2,
-        name: "Dr. Dharmesh Varma",
+        name: "Dr. Dharmesh Verma",
         work: "Organic Farming Expert",
         image: "/assets/images/dhaam_images/dharmesh varma.webp",
         desc: (

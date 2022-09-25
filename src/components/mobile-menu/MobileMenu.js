@@ -109,7 +109,7 @@ const MobileMenu = () => {
                     <Link to='/organic-food/selection-of-farmer'>SELECTION OF FARMER</Link>
                   </li>
                   <li>
-                    <Link to='/organic-food/phases-in-farming'>PHASES IN FAMRING</Link>
+                    <Link to='/organic-food/phases-in-farming'>PHASES IN FARMING</Link>
                   </li>
                   <li>
                     <Link to='/organic-food/faq'>FAQ’s</Link>
