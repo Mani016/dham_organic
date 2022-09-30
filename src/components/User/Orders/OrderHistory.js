@@ -64,6 +64,11 @@ const OrderHistory = () => {
       isActive = false;
     };
   }, [page, refresh]);
+  useEffect(()=>{
+    if(!localStorage.getItem("clientId")){
+      window.location = "/login";
+    }
+  },[])
   return (
     <div className='past_order'>
       <div className='order-heading-container'>
