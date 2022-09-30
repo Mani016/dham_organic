@@ -43,8 +43,10 @@ const Login = () => {
             setItemToSessionStore('clientId', res.data.user.id);
             setItemToSessionStore('activeTab', 'orders');
             setTimeout(function () {
-              window.history.go(-1)
-              // window.location = '/my-account';
+              // window.history.go(-1);
+              // window.history.back();
+              window.location = '/my-account';
+              window.location.reload(true);
               setLoading(false);
             }, 1000);
           } else {
