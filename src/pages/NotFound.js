@@ -21,7 +21,7 @@ const NotFound = () => {
               <div className="col-sm-12 text-center"> 
                     <h2>OOPS!</h2>
                     <span>404 - PAGE NOT FOUND</span>
-                    <p>The page you are looking for was moved, removed, renamed or might never existed.</p>
+                    <p className="text-center">The page you are looking for was moved, removed, renamed or might never existed.</p>
                     <Link className="more-link" to={process.env.PUBLIC_URL + "/"}>
                       Go Home
                     </Link> 

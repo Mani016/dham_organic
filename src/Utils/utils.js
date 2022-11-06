@@ -2,11 +2,13 @@ import Alert from './Alert';
 
 export const setItemToSessionStore = (key, payload, store = localStorage) =>
   store.setItem(key, JSON.stringify(payload));
+
 export const getItemFromSessionStore = (
   key,
   defaultValue,
   store = localStorage
 ) => JSON.parse(store.getItem(key)) || defaultValue;
+
 export default function isImage(file) {
   const fileName = file.name || file.path;
   const suffix = fileName.substr(fileName.indexOf('.') + 1).toLowerCase();

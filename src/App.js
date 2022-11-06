@@ -24,6 +24,8 @@ import OurExperts from "./components/OurConcepts/Experts";
 import farmLocation from "./components/ContactUs/farm-location/farm-location";
 import returnRefund from "./components/ContactUs/return-refund";
 import Certification from "./components/OurConcepts/certifications";
+import ResetPassword from "./components/User/ResetPassword";
+import ForgotPassword from "./components/User/ForgotPassword";
 
 function App() {
   return (
@@ -116,7 +118,6 @@ function App() {
             path={`${process.env.PUBLIC_URL + '/my-account'}`}
             component={Profile}
           />
-
           <Route
             path={`${process.env.PUBLIC_URL + '/login'}`}
             component={Login}
@@ -124,6 +125,14 @@ function App() {
           <Route
             path={`${process.env.PUBLIC_URL + '/sign-up'}`}
             component={SignUp}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL + '/reset-password/:userId/:token'}`}
+            component={ResetPassword}
+          />
+           <Route
+            path={`${process.env.PUBLIC_URL + '/forgot-password'}`}
+            component={ForgotPassword}
           />
           <Route exact component={NotFound} />
         </Switch>

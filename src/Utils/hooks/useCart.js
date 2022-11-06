@@ -74,6 +74,7 @@ const useCart = () => {
     }
   }
   function handleRemove(productId) {
+    setLoading(true);
     const payload = {
       productId,
     };
@@ -82,7 +83,9 @@ const useCart = () => {
         if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
           Alert.showToastAlert('success', res.message);
           GetCart();
-          setLoading(false);
+          setTimeout(()=>{
+            setLoading(false);
+          },1000)
         } else {
           HANDLE_ERROR(res.message, setLoading);
         }

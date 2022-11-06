@@ -1,7 +1,6 @@
 import superagentPromise from 'superagent-promise';
 import _superagent from 'superagent';
 import { getItemFromSessionStore } from './Utils/utils';
-import Alert from './Utils/Alert';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
@@ -10,18 +9,16 @@ const API_ROOT = 'https://dhaam-api.herokuapp.com/api/';
 
 const responseBody = (res) => res.body;
 const errorBody = (err) => {
-  if (err.response?.status === 403) {
+  if(err.response.body?.status === 403){
     localStorage.clear();
-    Alert.showToastAlert('error', 'Session Expired');
     setTimeout(() => (window.location = '/login'), 2000);
-  } else {
-    return err.response.body;
   }
+    return err.response.body;
 };
 const token = getItemFromSessionStore('token');
 const createdBy = '620aae3e90e0a582e3d93ee5';
 const companyId = '6219f4a39ca8773564b6fac0';
-const clientId = getItemFromSessionStore('clientId');
+const clientId = getItemFromSessionStore('clientId') || localStorage.getItem("clientId");
 
 const requests = {
   del: (url) =>
@@ -67,6 +64,8 @@ const Auth = {
     requests.post('client/auth/register', { ...data, createdBy, companyId }),
   otp: (data) => requests.post('client/auth/verifyOTP', { ...data }),
   login: (data) => requests.post('client/auth/login', { ...data }),
+  forgotPassword: (data) => requests.post('client/auth/forgotPassword', { ...data }),
+  resetPassword: (data) => requests.post('client/auth/resetPassword', { ...data }),
 };
 
 const Client = {
