@@ -45,7 +45,7 @@ const Login = () => {
             setTimeout(function () {
               // window.history.go(-1);
               // window.history.back();
-              window.location = "/my-account";
+              window.location = '/my-account';
               window.location.reload(true);
               setLoading(false);
             }, 1000);

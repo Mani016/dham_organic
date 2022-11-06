@@ -26,5 +26,3 @@ export const HANDLE_ERROR = (message, setLoading) => {
   Alert.showToastAlert('error', message);
   setLoading(false);
 };
-
-

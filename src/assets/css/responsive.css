@@ -766,6 +766,7 @@
 ----------------------------------------------    ph-----------------------------------*/
 	header.blog-banner {
 		background-position: right;
+		background-size: 100% 152px;
 	}
 
 	.contact_pg_address {
