@@ -152,7 +152,7 @@ const Login = () => {
                           value={password}
                         />
                       </p>
-                      <Link to="/forgot-password" className="d-flex justify-content-end">
+                      <Link to="/forgot-password" className="d-flex justify-content-end text-primary">
                         forgot-password?
                       </Link>
                       <div className="d-flex mb-3 mt-2 justify-content-center">
