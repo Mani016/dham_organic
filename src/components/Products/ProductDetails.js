@@ -153,13 +153,15 @@ const ProductDetails = () => {
                         <div className='allproduct-price-area'>
                           {/* Product Price  */}
                           <span className='price'>
+                            <h5 className='mb-0'>₹{data.price}</h5>
+                            {/* <br/> */}
                             <span className='n-amt'>
-                              {data.finalPrice}/{data?.unit?.name}
+                              {data.qty}/{data?.unit?.name}
                             </span>
                             {data.discount > 0 && (
                               <span>
                                 <del>
-                                  ₹{data.price}/{data?.unit?.name}
+                                  ₹{data.qty}/{data?.unit?.name}
                                 </del>
                               </span>
                             )}

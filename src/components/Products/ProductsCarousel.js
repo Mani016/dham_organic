@@ -62,7 +62,7 @@ const ProductsCarousel = (props) => {
             </div>
           </Link>
           <div className='product_info'>
-            <h4>{valu.name}</h4>
+            <h5>{valu.name}</h5>
             <span>
               Qty:&nbsp; {valu.qty}/{valu.unit.name}
             </span>
