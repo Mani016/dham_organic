@@ -33,9 +33,11 @@ const CartSidebar = (props) => {
                   <div className='price_tag'>
                     <span>
                       <b>
-                        ₹{subItem.finalPrice}/{subItem.unit} x{' '}
+                        {subItem.details?.qty}{(subItem.unit).toLowerCase()} x{' '}
                         {subItem.quantity}
-                      </b>
+                      </b> | 
+                      <b className='mx-2'>₹{subItem.subTotal}</b>
+
                     </span>
                     {subItem.discount > 0 && (
                       <span style={{ textDecoration: 'line-through' }}>

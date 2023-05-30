@@ -6867,7 +6867,7 @@ input[type='number'] {
   align-items: center;
 }
 .cart-loader {
-  height: 60vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6883,8 +6883,8 @@ label {
     width: 280px;
   }
 .sidebar .item_box .item_details p{
-    width: 82px;
-    white-space: nowrap;
+    width: 100%;
+    white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: normal;
