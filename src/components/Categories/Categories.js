@@ -41,12 +41,12 @@ export const CategoryCard = ({ item = [] }) => {
 const Category = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
-  const { paginationLayout, page } = usePagination(data);
+  const { paginationLayout, page } = usePagination({data});
   function getCategories() {
     setLoading(true);
     const payload = {
       page: page,
-      limit: 10,
+      limit: 100,
       status: true,
     };
     agent.Category.get(payload)

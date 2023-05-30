@@ -16,12 +16,12 @@ const OrderHistory = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [refresh, setRefresh] = useState(false);
-  const { paginationLayout, page } = usePagination(data);
+  const { paginationLayout, page } = usePagination({data});
   const getOrderHistory = () => {
     setLoading(true);
     const payload = {
       page: page,
-      limit: 10,
+      limit: 100,
     };
     agent.Orders.getAll(payload)
       .then((res) => {
