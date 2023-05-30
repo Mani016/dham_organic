@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 const usePagination = (props) => {
-  const { data } = props;
+  const { data= {} } = props;
   const [page, setPage] = useState(1);
 
   const paginationLayout = () => {
-    console.log(data, "data");
 
     return (
       <>
