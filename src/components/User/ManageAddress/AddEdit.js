@@ -32,11 +32,11 @@ const AddEditAddress = (props) => {
     };
     agent.Localities.getAll(payload)
       .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
           setLocalities(res.data);
         } else {
           setLocalities([]);
-          Alert.showToastAlert("error", res.message);
+          Alert.showToastAlert("error", res?.message);
         }
       })
       .catch((err) => {
@@ -78,13 +78,13 @@ const AddEditAddress = (props) => {
 
         agent.Address.add({ address: payload })
           .then((res) => {
-            if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-              Alert.showToastAlert("success", res.message);
+            if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
+              Alert.showToastAlert("success", res?.message);
               handleClose();
               handleRefresh();
               setLoading(false);
             } else {
-              Alert.showToastAlert("error", res.message);
+              Alert.showToastAlert("error", res?.message);
               setLoading(false);
             }
           })
@@ -107,13 +107,13 @@ const AddEditAddress = (props) => {
         };
         agent.Address.update(payload)
           .then((res) => {
-            if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-              Alert.showToastAlert("success", res.message);
+            if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
+              Alert.showToastAlert("success", res?.message);
               handleClose();
               handleRefresh();
               setLoading(false);
             } else {
-              Alert.showToastAlert("error", res.message);
+              Alert.showToastAlert("error", res?.message);
               setLoading(false);
             }
           })

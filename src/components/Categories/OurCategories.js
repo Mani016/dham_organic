@@ -17,11 +17,11 @@ const OurCategories = () => {
     };
     agent.Category.get(payload)
       .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
           setData(res.data.data);
           setLoading(false);
         } else {
-          HANDLE_ERROR(res.message, setLoading);
+          HANDLE_ERROR(res?.message, setLoading);
         }
       })
       .catch((err) => {

@@ -25,11 +25,11 @@ const OrderHistory = () => {
     };
     agent.Orders.getAll(payload)
       .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
           setData(res.data);
           setLoading(false);
         } else {
-          HANDLE_ERROR(res.message, setLoading);
+          HANDLE_ERROR(res?.message, setLoading);
         }
       })
       .catch((err) => {
@@ -43,7 +43,7 @@ const OrderHistory = () => {
     agent.Orders.cancelOrder({ orderId }) // Get the details of the customer
       .then((res) => {
         // If the response is successful
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
           setRefresh(!refresh);
           // If the status is success
         } else {

@@ -19,7 +19,7 @@ const ProductsCarousel = (props) => {
     };
     agent.Product.get(payload)
       .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
           if (cartDetails.length > 0) {
             setData(
               res.data.data.filter(
@@ -31,7 +31,7 @@ const ProductsCarousel = (props) => {
             setData(res.data?.data);
           }
         } else {
-          Alert.showToastAlert('error', res.message);
+          Alert.showToastAlert('error', res?.message);
         }
       })
       .catch((err) => {

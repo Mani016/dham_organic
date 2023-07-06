@@ -1865,7 +1865,7 @@ section {
 /*   width: 200px !important; */
 /*   width: auto; */
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   max-height: 135px;
   transition: transform 0.6s;
 }
@@ -6290,6 +6290,11 @@ input[type='number'] {
 }
 .loader_outer {
   text-align: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .loader_outer img {
   width: 90px;

@@ -40,11 +40,11 @@ const Main = (props) => {
         setLoading(true);
         agent.Client.getById()
           .then((res) => {
-            if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+            if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
               setUser(res.data);
               setLoading(false);
             } else {
-              HANDLE_ERROR(res.message, setLoading);
+              HANDLE_ERROR(res?.message, setLoading);
             }
           })
           .catch((err) => {
@@ -83,6 +83,9 @@ const Main = (props) => {
     selectedAddress,
     finalAmount,
   };
+  useEffect(()=>{
+    window.scroll(0,0)
+  },[])
 
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>

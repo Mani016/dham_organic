@@ -18,11 +18,11 @@ const Index = () => {
       setLoading(true);
       agent.Gallery.getAll({ type: type.toUpperCase() })
         .then((res) => {
-          if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+          if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
             setGalleryListArray(res.data);
             setLoading(false);
           } else {
-            HANDLE_ERROR(res.message, setLoading);
+            HANDLE_ERROR(res?.message, setLoading);
           }
         })
         .catch((err) => {

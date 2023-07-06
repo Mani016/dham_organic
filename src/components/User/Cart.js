@@ -52,13 +52,13 @@ const Cart = () => {
       };
       agent.Cart.checkout(payload)
         .then((res) => {
-          if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-            Alert.showToastAlert('success', res.message);
+          if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
+            Alert.showToastAlert('success', res?.message);
             setItemToSessionStore('selectedAddress', {});
             GetCart();
             setLoading(false);
           } else {
-            HANDLE_ERROR(res.message, setLoading);
+            HANDLE_ERROR(res?.message, setLoading);
           }
         })
         .catch((err) => {

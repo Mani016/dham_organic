@@ -27,11 +27,11 @@ const Product = () => {
     };
     agent.Product.get(payload)
       .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
           setResponse(res.data);
           setLoading(false);
         } else {
-          HANDLE_ERROR(res.message, setLoading);
+          HANDLE_ERROR(res?.message, setLoading);
         }
       })
       .catch((err) => {

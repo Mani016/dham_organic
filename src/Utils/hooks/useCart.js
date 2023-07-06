@@ -29,13 +29,13 @@ const useCart = () => {
       setLoading(true);
       agent.Cart.add({ productId: id })
         .then((res) => {
-          if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+          if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
             Alert.showToastAlert('success', 'Product Added Successfully.');
             GetCart();
             setLoading(false);
             setSelectedId('');
           } else {
-            HANDLE_ERROR(res.message, setLoading);
+            HANDLE_ERROR(res?.message, setLoading);
             setSelectedId('');
           }
         })
@@ -54,13 +54,13 @@ const useCart = () => {
       setLoading(true);
       agent.Cart.remove({ productId: id })
         .then((res) => {
-          if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+          if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
             Alert.showToastAlert('success', 'Product Removed Successfully.');
             GetCart();
             setLoading(false);
             setSelectedId('');
           } else {
-            HANDLE_ERROR(res.message, setLoading);
+            HANDLE_ERROR(res?.message, setLoading);
             setSelectedId('');
           }
         })
@@ -80,14 +80,14 @@ const useCart = () => {
     };
     agent.Cart.deleteFromCart(payload)
       .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-          Alert.showToastAlert('success', res.message);
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
+          Alert.showToastAlert('success', res?.message);
           GetCart();
           setTimeout(()=>{
             setLoading(false);
           },1000)
         } else {
-          HANDLE_ERROR(res.message, setLoading);
+          HANDLE_ERROR(res?.message, setLoading);
         }
       })
       .catch((err) => {

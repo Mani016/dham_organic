@@ -34,13 +34,13 @@ const EditProfile = (props) => {
     };
     agent.Client.update(payload)
       .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-          Alert.showToastAlert('success', res.message);
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
+          Alert.showToastAlert('success', res?.message);
           handleRefresh();
           setLoading(false);
           handleClose();
         } else {
-          Alert.showToastAlert('error', res.message);
+          Alert.showToastAlert('error', res?.message);
           setLoading(false);
           handleClose();
         }
@@ -64,14 +64,14 @@ const EditProfile = (props) => {
       const deletePayload = { filename: user.image.filename };
       agent.Client.deleteProfilePic(deletePayload)
         .then((res) => {
-          if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+          if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
             agent.Client.uploadProfilePic(formData)
               .then((res) => {
-                if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+                if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
                   payload.image = res.data;
                   handleUpdate(payload);
                 } else {
-                  Alert.showToastAlert('error', res.message);
+                  Alert.showToastAlert('error', res?.message);
                   setLoading(false);
                   handleClose();
                 }
@@ -82,7 +82,7 @@ const EditProfile = (props) => {
                 handleClose();
               });
           } else {
-            Alert.showToastAlert('error', res.message);
+            Alert.showToastAlert('error', res?.message);
             setLoading(false);
             handleClose();
           }
@@ -95,11 +95,11 @@ const EditProfile = (props) => {
     } else {
       agent.Client.uploadProfilePic(formData)
       .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
           payload.image = res.data;
           handleUpdate(payload);
         } else {
-          Alert.showToastAlert('error', res.message);
+          Alert.showToastAlert('error', res?.message);
           setLoading(false);
           handleClose();
         }

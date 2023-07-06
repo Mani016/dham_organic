@@ -16,7 +16,7 @@ const DownloadInvoice = ({ showTxt, orderId }) => {
     agent.Orders.getById({ orderId }) // Get the details of the customer
       .then((res) => {
         // If the response is successful
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
           setLoading(false); // Set loading to false
           // If the status is success
           generatePDF(res.data); // Generate the pdf

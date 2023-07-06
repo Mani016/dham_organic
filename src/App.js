@@ -26,7 +26,6 @@ import returnRefund from "./components/ContactUs/return-refund";
 import Certification from "./components/OurConcepts/certifications";
 import ResetPassword from "./components/User/ResetPassword";
 import ForgotPassword from "./components/User/ForgotPassword";
-
 function App() {
   return (
     <Router>

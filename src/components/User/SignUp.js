@@ -65,9 +65,9 @@ const SignUp = () => {
       };
       agent.Auth.register(data)
         .then((res) => {
-          if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+          if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
             //             setCreated(true);
-            Alert.showToastAlert("success", res.message);
+            Alert.showToastAlert("success", res?.message);
             setItemToSessionStore("token", res.data.token);
             setItemToSessionStore("justOnce", true);
             setItemToSessionStore("clientId", res.data.user.id);
@@ -76,7 +76,7 @@ const SignUp = () => {
             }, 1000);
             setLoading(false);
           } else {
-            HANDLE_ERROR(res.message, setLoading);
+            HANDLE_ERROR(res?.message, setLoading);
             //             setCreated(false);
           }
         })
@@ -100,7 +100,7 @@ const SignUp = () => {
   //       };
   //       agent.Auth.otp(data)
   //         .then((res) => {
-  //           if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
+  //           if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
   //             setCreated(true);
   //             setItemToSessionStore('token', res.data.token);
   //             setItemToSessionStore('justOnce', true);
@@ -110,7 +110,7 @@ const SignUp = () => {
   //             }, 1000);
   //             setLoading(false);
   //           } else {
-  //             HANDLE_ERROR(res.message, setLoading);
+  //             HANDLE_ERROR(res?.message, setLoading);
   //           }
   //         })
   //         .catch((err) => HANDLE_ERROR(err.message, setLoading));

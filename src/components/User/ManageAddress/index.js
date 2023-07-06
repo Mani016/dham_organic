@@ -30,11 +30,11 @@ const ManageAddress = (props) => {
         setLoading(true);
         agent.Address.delete({ addressId })
           .then((res) => {
-            if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-              Alert.showToastAlert('success', res.message);
+            if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
+              Alert.showToastAlert('success', res?.message);
               handleRefresh();
             } else {
-              HANDLE_ERROR(res.message, setLoading);
+              HANDLE_ERROR(res?.message, setLoading);
             }
           })
           .catch((err) => {

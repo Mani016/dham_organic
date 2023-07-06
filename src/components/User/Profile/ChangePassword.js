@@ -17,14 +17,14 @@ const { user } = useContext(AppContext);
     
     agent.Client.changePassword(payload)
       .then((res) => {
-        if (API_STATUS.SUCCESS_CODE.includes(res.status)) {
-          Alert.showToastAlert('success', res.message);
+        if (API_STATUS.SUCCESS_CODE.includes(res?.status)) {
+          Alert.showToastAlert('success', res?.message);
           setTimeout(function () {
             localStorage.clear()
             window.location = '/login';
           }, 1000);
         } else {
-          Alert.showToastAlert('error', res.message);
+          Alert.showToastAlert('error', res?.message);
         }
       })
       .catch((err) => {

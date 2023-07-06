@@ -5,12 +5,18 @@ class AlertMessage {
       toast: true,
       position: "top-right",
       showConfirmButton: false,
-      timer,
+      timer: 3000, // Example duration, you can set your desired timer
       timerProgressBar: true,
       didOpen: (toast) => {
-        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseenter", Swal.resumeTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
       },
+      allowOutsideClick: true,
+      customClass: {
+        closeButton: "my-close-button",
+      },
+      buttonsStyling: false,
+      showCloseButton: true,
     });
     Toast.fire({
       icon: icon,

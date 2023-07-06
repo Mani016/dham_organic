@@ -9,17 +9,16 @@ const API_ROOT = 'https://dhaam-api.vercel.app/api/';
 
 const responseBody = (res) => res.body;
 const errorBody = (err) => {
-  if(err.response?.body?.status === 403){
+  if(err?.response?.body?.status === 403){
     localStorage.clear();
     setTimeout(() => (window.location = '/login'), 2000);
   }
-    return err.response?.body;
+    return err?.response?.body;
 };
 const token = getItemFromSessionStore('token');
 const createdBy = '620aae3e90e0a582e3d93ee5';
 const companyId = '6219f4a39ca8773564b6fac0';
 const clientId = getItemFromSessionStore('clientId') || localStorage.getItem("clientId");
-
 const requests = {
   del: (url) =>
     superagent
