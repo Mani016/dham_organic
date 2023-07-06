@@ -1,90 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/dhaam_logo.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <!-- <meta name="description"
-    content="Buy farm fresh fruits & vegetables from Dhaam Organic. Home delivery at best prices in Delhi, Gurgaon, Noida and  Dwarka. Pay online or cash on delivery." />
-  <meta name="keywords"
-    content="online vegetables,online vegetables near me,buy vegetables online,online vegetable delivery,order vegetables online,vegetables delivery,online fruits and vegetables,online fresh vegetables,online organic vegetables,vegetables delivery app,online delivery of fruits,home delivery of fresh vegetables,vegetables home delivery near me,vegetable home delivery,online vegetables delivery near me,home delivery vegetables near me,buy organic vegetables online,buy fresh vegetables online,online vegetables delivery app,order fresh vegetables online,buy fruits and vegetables online,order fruits and vegetables online,online vegetable market,order fresh fruits and vegetables online,vegetable home delivery app,home delivery of vegetables near me,buy vegetables online near me,order fruit and veg online,order organic vegetables online,buy organic fruits online,buy fruit and veg online,buy fresh produce online,vegetables online delivery near me,online delivery vegetables,vegetable shop near me home delivery,big basket online vegetables,vegetables and fruits home delivery near me,fruits and vegetables home delivery near me,online vegetable shopping app,order vegetables online near me,buy frozen vegetables online,online vegetables and fruits near me,home delivery fruits and vegetables near me,online vegetable purchase,online fresh fruits and vegetables,buy organic fruits and vegetables online,fresh vegetables home delivery near me,fruit and veg home delivery near me,vegetables at home delivery,app for vegetables delivery,online vegetables indirapuram,door delivery vegetables near me,buy fresh fruits and vegetables online,online delivery of fruits and vegetables,online vegetables website,fruits and vegetables delivery app,app to buy vegetables online,vegetables door delivery,more online vegetables,vegetables and fruits delivery app,online vegetables home delivery,home delivery vegetables and fruits near me,buy fruits vegetables online,buy cut vegetables online,free home delivery vegetables near me,online sabzi delivery,buy cheap vegetables online,vegetable free home delivery,buy kathal online,online vegetables dwarka,online vegetables in rohini,order vegetables and fruits online,fruits vegetables delivery,home delivery of fruits and vegetables near me,fruits order online app,free home delivery vegetables,app for buying fruits and vegetables,best online vegetables delivery,delivery fresh vegetables,online vegetable selling websites,buy green vegetables online,vegetables and fruits home delivery,order sabji online,online vegetables and fruits delivery near me,kathal buy online,buy online vegetables near me,buy fresh vegetables online near me,online vegetables suppliers near me,home delivery of fruits,vegetables near me home delivery,online vegetables site,online delivery of vegetables near me,app to order fresh fruits and vegetables online,buy exotic vegetables online,home delivery for vegetables,online vegetables and grocery,delivery of vegetables near me,online delivery fruits and vegetables,to buy vegetables online,online vegetables price,cheapest online vegetables,online vegetable and fruit delivery,online order for vegetables,order sabzi online,organic online vegetables,purchase fruits and vegetables online,buy vegetables in bulk online,online cheap vegetables,online vegetables order app,order organic fruit and vegetables online,veg delivered near me,best online vegetables,vegetable delivery dwarka,online fruits & vegetables,order exotic vegetables online,home delivery of vegetables and fruits near me,vegetables online same day delivery,buy wholesale vegetables online,online grocery vegetables,online vegetables home delivery near me,online vegetables app near me,fruits and vegetables home delivery app,order veggies and fruits online,buy fresh vegetables and fruits online,vegetables order online near me,fruits and vegetables online order,online home delivery vegetables,order fruits vegetables online,kathal online delivery,buy local vegetables online,order vegetables online app,online order fruits and vegetables,best place to buy fruits and vegetables online,cheap online fruit and veg,online vegetables sale,order fresh fruits and vegetables online near me,order online fruits and vegetables,home delivery app for vegetables,vegetables online order near me,best app for fruits delivery,online vegetables in indirapuram,order green vegetables online,buy chopped vegetables online,buy fresh organic vegetables online,online vegetables from farmers,order online fresh vegetables,vegetable delivery website,home delivery for vegetables near me,buy vegetables online cheap,vegetables order app,vegetables and fruits buy online,online vegetables order near me,vegetables online delivery app,want to buy vegetables online,vegetables and fruits online order,online groceries fruits and vegetables,online order of vegetables,fruit and vegetables delivered near me,online delivery for vegetables,online vegetables & fruits,online vegetables in powai,online app to buy vegetables,buy vegetables online indirapuram,online vegetable company,online vegetables amazon,buy fruits & vegetables online,buy vegetables online wholesale,online order of fruits,fresh fruit and vegetables delivered near me,online vegetables online,order online vegetables near me,vegetable fruit home delivery,best fruits delivery app,vegetables for home delivery,best site for online vegetables,fresh vegetables delivery online,home delivery vegetable app,delivery of fresh vegetables,online vegetable sellers,green vegetables delivery,vegetable home delivery in panvel,fresh vegetables online order,buy vegetables online dwarka,order fruits and vegetables online near me,big bazaar vegetables home delivery,online vegetable service,online vegetables big basket,online order vegetables and fruits,online vegetables supply,online free delivery vegetables,basket online vegetables,frozen vegetables order online,purchase online vegetables">
-
-  <meta property="og:title" content="Fresh fruits & vegetables delivery in Delhi NCR from farms near you.">
-  <meta property="og:description"
-    content="Buy farm fresh fruits & vegetables from Just Fresh App. Flat 30% Off on first order, Code: JUST30. Home delivery at best prices in Delhi, Gurgaon, Noida, Ghaziabad and Faridabad. Order online by 10 PM to get delivery next morning between 6 AM and 9 AM or order after 10 PM for delivery between 6 PM and 9 PM. Pay online or cash on delivery.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.dhaamorganic.com">
-  <meta name="twitter:title" content="Fresh fruits & vegetables delivery in Delhi NCR from farms near you.">
-  <meta name="twitter:description"
-    content="Buy farm fresh fruits & vegetables from Just Fresh App. Flat 30% Off on first order, Code: JUST30. Home delivery at best prices in Delhi, Gurgaon, Noida, Ghaziabad and Faridabad. Order online by 10 PM to get delivery next morning between 6 AM and 9 AM or order after 10 PM for delivery between 6 PM and 9 PM. Pay online or cash on delivery.">
-  <meta name="twitter:site" content="https://www.dhaamorganic.co/">
-  <meta name="twitter:card"
-    content="Buy farm fresh fruits & vegetables from Just Fresh App. Flat 30% Off on first order, Code: JUST30. Home delivery at best prices in Delhi, Gurgaon, Noida, Ghaziabad and Faridabad. Order online by 10 PM to get delivery next morning between 6 AM and 9 AM or order after 10 PM for delivery between 6 PM and 9 PM. Pay online or cash on delivery."> -->
-
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <!-- <meta name=“google-play-app” content=“app-id=”> -->
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/dhaam_logo.png" />
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.23.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.23.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.23.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.23.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.23.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.23.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.23.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.23.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.23.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.23.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
     -->
-  <!-- <base href="/" /> -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="stylesheet" type="text/css" charset="UTF-8"
-    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  <title>Dhaam Organic- Organic Food </title>
-</head>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyDGXsxAwh96XvX24Mp4SVnxwbUPm1aJh6c",
-      authDomain: "dhaam-website.firebaseapp.com",
-      projectId: "dhaam-website",
-      storageBucket: "dhaam-website.appspot.com",
-      messagingSenderId: "120658657919",
-      appId: "1:120658657919:web:2338390309e6463673754a",
-      measurementId: "G-0T1XZB6R49"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
-  <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-</body>
-
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
 </html>
