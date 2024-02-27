@@ -38,7 +38,7 @@ const OrderDetail = (props) => {
                   <span>
                     <b>
                       {subItem.details?.qty}
-                      {subItem.unit?.toLowerCase()} x {subItem.quantity}
+                      {subItem.unit?.name} x {subItem.quantity}
                     </b>{" "}
                     |<b className="mx-2">₹{subItem.subTotal}</b>
                   </span>

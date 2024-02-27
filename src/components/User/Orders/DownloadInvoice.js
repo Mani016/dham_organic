@@ -86,7 +86,7 @@ const DownloadInvoice = ({ showTxt, orderId }) => {
           item.name,
           item.price,
           item.quantity,
-          `${item.details?.qty}${item.unit?.toLowerCase()}`,
+          `${item.details?.qty}${item.unit?.name}`,
           item.size !=="None" ? item.size : "-",
           item.discount ? `${item.discount}%` : "-",
           item.finalPrice,
