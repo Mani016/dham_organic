@@ -11,7 +11,7 @@ export const getItemFromSessionStore = (
 
 export default function isImage(file) {
   const fileName = file.name || file.path;
-  const suffix = fileName.substr(fileName.indexOf('.') + 1).toLowerCase();
+  const suffix = fileName.substr(fileName.indexOf('.') + 1)?.toLowerCase();
   if (
     suffix === 'jpg' ||
     suffix === 'jpeg' ||

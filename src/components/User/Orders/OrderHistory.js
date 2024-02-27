@@ -93,7 +93,7 @@ const OrderHistory = () => {
               data.data.map((item, index) => (
                 <div className='order_box' key={index}>
                   <span
-                    className={`order_status ${item.orderStatus.toLowerCase()}`}
+                    className={`order_status ${item.orderStatus?.toLowerCase()}`}
                   >
                     {item.orderCancelledBy
                       ? item.orderStatus + ' by you'
