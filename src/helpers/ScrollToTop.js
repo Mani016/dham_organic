@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { withRouter } from "react-router-dom";
 
-const ScrollToTop = props => {
+const ScrollToTop = (props) => {
+
+  // for browser's back
   useEffect(() => {
     const unlisten = props.history.listen((location, action) => {
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -15,6 +17,20 @@ const ScrollToTop = props => {
       unlisten();
     };
   }, [props.history]);
+
+
+  // for refresh the page
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    };
+  
+    window.addEventListener('unload', handleBeforeUnload);
+  
+    return () => {
+      window.removeEventListener('unload', handleBeforeUnload);
+    };
+  }, []);
 
   return props.children;
 };
