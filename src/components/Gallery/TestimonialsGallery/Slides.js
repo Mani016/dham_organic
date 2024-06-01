@@ -21,7 +21,7 @@ class Slides extends Component {
       <div className='slides_wrapper'>
         <div className='slider_home'>
           <Slider {...properties}>
-            {[...Array(8)].map((val,i) => (
+            {[...Array(7)].map((val,i) => (
               <img
               key={i}
                 src={`/assets/images/testimonials/${`${i+1}.webp`}`}
